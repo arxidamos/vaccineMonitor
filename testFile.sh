@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check command line args
+# Check command line arguments
 # Number of args has to be 4
 if [ $# -ne 4 ]
 then
@@ -82,45 +82,45 @@ while [ $i -lt $numLines ]
 do
     # Create random citizenID
     citizenID=${num_array[$i]}
-    echo $citizenID  | tr '\n' ' ' >> "recordsFile.txt"
+    echo $citizenID  | tr '\n' ' ' >> "citizenRecordsFile.txt"
 
     # Create random name
     name_length=$(( $RANDOM%13+3 ))
     # tr -dc: remove all chars from incoming command BUT the ones in the set
     # head -c : keep first <name_length> bytes (chars) from /urandom
-    tr -dc 'a-zA-Z' </dev/urandom | head -z -c $name_length  >> "recordsFile.txt"
-    echo -n ' ' >> "recordsFile.txt"
+    tr -dc 'a-zA-Z' </dev/urandom | head -z -c $name_length  >> "citizenRecordsFile.txt"
+    echo -n ' ' >> "citizenRecordsFile.txt"
 
     # Create random surname
     name_length=$(( $RANDOM%13+3 ))
-    tr -dc 'a-zA-Z' </dev/urandom | head -z -c $name_length  >> "recordsFile.txt"
-    echo -n ' ' >> "recordsFile.txt"
+    tr -dc 'a-zA-Z' </dev/urandom | head -z -c $name_length  >> "citizenRecordsFile.txt"
+    echo -n ' ' >> "citizenRecordsFile.txt"
 
     # Select random country
-    shuf -n 1 $countriesFile | tr '\n' ' ' >> "recordsFile.txt" 
+    shuf -n 1 $countriesFile | tr '\n' ' ' >> "citizenRecordsFile.txt" 
 
     # Create random age
     age=$(( $RANDOM%120+1 ))
-    printf "%d " "$age" >> "recordsFile.txt"
+    printf "%d " "$age" >> "citizenRecordsFile.txt"
 
     # Select random virus
-    shuf -n 1 $virusesFile | tr '\n' ' '>> "recordsFile.txt"
+    shuf -n 1 $virusesFile | tr '\n' ' '>> "citizenRecordsFile.txt"
 
     # Randomly choose YES/NO
     vaccined=$(toss_coin)
-    printf "%s" "$vaccined" >> "recordsFile.txt"
+    printf "%s" "$vaccined" >> "citizenRecordsFile.txt"
 
     # Create random date, if YES was generated
     if [[ $vaccined == "YES" ]]
     then
         date=$(random_date)
-        printf " %s \n" "$date" >> "recordsFile.txt"
+        printf " %s \n" "$date" >> "citizenRecordsFile.txt"
     else
-        printf " \n" >> "recordsFile.txt"
+        printf " \n" >> "citizenRecordsFile.txt"
     fi
 
     i=$(( $i + 1 ))
 done
 
 # Remove last blank line
-truncate -s -1 recordsFile.txt
+truncate -s -1 citizenRecordsFile.txt
