@@ -1,4 +1,35 @@
 #!/bin/bash
+
+# Check command line args
+# Number of args has to be 4
+if [ $# -ne 4 ]
+then
+    echo "You must enter exactly 4 parameters"
+    exit 2
+fi
+
+# First two args must refer to existing files
+if [[ ! -f $1 ]] || [[ ! -f $2 ]]
+then
+    echo "You must enter two existing files for arg 1 and arg 2"
+    exit 2
+fi
+
+# Third arg has to be a contiguous string of digits
+if [[ ! $3 =~ ^[0-9]+$ ]]
+then
+    echo "You must enter an integer for arg 3"
+    exit 2
+fi
+
+# Fourth arg has to be either 0 or 1
+if [[ ! $4 =~ ^[0-9]+$ ]] || [[ $4 -ne 0 ]] && [[ $4 -ne 1 ]]
+then
+    echo "You must enter 0 or 1 for arg 4"
+    exit 2
+fi
+
+# Store args
 virusesFile=$1
 countriesFile=$2
 numLines=$3
@@ -27,7 +58,6 @@ random_id() {
             # get random indices in num_array
             local k=$(( $RANDOM%$numLines ))
             local j=$(( $RANDOM%$numLines ))
-
             # make the one duplicate of the other
             num_array[$j]=${num_array[$k]}
 
@@ -45,8 +75,6 @@ random_date() {
     d=`date -d "$dd-$mm-$yyyy" '+%d-%m-%Y'`
     echo "$d"
 }
-# random_date
-# 889 John Papadopoulos Greece 52 COVID-19 YES 27-12-2020 ######
 
 random_id $duplicatesAllowed
 i=0
@@ -82,7 +110,7 @@ do
     vaccined=$(toss_coin)
     printf "%s" "$vaccined" >> "recordsFile.txt"
 
-    # Create random date, if current dude is vaccined
+    # Create random date, if YES was generated
     if [[ $vaccined == "YES" ]]
     then
         date=$(random_date)
@@ -94,5 +122,5 @@ do
     i=$(( $i + 1 ))
 done
 
-# remove last blank line
+# Remove last blank line
 truncate -s -1 recordsFile.txt
