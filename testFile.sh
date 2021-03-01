@@ -114,9 +114,9 @@ do
     if [[ $vaccined == "YES" ]]
     then
         date=$(random_date)
-        printf " %s \n" "$date" >> "citizenRecordsFile.txt"
+        printf " %s\n" "$date" >> "citizenRecordsFile.txt"
     else
-        printf " \n" >> "citizenRecordsFile.txt"
+        printf "\n" >> "citizenRecordsFile.txt"
     fi
 
     i=$(( $i + 1 ))

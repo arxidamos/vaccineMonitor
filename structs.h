@@ -19,18 +19,18 @@ typedef struct Date {
     
 // }
 
+typedef struct Record {
+    char* citizenID;
+    char* firstName;
+    char* lastName;
+    int age;
+    char* virus;
+    char* country;
+    Date vaccDate;     // dd-mm-yyyy
+    struct Record* next;
+} Record;
 
 
-// typedef struct Patient {
-//     char* recordID;
-//     char* patientFirstName;
-//     char* patientLastName;
-//     char* diseaseID;
-//     char* country;
-//     Date entryDate;     // dd-mm-yyyy
-//     Date exitDate;     // dd-mm-yyyy
-//     struct Patient* next;
-// } Patient;
 
 // typedef struct TreeNode {
 //     Date date;
@@ -53,32 +53,9 @@ typedef struct Date {
 // typedef struct HashTableBucket {
 //     int recs;               // Number of records in each bucket
 //     void* bucket;           // Memory where records will reside
+//     Patient* patientPtr;
 //     struct HashTableBucket* next;
 // } HashTableBucket;
 
-
-// typedef struct HeapTreeNode {
-//     char* keyID; // Disease or country
-//     int count;
-//     struct HeapTreeNode* parent;
-//     struct HeapTreeNode* left;
-//     struct HeapTreeNode* right;
-// } HeapTreeNode;
-
-// typedef struct HeapTree {
-//     int size;
-//     HeapTreeNode* root;
-//     HeapTreeNode* last;
-// } HeapTree;
-
-// typedef struct QueueNode {
-//     struct QueueNode* next;
-//     HeapTreeNode* node;
-// } QueueNode;
-
-// typedef struct Queue {
-//     QueueNode* front;
-//     QueueNode* rear;
-// } Queue;
 
 #endif

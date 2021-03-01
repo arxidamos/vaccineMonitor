@@ -1,8 +1,8 @@
-OBJS = main.o
+OBJS = main.o functions.o
 # OBJS = main.o functions.o treeFunctions.o heapFunctions.o mainFunctions.o
 # SOURCE = main.c functions.c treeFunctions.c heapFunctions.c mainFunctions.c
-SOURCE = main.c
-HEADER = structs.h
+SOURCE = main.c functions.c
+HEADER = structs.h functions.h
 OUT = vaccineMonitor
 CC = gcc
 FLAGS = -g3 -c -Wall
@@ -13,8 +13,8 @@ all:$(OBJS)
 vaccineMonitor.o:main.c
 	$(CC) $(FLAGS) main.c
 
-# functions.o:functions.c
-# 	$(CC) $(FLAGS) functions.c
+functions.o:functions.c
+	$(CC) $(FLAGS) functions.c
 
 # treeFunctions.o:treeFunctions.c
 # 	$(CC) $(FLAGS) treeFunctions.c

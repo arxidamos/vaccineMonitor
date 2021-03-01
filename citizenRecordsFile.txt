@@ -1,60 +1,10 @@
-4802 WlnkGcBpvBAY UPyRKTo Liechtenstein 69 polyomavirus YES 06-06-2020 
-6394 ydJDXQvqUKQv emPqMjMyur Pakistan 93 Echovirus YES 04-06-2020 
-5400 kSsAOWtnAOBb pVHOqbBsWzSdXG Lebanon 88 Oropouche YES 05-08-2020 
-4671 fBYoahJFGdkBOJ XAfPgXCW Ukraine 87 Yaba-like NO 
-8238 iLcvQb ljluvj Bhutan 56 Punta YES 25-06-2020 
-210 PfsdelQdKtjlWcN rfE Armenia 119 polyomavirus YES 15-01-2020 
-5596 cFTIz qcLKoba Netherlands 69 Zikavirus YES 12-11-2020 
-5741 yVhGihmiqJsRp CVxGd Haiti 43 Punta NO 
-1604 XHkdbDZKnMXMjw uMzL Djibouti 60 Oropouche YES 23-06-2020 
-7071 GRfZMlfbvnMq MVfvkCABhvfrRX Venezuela 48 Vaccinia YES 09-08-2020 
-1361 XbG pWftup Ecuador 14 SARS-COVID19 YES 03-07-2020 
-3319 BuVfviceUiYyE TcrtHIx Tajikistan 72 West-Nile NO 
-2581 lNUZcKdxpGiPpCA LXmQ Bulgaria 55 Dhori YES 07-11-2020 
-3703 IVQkTFlJaDutoT MoJvp Australia 23 Onyong-nyong NO 
-8291 oXfaH SYHC Namibia 90 Yaba-like YES 21-01-2020 
-2190 HAOhvQwExk EqEdzubbgC Grenada 120 Cowpox NO 
-2423 kOMrBQNGkbcczje hFw St-Kitts-Nevis 87 Yaba-monkey NO 
-6930 fvPFJzexSZN lCMczMdbwdMM Estonia 103 Vaccinia NO 
-6090 YDOOMtvqbySn WAJUxLUJWBPHsQL Latvia 49 Dhori NO 
-2432 GkywzO IgjoN El-Salvador 101 SARS-1 NO 
-5828 jLBkaTqaGsGWs OEjCpCjeu Haiti 86 YellowFever YES 04-09-2020 
-1243 ZBKztYgtojw DLpldggjht Venezuela 54 Yaba-monkey YES 21-09-2020 
-63 ARyypZAhWh CjJkYTGqFPPF Togo 52 Dengue NO 
-6442 FABodTvKYHW YuJWPdGV Latvia 94 Bunyavirus YES 03-11-2020 
-9582 GgeNbSJJAZkOGut TpfFxE Taiwan 67 Cosavirus NO 
-5370 vUYnAjt phdomNszfTCZj Vatican-City 91 Onyong-nyong YES 15-05-2020 
-1553 qyOWjKEj IVT Solomon-Islands 89 West-Nile NO 
-3026 wkPYZFM quJHDmLFltTsEfy Algeria 14 Norwalk NO 
-7901 zRYpJPHeXwz UOAYsSea Kosovo 50 HIV YES 26-09-2020 
-3832 EmuEn kQkcCTmLweXr Madagascar 31 Ebolavirus NO 
-9427 hYtWqUDHvxGZ DVr Palau 107 Enterovirus YES 01-08-2020 
-4422 smRR cTzinyPI Somalia 24 Chikungunya YES 24-05-2020 
-7856 ILlpcvEqyCvm ttbDmucYbHYulw Mongolia 110 H1N1 NO 
-9532 UxrQE ErWlqcPkisld Barbados 66 Cowpox NO 
-929 raRGu YLtPFCjP Yemen 69 Dugbe YES 19-09-2020 
-6190 iFo KKuKBFenryL China 89 Punta NO 
-6499 HNXnOyNHIweXovI vBhoEJyOYsORA Seychelles 9 polyomavirus NO 
-5367 pKgsECB oVMfu St-Lucia 70 polyomavirus YES 07-11-2020 
-4874 wdsyokwH oFiyZTbVRm United-Arab-Emirates 2 HIV YES 28-03-2020 
-8263 AAAlGFESfuSbcZx JhS Mongolia 61 Isfahan YES 14-03-2020 
-5347 hEq fJDtnoxmAilOBO Thailand 101 Bunyavirus YES 07-05-2020 
-7411 TriOYAHEVe PSYWyWyvL Denmark 82 West-Nile YES 07-01-2020 
-9034 EoJhUIKxCPH eUzy Hungary 53 Nipah YES 25-07-2020 
-158 sPbRf krxFsqGYeNtWcJ Romania 2 MERS YES 01-06-2020 
-7925 oJscXThPj faiBDGFGSbj Kosovo 12 Cosavirus YES 17-10-2020 
-9280 UXFmFAoMGsZHzih MGBwGBQFdmRsIrz Fiji 35 torovirus YES 20-11-2020 
-7442 lTY bMlsDDhWBMvQUyg Moldova 101 Varicella-zoster YES 01-10-2020 
-6994 lnsUJMox ennQVYWvcgDdM Haiti 4 SARS-1 YES 03-12-2020 
-6150 Qxdg hZzfX Brunei 103 MERS YES 24-02-2020 
-1851 QmNzBsMBREThqod gPYIpUFyqZzKI Guinea-Bissau 91 H1N1 YES 16-06-2020 
-4435 MuDlqP tyKPp Australia 40 Encephalomyocarditis YES 02-12-2020 
-7483 qkQSv unwcOvZTgbPtgN St-Kitts-Nevis 116 Echovirus NO 
-1905 gGdfdSRKUoc nXb Slovenia 116 Horsepox NO 
-3067 OhWkJmr JpihPAVJIZ Saudi-Arabia 16 H1N1 NO 
-1490 YdTMXIlLt XieyUqStf Lithuania 73 Oropouche YES 18-10-2020 
-4085 pDMcLE WpaqbSWmBzvTtMq Malawi 85 encephalitis YES 16-10-2020 
-4544 LzVsKle ZaQb Ghana 110 Epstein-Barr NO 
-3666 PIESaCJSxcGZv hwkZiwLLldh Kuwait 59 Vaccinia NO 
-4435 YkdS OIbBDmyQIPw Antigua-Deps 118 YellowFever YES 07-02-2020 
-9165 YfqiFVtIm FgoXAcx East-Timor 6 YellowFever YES 02-11-2020 
+9061 KxoBKzcYmuUV qUJGdbpJj Turkey 64 West-Nile NO
+2918 xZkYVk AmlcRa Philippines 29 Chandipura NO
+1190 bTR dSzQhOCWxkyK Peru 16 Chikungunya YES 12-05-2020
+6974 GPcKgKNuQGNSpNN HYXhGP Germany 91 SARS-1 YES 22-03-2020
+1480 NaKITzaJQMCmSTv VnIKcQhS Brunei 65 Norwalk YES 20-01-2020
+6746 GJWLBTZNVEbpqi qPFNB Thailand 72 polyomavirus YES 06-12-2020
+8622 hluqWtmNTXmvQe uTcjORqD Myanmar-Burma 58 Echovirus YES 08-09-2020
+9410 MKXHKUC qWvelebtRXxDA United-Kingdom 69 Vaccinia YES 09-09-2020
+2874 TxM iNBOtxTHbwjZtUp Brazil 90 Chikungunya NO
+4963 JRBpqHInSI mmxzMx Morocco 15 Bunyavirus NO

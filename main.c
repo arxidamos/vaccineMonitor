@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "structs.h"
+#include "functions.h"
 
 int main(int argc, char **argv) {
     FILE* inputFile;
@@ -20,7 +21,6 @@ int main(int argc, char **argv) {
                 fprintf(stderr, "Cannot open file: %s\n", argv[i+1]);
                 return 1;
             }            
-            printf("All ok with opening the file\n");
         }
 		else if(!strcmp("-b", argv[i])) {
 			bloomSize = atoi(argv[i+1]);
@@ -28,98 +28,101 @@ int main(int argc, char **argv) {
 				fprintf(stderr, "Error: Bloom filter size must be a positive number.\n");
 				exit(EXIT_FAILURE);
 			}
-            printf("All ok with the bloom filter size\n");            
 		}
 	}
 
-
-
-    // Initialize necessary variables
-    // size_t textSize;
-    // char *text = NULL;
-    // char* token = NULL;
+    // Initialize  variables
+    size_t textSize;
+    char* text = NULL;
+    char* token = NULL;
     
-    // char* recordID;
-    // char* fName;
-    // char* lName;
-    // char* diseaseID;
-    // char* country;
-    // Date entryDate;
-    // Date exitDate;
-    // Patient* head = NULL;
-    // Patient* last = NULL;
+    char* citizenID;
+    char* fName;
+    char* lName;
+    char* country;
+    int age;
+    char* virus;
+    Date vaccDate;
+    Record* head = NULL;
+    Record* last = NULL;
     // TreeRoot* tree = NULL;
-    // HashTableBucket** diseaseHT = createTable(disease_ht_size);
-    // HashTableBucket** countryHT = createTable(country_ht_size);
-    // int diseaseHashResult;
-    // int countryHashResult;
-    // void* bucket = NULL;
+        // HashTableBucket** diseaseHT = createTable(disease_ht_size);
+        // HashTableBucket** countryHT = createTable(country_ht_size);
+        // int diseaseHashResult;
+        // int countryHashResult;
+        // void* bucket = NULL;
     // Record record;
 
     // Read from inputFile and create structs
-    // while (getline(&text, &textSize, inputFile) != -1) {
+    while (getline(&text, &textSize, inputFile) != -1) {
 
-    //     // Get recordID
-    //     token = strtok(text, " ");
-    //     recordID = malloc(strlen(token)+1);
-    //     strcpy(recordID, token);
+        // Get citizenID
+        token = strtok(text, " ");
+        citizenID = malloc(strlen(token)+1);
+        strcpy(citizenID, token);
 
-    //     // Get patientFirstName
-    //     token = strtok(NULL, " ");
-    //     fName = malloc(strlen(token)+1);
-    //     strcpy(fName, token);
+        // Get firstName
+        token = strtok(NULL, " ");
+        fName = malloc(strlen(token)+1);
+        strcpy(fName, token);
 
-    //     // Get patientLastName
-    //     token = strtok(NULL, " ");
-    //     lName = malloc(strlen(token)+1);        
-    //     strcpy(lName, token);
+        // Get lastName
+        token = strtok(NULL, " ");
+        lName = malloc(strlen(token)+1);        
+        strcpy(lName, token);
 
-    //     // Get diseaseID
-    //     token = strtok(NULL, " ");
-    //     diseaseID = malloc(strlen(token)+1);
-    //     strcpy(diseaseID, token);
+        // Get country
+        token = strtok(NULL, " ");
+        country = malloc(strlen(token)+1);
+        strcpy(country, token);
 
-    //     // Get country
-    //     token = strtok(NULL, " ");
-    //     country = malloc(strlen(token)+1);
-    //     strcpy(country, token);
+        // Get age
+        token = strtok(NULL, " ");
+        sscanf(token, "%d", &age);
 
-    //     // Get entryDate
-    //     token = strtok(NULL, " ");
-    //     sscanf(token, "%d-%d-%d", &entryDate.day, &entryDate.month, &entryDate.year);
+        // Get virus
+        token = strtok(NULL, " ");
+        virus = malloc(strlen(token)+1);
+        strcpy(virus, token);
 
-    //     // Get exitDate (or "-")
-    //     token = strtok(NULL, " ");
-    //     // "-"
-    //     if(token[0] == '-') {
-    //         exitDate.empty = 1;
-    //     }
-    //     // Proper exitDate
-    //     else {
-    //         sscanf(token, "%d-%d-%d", &exitDate.day, &exitDate.month, &exitDate.year);
-    //         exitDate.empty = 0;
-    //     }
+        // Check if YES/NO
+        token = strtok(NULL, " ");
+
+        // Get vaccine date, if YES
+        if(!strcmp("YES", token)){
+            token = strtok(NULL, " ");
+            sscanf(token, "%d-%d-%d", &vaccDate.day, &vaccDate.month, &vaccDate.year);
+        }
+        else {
+            vaccDate.day=0;
+            vaccDate.month=0;
+            vaccDate.year=0;
+        }
+
 
     //     // Validate that exit date (if given) isn't older than entry date
     //     if (compareDate(entryDate, exitDate) || exitDate.empty) {
             
     //         // Add new record in a linked list
-    //         if (head != NULL) {
-    //             last = patientAppend (head, recordID, fName, lName, diseaseID, country, entryDate, exitDate);
-    //         }
-    //         else if (head == NULL) {
-    //             head = createPatient(recordID, fName, lName, diseaseID, country, entryDate, exitDate);
-    //         }
-    //         // Check if recordID is unique; if not, exit the app
-    //         recordExists(head, recordID);
+        if (head != NULL) {
+            // Check if recordID is unique; if not, exit the app
+            if (!checkDuplicate(head, citizenID, fName, lName, country, age, virus, vaccDate)) {
+                head = insertSortedRecord(head, citizenID, fName, lName, country, age, virus, vaccDate);
+            }
+        }
+        else if (head == NULL) {
+            printf("FIRST FUCKING RECORD\n");
+            head = createRecord(citizenID, fName, lName, country, age, virus, vaccDate);
+            printf("FIRST FUCKING RECORD finished\n");
+        }
 
-    //         // Add new record in country- and disease-hashtables
-    //         countryHashResult = hashFunction(country_ht_size, country);
-    //         diseaseHashResult = hashFunction(disease_ht_size, diseaseID);
-    //         if (last == NULL) {
-    //             insertRecord(countryHT, countryHashResult, bucketSize, country, head);
-    //             insertRecord(diseaseHT, diseaseHashResult, bucketSize, diseaseID, head);
-    //         }
+            // Add new record in country- and disease-hashtables
+            // countryHashResult = hashFunction(country_ht_size, country);
+            // diseaseHashResult = hashFunction(disease_ht_size, diseaseID);
+            // if (last == NULL) {
+            //     insertRecord(countryHT, countryHashResult, bucketSize, country, head);
+            //     insertRecord(diseaseHT, diseaseHashResult, bucketSize, diseaseID, head);
+            // }
     //         else {
     //             insertRecord(countryHT, countryHashResult, bucketSize, country, last);
     //             insertRecord(diseaseHT, diseaseHashResult, bucketSize, diseaseID, last);
@@ -128,13 +131,16 @@ int main(int argc, char **argv) {
 
     //     else
     //         printf("Exit date can't be older than entry date.\nRecord '%s' rejected.\n", recordID);
-        
-    //     free(recordID);
-    //     free(fName);
-    //     free(lName);
-    //     free(diseaseID);
-    //     free(country);
-    // }
+        free(citizenID);
+        free(fName);
+        free(lName);
+        free(country);
+        free(virus);
+    }
+        free(text);
+        printRecordsList(head);
+        freeRecordList(head);
+
 
     // Prepare for receiving commands 
     // size_t inputSize;
@@ -143,7 +149,7 @@ int main(int argc, char **argv) {
 
     // // printf("Structs have been constructed. Type a command:\n");
 
-    // while (1) {
+ // while (1) {
 
     //     getline(&input, &inputSize, stdin);
     //     input[strlen(input)-1] = '\0'; // Cut terminating '\n' from string (with null terminator)
@@ -506,7 +512,7 @@ int main(int argc, char **argv) {
     //         freeHashTable(countryHT, country_ht_size);
     //         freeHashTable(diseaseHT, disease_ht_size);
 
-    //         fclose(inputFile);
+            fclose(inputFile);
     //         printf("exiting\n");
 
     //         return 1;
@@ -515,7 +521,7 @@ int main(int argc, char **argv) {
     //         printf("Command '%s' is unknown\n", command);
     //         printf("Please type a known command:\n");
     //     }
-    // }
+// }
 
     fflush(stdout);
 
