@@ -10,19 +10,19 @@ int main(int argc, char **argv) {
     int bloomSize;
 
 	// Scan command line arguments
-    if(argc != 5) {
+    if (argc != 5) {
         fprintf(stderr, "Error: 4 parameters are required.\n");
         exit(EXIT_FAILURE);
     }
-	for(int i=0; i<argc; ++i) {
-		if(!strcmp("-c", argv[i])) {
+	for (int i=0; i<argc; ++i) {
+		if (!strcmp("-c", argv[i])) {
             inputFile = fopen(argv[i+1], "r");
             if(inputFile == NULL) {
                 fprintf(stderr, "Cannot open file: %s\n", argv[i+1]);
                 return 1;
             }            
         }
-		else if(!strcmp("-b", argv[i])) {
+		else if (!strcmp("-b", argv[i])) {
 			bloomSize = atoi(argv[i+1]);
 			if (bloomSize <= 0) {
 				fprintf(stderr, "Error: Bloom filter size must be a positive number.\n");
@@ -43,19 +43,15 @@ int main(int argc, char **argv) {
     int age;
     char* virus;
     Date vaccDate;
-    Record* head = NULL;
-    Record* last = NULL;
-    // TreeRoot* tree = NULL;
-        // HashTableBucket** diseaseHT = createTable(disease_ht_size);
-        // HashTableBucket** countryHT = createTable(country_ht_size);
-        // int diseaseHashResult;
-        // int countryHashResult;
-        // void* bucket = NULL;
-    // Record record;
+    Record* recordsHead = NULL;
+    Record* record;
+
+    BloomFilter* bloomsHead = NULL;
+    int k =16;
 
     // Read from inputFile and create structs
     while (getline(&text, &textSize, inputFile) != -1) {
-
+      //
         // Get citizenID
         token = strtok(text, " ");
         citizenID = malloc(strlen(token)+1);
@@ -94,53 +90,73 @@ int main(int argc, char **argv) {
             sscanf(token, "%d-%d-%d", &vaccDate.day, &vaccDate.month, &vaccDate.year);
         }
         else {
-            vaccDate.day=0;
-            vaccDate.month=0;
-            vaccDate.year=0;
+            // If NO, then record should have no date
+            if (token = strtok(NULL, " ")) {
+                printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, country, age, virus);
+            }
+            else {
+                vaccDate.day=0;
+                vaccDate.month=0;
+                vaccDate.year=0;
+            }
         }
-
-
+     //
     //     // Validate that exit date (if given) isn't older than entry date
     //     if (compareDate(entryDate, exitDate) || exitDate.empty) {
             
     //         // Add new record in a linked list
-        if (head != NULL) {
-            // Check if recordID is unique; if not, exit the app
-            if (!checkDuplicate(head, citizenID, fName, lName, country, age, virus, vaccDate)) {
-                head = insertSortedRecord(head, citizenID, fName, lName, country, age, virus, vaccDate);
+        if (recordsHead == NULL) {
+            // printf("FIRST FUCKING RECORD\n");
+            recordsHead = createRecord(citizenID, fName, lName, country, age, virus, vaccDate);
+        }
+        else if (recordsHead != NULL) {
+            // Check if record is unique
+            if (!checkDuplicate(recordsHead, citizenID, fName, lName, country, age, virus, vaccDate)) {
+                record = insertSortedRecord(&recordsHead, citizenID, fName, lName, country, age, virus, vaccDate);
             }
         }
-        else if (head == NULL) {
-            printf("FIRST FUCKING RECORD\n");
-            head = createRecord(citizenID, fName, lName, country, age, virus, vaccDate);
-            printf("FIRST FUCKING RECORD finished\n");
+        // Insert in Bloom Filter only vaccinated records
+        if (bloomsHead == NULL) {
+            // Create empty BloomFilter
+            bloomsHead = createBloom(bloomsHead, virus, bloomSize, k);
+            // Insert current record in Filter 
+            insertInBloom(bloomsHead, citizenID, virus);
         }
-
-            // Add new record in country- and disease-hashtables
-            // countryHashResult = hashFunction(country_ht_size, country);
-            // diseaseHashResult = hashFunction(disease_ht_size, diseaseID);
-            // if (last == NULL) {
-            //     insertRecord(countryHT, countryHashResult, bucketSize, country, head);
-            //     insertRecord(diseaseHT, diseaseHashResult, bucketSize, diseaseID, head);
-            // }
-    //         else {
-    //             insertRecord(countryHT, countryHashResult, bucketSize, country, last);
-    //             insertRecord(diseaseHT, diseaseHashResult, bucketSize, diseaseID, last);
-    //         }
-    //     }
+        else {
+            // Insert in Bloom Filter only vaccinated records
+            if (vaccDate.year != 0) {
+                if (virusBloomExists(bloomsHead, virus) == 1) {
+                    insertInBloom(bloomsHead, citizenID, virus);
+                }
+                else {
+                    bloomsHead = createBloom(bloomsHead, virus, bloomSize, k);
+                    insertInBloom(bloomsHead, citizenID, virus);
+                }
+            }
+        }
 
     //     else
     //         printf("Exit date can't be older than entry date.\nRecord '%s' rejected.\n", recordID);
+
+
+
+
         free(citizenID);
         free(fName);
         free(lName);
         free(country);
         free(virus);
     }
-        free(text);
-        printRecordsList(head);
-        freeRecordList(head);
 
+
+        free(text);
+        char* marika = "1190";
+        vaccineStatusBloom(bloomsHead, marika, "Chikungunya");
+
+        // printRecordsList(recordsHead);
+        printBloomsList(bloomsHead);
+        freeRecordList(recordsHead);
+        freeBlooms(bloomsHead);
 
     // Prepare for receiving commands 
     // size_t inputSize;

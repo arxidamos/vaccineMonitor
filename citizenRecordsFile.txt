@@ -4,7 +4,9 @@
 6974 GPcKgKNuQGNSpNN HYXhGP Germany 91 SARS-1 YES 22-03-2020
 1480 NaKITzaJQMCmSTv VnIKcQhS Brunei 65 Norwalk YES 20-01-2020
 6746 GJWLBTZNVEbpqi qPFNB Thailand 72 polyomavirus YES 06-12-2020
-8622 hluqWtmNTXmvQe uTcjORqD Myanmar-Burma 58 Echovirus YES 08-09-2020
-9410 MKXHKUC qWvelebtRXxDA United-Kingdom 69 Vaccinia YES 09-09-2020
-2874 TxM iNBOtxTHbwjZtUp Brazil 90 Chikungunya NO
+8622 hluqWtmNTXmvQe uTcjORqD Myanmar-Burma 58 YellowFever YES 08-09-2020
+9410 MKXHKUC qWvelebtRXxDA United-Kingdom 69 YellowFever YES 09-09-2020
+2874 TxM iNBOtxTHbwjZtUp Brazil 90 Chikungunya NO 09-09-2020
 4963 JRBpqHInSI mmxzMx Morocco 15 Bunyavirus NO
+4578 XoaWqYMJhaMoKA JfaZkcYzUHRb Tuvalu 36 SARS-1 NO
+6608 XQg EyuDNBWoAESW Mali 22 YellowFever YES 18-02-2020

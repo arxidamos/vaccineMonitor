@@ -31,30 +31,39 @@ typedef struct Record {
 } Record;
 
 
+typedef struct BloomFilter {
+    char* virus;
+    int size;
+    int k;
+    int* bitArray;
+    struct BloomFilter* next;
+} BloomFilter;
+
+
 
 // typedef struct TreeNode {
-//     Date date;
-//     Patient* patientPtr;
-//     struct TreeNode* left;
-//     struct TreeNode* right;
-//     int height;
-// } TreeNode;
+    //     Date date;
+    //     Patient* patientPtr;
+    //     struct TreeNode* left;
+    //     struct TreeNode* right;
+    //     int height;
+    // } TreeNode;
 
-// typedef struct TreeRoot {
-//     char* keyID;        // DiseaseID or countryID
-//     TreeNode* root;     // Pointer to the root
-// } TreeRoot;
+    // typedef struct TreeRoot {
+    //     char* keyID;        // DiseaseID or countryID
+    //     TreeNode* root;     // Pointer to the root
+    // } TreeRoot;
 
-// typedef struct Record {
-//     char* keyID;    // DiseaseID or countryID
-//     TreeRoot* tree; // Pointer to record's tree
-// } Record;
+    // typedef struct Record {
+    //     char* keyID;    // DiseaseID or countryID
+    //     TreeRoot* tree; // Pointer to record's tree
+    // } Record;
 
-// typedef struct HashTableBucket {
-//     int recs;               // Number of records in each bucket
-//     void* bucket;           // Memory where records will reside
-//     Patient* patientPtr;
-//     struct HashTableBucket* next;
+    // typedef struct HashTableBucket {
+    //     int recs;               // Number of records in each bucket
+    //     void* bucket;           // Memory where records will reside
+    //     Patient* patientPtr;
+    //     struct HashTableBucket* next;
 // } HashTableBucket;
 
 

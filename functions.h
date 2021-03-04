@@ -5,10 +5,29 @@
 // functions.c 
 // Linked list functions
 Record* createRecord (char* citizenID, char* fName, char* lName, char* country, int age, char* virus,  Date vaccDate);
-Record* insertSortedRecord (Record* head, char* citizenID, char* fName, char* lName, char* country, int age, char* virus, Date vaccDate);
+Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, char* country, int age, char* virus, Date vaccDate);
 int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, char* country, int age, char* virus, Date vaccDate);
 void printRecordsList (Record* record);
 void freeRecordList (Record* head);
+
+
+
+
+unsigned long djb2(unsigned char *str);
+unsigned long sdbm(unsigned char *str);
+unsigned long hash_i(unsigned char *str, unsigned int i);
+
+
+
+BloomFilter* createBloom (BloomFilter* bloomsHead, char* virus, int size, int k);
+void insertInBloom (BloomFilter* bloomsHead, char* citizenID, char* virus);
+int virusBloomExists (BloomFilter* bloomsHead, char* virus);
+
+void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus);
+
+
+void printBloomsList (BloomFilter* head);
+void freeBlooms(BloomFilter* head);
 // treeFunctions.c
 // TreeNode* createTreeNode (Patient* patient, Date entryDate);
 // TreeRoot* createTreeRoot (char* keyID, Patient* patient, Date entryDate);
