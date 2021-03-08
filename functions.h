@@ -28,6 +28,17 @@ void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus);
 
 void printBloomsList (BloomFilter* head);
 void freeBlooms(BloomFilter* head);
+
+
+
+SkipList* createList(SkipList* skipListHead, char* virus);
+
+void freeSkipLists(SkipList* head);
+
+int virusSkipExists(SkipList* skipListHead, char* virus);
+
+void printSkipLists (SkipList* head);
+
 // treeFunctions.c
 // TreeNode* createTreeNode (Patient* patient, Date entryDate);
 // TreeRoot* createTreeRoot (char* keyID, Patient* patient, Date entryDate);

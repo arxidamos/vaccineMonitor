@@ -130,7 +130,7 @@ void freeRecordList(Record* head) {
     }
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Hash aux function djb2
 unsigned long djb2(unsigned char *str) {
@@ -168,7 +168,6 @@ BloomFilter* createBloom (BloomFilter* bloomsHead, char* virus, int size, int k)
     
     // Put new Bloom in head
     if (bloomsHead) {
-        // bloomsHead->next = NULL;
         newBloom->next = bloomsHead;
     }
     else {
@@ -251,7 +250,6 @@ void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus) {
     unsigned long hash;
     unsigned int set = 1; // All 0s and leftmost bit=1
     int x;
-    int vaccined;
 
     while (current) {
         if (!strcmp(current->virus, virus)) {
@@ -267,20 +265,17 @@ void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus) {
                 
                 // Shift left the *set* bit
                 set = set << (x%32);
-                printf("after shift: %d\n", set);
+                // printf("after shift: %d\n", set);
 
-                int result = (current->bitArray[x/32] & set);
-                printf("Comparing set and bitarray bit: %d\n", result);
+                // printf("Comparing set and bitarray bit: %d\n", result);
                 // Check if bitArray has *1* in the same spot
                 if ((current->bitArray[x/32] & set) != 0) {
-                    printf("x=%d, bitArray[%d/32]=%d, setBit=%d\n", x, x, current->bitArray[x/32], set);
+                    // printf("x=%d, bitArray[%d/32]=%d, setBit=%d\n", x, x, current->bitArray[x/32], set);
 
-                    vaccined = 1;
                     // printf("NOT VACCINATED\n");
                     // return;
                 }
                 else {
-                    vaccined = 0;
                     printf("NOT VACC\n");
                     return;
                 }
@@ -293,4 +288,109 @@ void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus) {
     }
     printf("There is no Bloom Filter for the virus name you inserted.\n");
     return;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+SkipList* createList(SkipList* skipListHead, char* virus) {
+    SkipList* newList;
+    newList = malloc(sizeof(SkipList));
+    // newList->head = malloc(sizeof(SkipNode));
+    newList->head = NULL;
+
+
+    newList->maxLevel = 32; // ~log2(world population)
+    newList->virus = malloc(strlen(virus)+1);
+    strcpy(newList->virus, virus);
+
+    // newList->last = malloc(sizeof(SkipNode));
+    // newList->head->citizenID = malloc(strlen("@")+1);
+    // strcpy(newList->head->citizenID, "@");
+
+    // newList->head->citizenID = "@";
+    // newList->last->citizenID = "z";
+
+    // newList->head->next = malloc(sizeof(SkipNode*)*(newList->maxLevel));
+    // // Initialize all levels' next pointers
+    // for (int i=0; i<newList->maxLevel; i++) {
+    // // for (int i=0; i<=0; i++) {
+
+    //     // newList->head->next[i] = malloc(sizeof(SkipNode));
+    //     newList->head->next[i] = NULL;
+    // }
+
+    // Put new skipList in head
+    if (skipListHead) {
+        printf("new skipList for %s\n", virus);
+        newList->next = skipListHead;
+    }
+    else {
+        printf("1st skipList for %s\n", virus);
+        newList->next = NULL;
+    }
+    return newList;
+}
+
+// Free memory alloc'd for skip Lists
+void freeSkipLists(SkipList* head) {
+    SkipList* currentList = head;
+    SkipList* tmpList;
+    // SkipNode* currentNode;
+    // SkipNode* tmpNode;
+
+    // Iterate through all skip Lists
+    while (currentList) {
+        tmpList = currentList;
+        currentList = currentList->next;
+
+        
+        // // Iterate through all levels of this List
+        // for (int i=(tmpList->maxLevel-1); i>=0; i--) {
+        //     // printf("before!\n");
+            
+        //     currentNode = tmpList->head;
+        //     while (currentNode->next[i]) {
+        //         tmpNode = currentNode;
+        //         currentNode = currentNode->next[i];
+
+        //         if (tmpNode != tmpList->head) {
+        //             free(tmpNode->citizenID);
+        //             free(tmpNode);   
+        //         }
+        //     }
+        //     // free(tmpList->head->next[i]);
+        // }
+        // for (int i=(tmpList->maxLevel-1); i>=0; i--) {
+        //     free(tmpList->head->next[i]);
+        // }
+        // free(tmpList->head->next);
+        // free(tmpList->head->citizenID);
+        free(tmpList->head);
+        printf("Just freed %s.\n", tmpList->virus);
+        free(tmpList->virus);
+        free(tmpList);
+        
+    }
+}
+
+
+int virusSkipExists(SkipList* skipListHead, char* virus) {
+    SkipList* current = skipListHead;
+    while (current) {
+        if (!strcmp(current->virus, virus)) {
+            return 1;
+        }
+        current = current->next;
+    }
+    return 0;
+
+}
+
+
+void printSkipLists (SkipList* head) {
+    SkipList* current = head;    
+    while (current) {
+        printf("SL : %s\n", current->virus);    
+        current = current->next;
+    }
 }

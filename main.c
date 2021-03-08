@@ -49,6 +49,10 @@ int main(int argc, char **argv) {
     BloomFilter* bloomsHead = NULL;
     int k =16;
 
+    SkipList* skipVaccHead = NULL;
+    SkipList* skipNonVaccHead = NULL;
+
+
     // Read from inputFile and create structs
     while (getline(&text, &textSize, inputFile) != -1) {
       //
@@ -104,7 +108,7 @@ int main(int argc, char **argv) {
     //     // Validate that exit date (if given) isn't older than entry date
     //     if (compareDate(entryDate, exitDate) || exitDate.empty) {
             
-    //         // Add new record in a linked list
+        // Add new record in a linked list
         if (recordsHead == NULL) {
             // printf("FIRST FUCKING RECORD\n");
             recordsHead = createRecord(citizenID, fName, lName, country, age, virus, vaccDate);
@@ -115,6 +119,7 @@ int main(int argc, char **argv) {
                 record = insertSortedRecord(&recordsHead, citizenID, fName, lName, country, age, virus, vaccDate);
             }
         }
+
         // Insert in Bloom Filter only vaccinated records
         if (bloomsHead == NULL) {
             // Create empty BloomFilter
@@ -135,10 +140,45 @@ int main(int argc, char **argv) {
             }
         }
 
-    //     else
-    //         printf("Exit date can't be older than entry date.\nRecord '%s' rejected.\n", recordID);
+        // Insert in Skip List
+        // Separate structure for vaccined skip Lists
+        if (vaccDate.year != 0) {
+            if (virusSkipExists(skipVaccHead, virus) == 1) {
+                // insertInSkip(skipVaccHead, citizenID, virus);
+            }
+            else {
+                skipVaccHead = createList(skipVaccHead, virus);
+                // insertInSkip(skipVaccHead, citizenID, virus);
+            }
+        }
+        // Structure for non-vacc skip Lists
+        else {
+            if (virusSkipExists(skipNonVaccHead, virus) == 1) {
+                // insertInSkip(skipNonVaccHead, citizenID, virus);
+            }
+            else {
+                skipNonVaccHead = createList(skipNonVaccHead, virus);
+                // insertInSkip(skipNonVaccHead, citizenID, virus);
+            }        
+            
+        }
 
+        // if (vaccDate.year != 0) {
 
+        //     if (virusSkipExists(skipVaccHead, virus) != 1){
+        //         skipVaccHead = createList(skipVaccHead, virus);
+        //         // insertInSkip(skipVaccHead, citizenID, virus);
+        //     }
+        // }
+        // // Structure for non-vacc skip Lists
+        // else {
+
+        //     if (virusSkipExists(skipVaccHead, virus) != 1){
+        //         skipNonVaccHead = createList(skipNonVaccHead, virus);
+        //         // insertInSkip(skipNonVaccHead, citizenID, virus);
+        //     }        
+            
+        // }
 
 
         free(citizenID);
@@ -150,13 +190,20 @@ int main(int argc, char **argv) {
 
 
         free(text);
-        char* marika = "1190";
-        vaccineStatusBloom(bloomsHead, marika, "Chikungunya");
+        // Bloom filter test cases
+        vaccineStatusBloom(bloomsHead, "2918", "Chandipura");
+        vaccineStatusBloom(bloomsHead, "6746", "polyomavirus");
+        vaccineStatusBloom(bloomsHead, "1190", "Chikungunya");
+        vaccineStatusBloom(bloomsHead, "1480", "Norwalk");
 
         // printRecordsList(recordsHead);
-        printBloomsList(bloomsHead);
+        // printBloomsList(bloomsHead);
+        printSkipLists(skipVaccHead);
+        printSkipLists(skipNonVaccHead);
         freeRecordList(recordsHead);
         freeBlooms(bloomsHead);
+        freeSkipLists(skipVaccHead);
+        freeSkipLists(skipNonVaccHead);
 
     // Prepare for receiving commands 
     // size_t inputSize;

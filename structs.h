@@ -6,6 +6,7 @@
 
 // Some macros for tree printing
 #define TABS(depth) for (int x = 0; x < (depth); ++x) {printf("\t");} // print 'depth' tabs
+// const int maxLevel = 32; // ~log2(world population)
 
 typedef struct Date {
     int day;        //dd
@@ -39,8 +40,6 @@ typedef struct BloomFilter {
     struct BloomFilter* next;
 } BloomFilter;
 
-
-
 // typedef struct TreeNode {
     //     Date date;
     //     Patient* patientPtr;
@@ -65,6 +64,21 @@ typedef struct BloomFilter {
     //     Patient* patientPtr;
     //     struct HashTableBucket* next;
 // } HashTableBucket;
+
+typedef struct SkipNode {
+    char* citizenID;
+    int level;
+    // Array of nexts, one for each level
+    // struct SkipNode** next;
+} SkipNode;
+
+typedef struct SkipList {
+    SkipNode* head;
+    // SkipNode* last;
+    int maxLevel;
+    char* virus;
+    struct SkipList* next;
+} SkipList;
 
 
 #endif
