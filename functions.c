@@ -533,21 +533,22 @@ void printSkipLists (SkipList* head) {
 
 void printSkipNodes(SkipList* skipList) {
     SkipNode* current = skipList->head;
-    // int height = skipList->head->levels;
+    int height = skipList->head->levels;
 
-    // for (int i=height-1; i>=0; i--) {
+    for (int i=height-1; i>=0; i--) {
 
         while (current) {
             printf("[%s]-->", current->citizenID);
-            // current = current->next[i];
-            current = current->next[0];
+            current = current->next[i];
+            // current = current->next[0];
 
         }
-        // printf("[end[%d]]\n", i);
-        printf("[end[%d]]\n", 0);
+        current = skipList->head;
+        printf("[end[%d]]\n", i);
+        // printf("[end[%d]]\n", 0);
 
 
-    // }
+    }
 }
 
 int getHeight(int maximum) {
