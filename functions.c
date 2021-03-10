@@ -295,11 +295,18 @@ void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus) {
 SkipList* createList(SkipList* skipListHead, char* virus) {
     SkipList* newList;
     newList = malloc(sizeof(SkipList));
-    // newList->head = malloc(sizeof(SkipNode));
-    newList->head = NULL;
+    // newList->head = calloc(1, sizeof(SkipNode));
+    newList->head = malloc(sizeof(SkipNode));
 
+    newList->head->levels = max;
+    newList->head->citizenID = malloc(strlen("@")+1);
+    strcpy(newList->head->citizenID, "@");
 
-    newList->maxLevel = 32; // ~log2(world population)
+    for (int i=0; i<newList->head->levels; i++){
+        newList->head->next[i] = NULL;
+    }
+
+    newList->maxLevel = max; // ~log2(world population)
     newList->virus = malloc(strlen(virus)+1);
     strcpy(newList->virus, virus);
 
@@ -321,14 +328,126 @@ SkipList* createList(SkipList* skipListHead, char* virus) {
 
     // Put new skipList in head
     if (skipListHead) {
-        printf("new skipList for %s\n", virus);
+        // printf("new skipList for %s\n", virus);
         newList->next = skipListHead;
     }
     else {
-        printf("1st skipList for %s\n", virus);
+        // printf("1st skipList for %s\n", virus);
         newList->next = NULL;
     }
     return newList;
+}
+
+void insertInSkip(SkipList* skipListHead, Record* record, char* virus) {
+    SkipList* skipL = skipListHead;
+
+    while (skipL) {
+        if (!strcmp(skipL->virus, virus)) {
+            // We are in the right list
+            printf("Inserting in list %s\n", skipL->virus);
+            SkipNode* current = skipL->head;
+            int level = skipL->head->levels - 1;
+            int compare;
+            // Keep last visited for each level            
+            SkipNode* lastVisited[max];
+            // for (int i=0; i<max; i++) {
+                //     lastVisited[i] = malloc(sizeof(SkipNode));
+            // }
+            // for (int i=0; i<max; i++) {
+            //     lastVisited[i] = NULL;
+            // }
+            
+            // Search Lists' nodes, starting from top level
+            while ( (current != NULL) && (level>=0) ) {
+                lastVisited[level] = current;
+                // No more nodes on this level                
+                if (current->next[level] == NULL) {
+                    printf("reached level #%d end\n", level);
+                    level--;
+                }
+                // More nodes on this level
+                else {                
+                    compare = strcmp(current->next[level]->citizenID, record->citizenID);
+                    // ID already exists
+                    if (!compare) {
+                        return;
+                    }
+                    // Reached level's bigger ID
+                    else if (compare>0) {
+                        printf("Bigger node in level #%d\n", level);
+                        level--;
+                    }
+                    // Keep checkin on this level
+                    else {
+                        printf("Move on, on same level #%d\n", level);
+                        current = current->next[level];
+                    }
+                }
+            }
+
+            // Insert new node
+            SkipNode* newNode = malloc(sizeof(SkipNode));
+            newNode->citizenID = malloc(strlen(record->citizenID)+1);
+            strcpy(newNode->citizenID, record->citizenID);
+            newNode->record = record;
+            newNode->levels = getHeight(max);
+            printf("New node will randomly have %d levels\n", newNode->levels);
+            
+            // for (int i=0; i<newNode->levels; i++){
+            //     newNode->next[i] = NULL;
+            // }
+
+            // for (int i=0; i<newNode->levels; i++){
+            //     lastVisited[i]->next[i] = NULL;
+            // }
+
+                        
+            for (int i=0; i<newNode->levels; i++) {
+            // for (int i=newNode->levels-1; i>=0; i--) {
+
+                // printf("%dh fora\n", i);
+                newNode->next[i] = lastVisited[i]->next[i];
+                lastVisited[i]->next[i] = newNode;
+            }
+            if (newNode->next[0] != NULL) {
+                printf("New node put: %s--%s--%s\n\n", lastVisited[0]->citizenID, newNode->citizenID, newNode->next[0]->citizenID);
+            }
+            else {
+                printf("New node put: %s--%s--Null\n\n", lastVisited[0]->citizenID, newNode->citizenID);
+            }
+            return;
+        }
+        skipL = skipL->next;    
+    }
+}
+
+Record* searchSkipLists(SkipList* skipListHead, char* virus, char* citizenID) {
+    SkipNode* current = skipListHead->head;
+    int level = skipListHead->head->levels - 1;
+    int compare;
+
+    while ( (current != NULL) && (level>=0) ) {
+        compare = strcmp(current->next[level]->citizenID, citizenID);
+        // Found, return record pointer
+        if (!compare) {
+            return current->next[level]->record;
+        }
+        // Reached level's bigger ID
+        else if (compare>0) {
+            level--;
+        }
+        // Keep checkin on this level
+        else {
+            if (current->next[level]) {
+                current = current->next[level];
+            }
+            // Unless at level's end
+            else {
+                level--;
+            }
+        }
+    }
+    return NULL;
 }
 
 // Free memory alloc'd for skip Lists
@@ -343,8 +462,33 @@ void freeSkipLists(SkipList* head) {
         tmpList = currentList;
         currentList = currentList->next;
 
+        // Free all nodes of this list
+        freeSkipNodes(tmpList);
+
+        // free(tmpList->head->citizenID);
+        // free(tmpList->head);
+        // printf("Just freed %s.\n", tmpList->virus);
+        free(tmpList->virus);
+        free(tmpList);
         
-        // // Iterate through all levels of this List
+    }
+}
+
+int virusSkipExists(SkipList* skipListHead, char* virus) {
+    SkipList* current = skipListHead;
+    while (current) {
+        if (!strcmp(current->virus, virus)) {
+            printf("Existing list %s\n", current->virus);            
+            return 1;
+        }
+        current = current->next;
+    }
+    printf("List %s to be added\n", virus);
+    return 0;
+}
+
+void freeSkipNodes(SkipList* skipList) {
+    // Iterate through all levels of this List
         // for (int i=(tmpList->maxLevel-1); i>=0; i--) {
         //     // printf("before!\n");
             
@@ -363,34 +507,58 @@ void freeSkipLists(SkipList* head) {
         // for (int i=(tmpList->maxLevel-1); i>=0; i--) {
         //     free(tmpList->head->next[i]);
         // }
-        // free(tmpList->head->next);
-        // free(tmpList->head->citizenID);
-        free(tmpList->head);
-        printf("Just freed %s.\n", tmpList->virus);
-        free(tmpList->virus);
-        free(tmpList);
-        
-    }
-}
+    // free(tmpList->head->next);
 
+    SkipNode* current = skipList->head;
+    SkipNode* tmp;
 
-int virusSkipExists(SkipList* skipListHead, char* virus) {
-    SkipList* current = skipListHead;
     while (current) {
-        if (!strcmp(current->virus, virus)) {
-            return 1;
-        }
-        current = current->next;
+        tmp = current;
+        current = current->next[0];
+
+        free(tmp->citizenID);
+        free(tmp);
     }
-    return 0;
-
+    return;
 }
-
 
 void printSkipLists (SkipList* head) {
     SkipList* current = head;    
     while (current) {
-        printf("SL : %s\n", current->virus);    
+        printf("SL : %s\n", current->virus);
+        printSkipNodes(current);
         current = current->next;
     }
+}
+
+void printSkipNodes(SkipList* skipList) {
+    SkipNode* current = skipList->head;
+    // int height = skipList->head->levels;
+
+    // for (int i=height-1; i>=0; i--) {
+
+        while (current) {
+            printf("[%s]-->", current->citizenID);
+            // current = current->next[i];
+            current = current->next[0];
+
+        }
+        // printf("[end[%d]]\n", i);
+        printf("[end[%d]]\n", 0);
+
+
+    // }
+}
+
+int getHeight(int maximum) {
+    // Generate random new height: 
+    int result;
+    int height=1;
+    for (int i=1; i<maximum; i++) {
+        result = rand() % RAND_MAX;
+        if (result < (RAND_MAX/2)) {
+            height++;
+        }
+    }
+    return height;
 }

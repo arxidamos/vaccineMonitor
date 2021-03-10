@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "structs.h"
 #include "functions.h"
 
 int main(int argc, char **argv) {
     FILE* inputFile;
-    // int bucketSize;
     int bloomSize;
 
 	// Scan command line arguments
@@ -36,6 +36,8 @@ int main(int argc, char **argv) {
     char* text = NULL;
     char* token = NULL;
     
+    srand(time(NULL));
+
     char* citizenID;
     char* fName;
     char* lName;
@@ -48,6 +50,7 @@ int main(int argc, char **argv) {
 
     BloomFilter* bloomsHead = NULL;
     int k =16;
+    int recordAccepted = 0;
 
     SkipList* skipVaccHead = NULL;
     SkipList* skipNonVaccHead = NULL;
@@ -105,81 +108,72 @@ int main(int argc, char **argv) {
             }
         }
      //
-    //     // Validate that exit date (if given) isn't older than entry date
-    //     if (compareDate(entryDate, exitDate) || exitDate.empty) {
-            
+
         // Add new record in a linked list
         if (recordsHead == NULL) {
-            // printf("FIRST FUCKING RECORD\n");
             recordsHead = createRecord(citizenID, fName, lName, country, age, virus, vaccDate);
+            record = recordsHead;
+            recordAccepted = 1;
         }
         else if (recordsHead != NULL) {
             // Check if record is unique
             if (!checkDuplicate(recordsHead, citizenID, fName, lName, country, age, virus, vaccDate)) {
                 record = insertSortedRecord(&recordsHead, citizenID, fName, lName, country, age, virus, vaccDate);
+                recordAccepted = 1;
+            }
+            // If not, don't add the record
+            else {
+                recordAccepted = 0;
             }
         }
 
-        // Insert in Bloom Filter only vaccinated records
-        if (bloomsHead == NULL) {
-            // Create empty BloomFilter
-            bloomsHead = createBloom(bloomsHead, virus, bloomSize, k);
-            // Insert current record in Filter 
-            insertInBloom(bloomsHead, citizenID, virus);
-        }
-        else {
+        if (recordAccepted) {
             // Insert in Bloom Filter only vaccinated records
+            if (bloomsHead == NULL) {
+                // Create empty BloomFilter
+                bloomsHead = createBloom(bloomsHead, virus, bloomSize, k);
+                // Insert current record in Filter 
+                insertInBloom(bloomsHead, citizenID, virus);
+            }
+            else {
+                // Insert in Bloom Filter only vaccinated records
+                if (vaccDate.year != 0) {
+                    if (virusBloomExists(bloomsHead, virus) == 1) {
+                        insertInBloom(bloomsHead, citizenID, virus);
+                    }
+                    else {
+                        bloomsHead = createBloom(bloomsHead, virus, bloomSize, k);
+                        insertInBloom(bloomsHead, citizenID, virus);
+                    }
+                }
+            }
+
+            // Insert in Skip List
+            // Separate structure for vaccined skip Lists
             if (vaccDate.year != 0) {
-                if (virusBloomExists(bloomsHead, virus) == 1) {
-                    insertInBloom(bloomsHead, citizenID, virus);
+                if (virusSkipExists(skipVaccHead, virus) == 1) {
+                    printf("Insert in skip %s\n", virus);
+                    insertInSkip(skipVaccHead, record, virus);
                 }
                 else {
-                    bloomsHead = createBloom(bloomsHead, virus, bloomSize, k);
-                    insertInBloom(bloomsHead, citizenID, virus);
+                    printf("Create and insert in skip %s\n", virus);
+                    skipVaccHead = createList(skipVaccHead, virus);
+                    insertInSkip(skipVaccHead, record, virus);
                 }
             }
-        }
-
-        // Insert in Skip List
-        // Separate structure for vaccined skip Lists
-        if (vaccDate.year != 0) {
-            if (virusSkipExists(skipVaccHead, virus) == 1) {
-                // insertInSkip(skipVaccHead, citizenID, virus);
-            }
+            // Structure for non-vacc skip Lists
             else {
-                skipVaccHead = createList(skipVaccHead, virus);
-                // insertInSkip(skipVaccHead, citizenID, virus);
+                if (virusSkipExists(skipNonVaccHead, virus) == 1) {
+                    insertInSkip(skipNonVaccHead, record, virus);
+                }
+                else {
+                    skipNonVaccHead = createList(skipNonVaccHead, virus);
+                    insertInSkip(skipNonVaccHead, record, virus);
+                }        
+                
             }
+
         }
-        // Structure for non-vacc skip Lists
-        else {
-            if (virusSkipExists(skipNonVaccHead, virus) == 1) {
-                // insertInSkip(skipNonVaccHead, citizenID, virus);
-            }
-            else {
-                skipNonVaccHead = createList(skipNonVaccHead, virus);
-                // insertInSkip(skipNonVaccHead, citizenID, virus);
-            }        
-            
-        }
-
-        // if (vaccDate.year != 0) {
-
-        //     if (virusSkipExists(skipVaccHead, virus) != 1){
-        //         skipVaccHead = createList(skipVaccHead, virus);
-        //         // insertInSkip(skipVaccHead, citizenID, virus);
-        //     }
-        // }
-        // // Structure for non-vacc skip Lists
-        // else {
-
-        //     if (virusSkipExists(skipVaccHead, virus) != 1){
-        //         skipNonVaccHead = createList(skipNonVaccHead, virus);
-        //         // insertInSkip(skipNonVaccHead, citizenID, virus);
-        //     }        
-            
-        // }
-
 
         free(citizenID);
         free(fName);
@@ -191,10 +185,10 @@ int main(int argc, char **argv) {
 
         free(text);
         // Bloom filter test cases
-        vaccineStatusBloom(bloomsHead, "2918", "Chandipura");
-        vaccineStatusBloom(bloomsHead, "6746", "polyomavirus");
-        vaccineStatusBloom(bloomsHead, "1190", "Chikungunya");
-        vaccineStatusBloom(bloomsHead, "1480", "Norwalk");
+        // vaccineStatusBloom(bloomsHead, "945", "Variola");
+        // vaccineStatusBloom(bloomsHead, "6746", "Rabies");
+        // vaccineStatusBloom(bloomsHead, "1190", "Chikungunya");
+        // vaccineStatusBloom(bloomsHead, "1480", "Norwalk");
 
         // printRecordsList(recordsHead);
         // printBloomsList(bloomsHead);

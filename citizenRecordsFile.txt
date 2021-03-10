@@ -1,20 +1,16 @@
-3842 rVdha lkSNrJKMxVZ Thailand 24 Puumala YES 08-12-2020
-1095 LXLYG IrOc Switzerland 61 SARS-1 YES 01-08-2020
-1695 Qso WJvvRnXqNGp KoreaSouth 78 Hepatitis YES 19-08-2020
-5022 LagJpKgqwJvQ Wkh Panama 98 Hepatitis NO
-7198 LqXR cgx Uzbekistan 93 SARS-1 NO
+7198 LqXR cgx Uzbekistan 93 Hepatitis NO
 8379 yflPkbi TZrLBwKUdwAM Botswana 6 Hepatitis YES 12-03-2020
-4 MwMuCrvOuHCV BaGNOBDZ Kuwait 105 SARS-1 YES 08-11-2020
+4 MwMuCrvOuHCV BaGNOBDZ Kuwait 105 Hepatitis YES 08-11-2020
 1645 ZLaxtx IDlzlUsu Iceland 13 Hepatitis YES 19-01-2020
 6127 bbdihv MpeGwhoOxP Brazil 9 Hepatitis YES 18-05-2020
-4433 TaGGhdy lsgjLQljAXI Togo 38 SARS-1 NO
+4433 TaGGhdy lsgjLQljAXI Togo 38 Hepatitis NO
 6413 XSoWrBF mva IrelandRepublic 13 Hepatitis YES 12-04-2020
-4376 xVBERLkRnNOE CMLA Macedonia 12 Chandipura YES 09-06-2020
-4042 psvanYEw EMBJHMmIHD SouthSudan 11 Chandipura NO
+4376 xVBERLkRnNOE CMLA Macedonia 12 Hepatitis YES 09-06-2020
+4042 psvanYEw EMBJHMmIHD SouthSudan 11 Hepatitis NO
 7888 tuNeOHtPRIir jWvyaJbkTcJWqe Latvia 46 Hepatitis YES 18-06-2020
-4462 kfFBq WvyelOnquTlvRsi Uruguay 70 Yaba-monkey YES 20-04-2020
-8060 HPwceKpnBYKpahi zXIYaVEPRErJ Uzbekistan 100 Orf YES 19-02-2020
+4462 kfFBq WvyelOnquTlvRsi Uruguay 70 Hepatitis YES 20-04-2020
+8060 HPwceKpnBYKpahi zXIYaVEPRErJ Hepatitis 100 Orf YES 19-02-2020
 6339 vPE SBmlbD Niger 31 Pichinde YES 14-04-2020
-7917 KjoO ygGVaVnq Colombia 5 SARS-1 YES 04-07-2020
-6920 nIglCP GSGeYLQz Haiti 15 SARS-1 YES 17-02-2020
+7917 KjoO ygGVaVnq Colombia 5 Hepatitis YES 04-07-2020
+6920 nIglCP GSGeYLQz Haiti 15 Hepatitis YES 17-02-2020
 2365 oDXdfIScZwuLIb FupdJECpA CentralAfricanRep 81 Hepatitis NO

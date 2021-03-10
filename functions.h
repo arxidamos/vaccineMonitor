@@ -10,34 +10,27 @@ int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, cha
 void printRecordsList (Record* record);
 void freeRecordList (Record* head);
 
-
-
-
 unsigned long djb2(unsigned char *str);
 unsigned long sdbm(unsigned char *str);
 unsigned long hash_i(unsigned char *str, unsigned int i);
-
-
-
 BloomFilter* createBloom (BloomFilter* bloomsHead, char* virus, int size, int k);
 void insertInBloom (BloomFilter* bloomsHead, char* citizenID, char* virus);
 int virusBloomExists (BloomFilter* bloomsHead, char* virus);
-
 void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus);
-
-
 void printBloomsList (BloomFilter* head);
 void freeBlooms(BloomFilter* head);
 
 
 
 SkipList* createList(SkipList* skipListHead, char* virus);
-
-void freeSkipLists(SkipList* head);
+void insertInSkip(SkipList* skipListHead, Record* record, char* virus);
 
 int virusSkipExists(SkipList* skipListHead, char* virus);
-
 void printSkipLists (SkipList* head);
+void printSkipNodes(SkipList* skipList);
+void freeSkipLists(SkipList* head);
+void freeSkipNodes(SkipList* skipList);
+int getHeight(int maximum);
 
 // treeFunctions.c
 // TreeNode* createTreeNode (Patient* patient, Date entryDate);
