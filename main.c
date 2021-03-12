@@ -152,11 +152,11 @@ int main(int argc, char **argv) {
             // Separate structure for vaccined skip Lists
             if (vaccDate.year != 0) {
                 if (virusSkipExists(skipVaccHead, virus) == 1) {
-                    printf("Insert in skip %s\n", virus);
+                    // printf("Insert in skip %s\n", virus);
                     insertInSkip(skipVaccHead, record, virus);
                 }
                 else {
-                    printf("Create and insert in skip %s\n", virus);
+                    // printf("Create and insert in skip %s\n", virus);
                     skipVaccHead = createList(skipVaccHead, virus);
                     insertInSkip(skipVaccHead, record, virus);
                 }
@@ -192,8 +192,8 @@ int main(int argc, char **argv) {
 
         // printRecordsList(recordsHead);
         // printBloomsList(bloomsHead);
-        printSkipLists(skipVaccHead);
-        printSkipLists(skipNonVaccHead);
+        // printSkipLists(skipVaccHead);
+        // printSkipLists(skipNonVaccHead);
         freeRecordList(recordsHead);
         freeBlooms(bloomsHead);
         freeSkipLists(skipVaccHead);

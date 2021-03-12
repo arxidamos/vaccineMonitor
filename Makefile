@@ -1,7 +1,7 @@
-OBJS = main.o functions.o
+OBJS = main.o mainFunctions.o recordList.o bloomFilter.o skipList.o
 # OBJS = main.o functions.o treeFunctions.o heapFunctions.o mainFunctions.o
 # SOURCE = main.c functions.c treeFunctions.c heapFunctions.c mainFunctions.c
-SOURCE = main.c functions.c
+SOURCE = main.c mainFunctions.c recordList.c bloomFilter.c skipList.c
 HEADER = structs.h functions.h
 OUT = vaccineMonitor
 CC = gcc
@@ -13,17 +13,17 @@ all:$(OBJS)
 vaccineMonitor.o:main.c
 	$(CC) $(FLAGS) main.c
 
-functions.o:functions.c
-	$(CC) $(FLAGS) functions.c
+mainFunctions.o:mainFunctions.c
+	$(CC) $(FLAGS) mainFunctions.c
 
-# treeFunctions.o:treeFunctions.c
-# 	$(CC) $(FLAGS) treeFunctions.c
+recordList.o:recordList.c
+	$(CC) $(FLAGS) recordList.c
 
-# heapFunctions.o:heapFunctions.c
-# 	$(CC) $(FLAGS) heapFunctions.c
+bloomFilter.o:bloomFilter.c
+	$(CC) $(FLAGS) bloomFilter.c
 
-# mainFunctions.o:mainFunctions.c
-# 	$(CC) $(FLAGS) mainFunctions.c		
+skipList.o:skipList.c
+	$(CC) $(FLAGS) skipList.c		
 
 clean:@echo "Cleaning up..."
 	rm -vf $(OBJS) $(OUT) 
