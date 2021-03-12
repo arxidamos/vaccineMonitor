@@ -1,0 +1,100 @@
+6165 EQpWyGS TMyJXiFsw Israel 45 Horsepox YES 18-01-2020
+4350 Acoqf dliu SaudiArabia 52 Influenza YES 21-03-2020
+2135 wIwYvarlUK fObBNkIjbVnigX Niger 11 Nipah YES 18-10-2020
+8803 ZMlj VhHQYwjpCBiX Luxembourg 21 HIV NO 18-10-2020
+1161 JhpN ynyLiqSMtAee Palau 28 Varicella-zoster NO
+9646 cXjbdb nEvYOVM Tunisia 71 T-lymphotropic YES 25-08-2020
+7879 IhKCWXizuKdp kSdRXIePCwKPuFN Israel 23 Puumala NO
+9359 kXdUxrvLCiU KQxaETCWoUpR Mauritania 104 Chikungunya NO
+5898 RHASoxrPHAs mLt CongoDemocraticRep 33 Cosavirus NO
+7366 huuqSRL rvDQUhP Botswana 70 torovirus NO
+5044 QNMSlwNQcTSd VFySiiJHRKTeq Bhutan 81 Hepatitis NO
+5044 UQftbBCl xErgaKzfdCWd Guatemala 48 H1N1 NO
+2419 ayeZ EKueqy MyanmarBurma 81 Vaccinia YES 28-05-2020
+7643 zudssgug cifyctGQKbQemcI Namibia 5 Chandipura YES 11-02-2020
+5546 WsXthr YtdUpbaV Belarus 119 Norwalk YES 24-08-2020
+3795 AkKXQwy VykPnGd SriLanka 53 Bunyavirus YES 21-08-2020
+3740 vDlNztCZiIuJEnj hFmQx Haiti 43 HIV YES 13-02-2020
+7399 RjgJqTdPKMxNVYO FIUIzoreEIKrh Uganda 66 Chandipura YES 11-12-2020
+1403 zRE FpWepdSs Poland 68 Dugbe NO
+9122 Lhu OYtgaQr Morocco 108 Cosavirus YES 19-01-2020
+1844 zXl JNPVJIWVUTCTNEK StLucia 116 Duvenhage YES 02-01-2020
+1585 blbXtAgopNDc AdtenEjRURsi Bulgaria 42 Oropouche NO
+4082 qHJcf vAq Nicaragua 118 MERS YES 24-09-2020
+1784 GBvxhTqsn GszzAPc Hungary 46 SARS-1 NO
+5789 UMDXEHWIehezQOF ziIvTfyvGmGJn Slovenia 120 Yaba-monkey NO
+2530 XZtPykXnXrbD mbdBiMBScHdgU CostaRica 98 Hepatitis NO
+7861 kaTwDq LBS UnitedArabEmirates 74 Dhori YES 01-03-2020
+2829 FyIJRqsAl DEI Armenia 27 Yaba-monkey YES 24-11-2020
+640 TuIS EMgjVHDTqtUum Mexico 19 Dugbe NO
+4242 XeFwcuuhUsPI sUbDNkmqxIqyAIQ Slovakia 46 Dugbe NO
+3461 iOQOwwVjz zCtJyfbmLzhKOpl Lesotho 74 Cowpox YES 13-08-2020
+5781 OxLTuKK OsO SanMarino 93 Epstein-Barr YES 14-06-2020
+6767 DXeTpjMJnHjeJ QffOLSXmKL Portugal 87 Cercopithecine YES 16-08-2020
+2152 uboQVzbIpZPzgb ZXNyhoz Cambodia 18 Influenza NO
+6447 CWs zVkgIZ Luxembourg 75 SARS-1 NO
+5898 XaQWGFbMJa Wadu Denmark 112 Orf NO
+7837 OJwJTfx LpcUZWTPL StLucia 96 YellowFever NO
+4992 LkTVBZbVlEIY YXZKJkIgRSZUW Philippines 107 SARS-COVID19 YES 26-04-2020
+5238 XOptidfIoCmeYR EARSpImHaFbY Guinea 62 Cercopithecine YES 20-11-2020
+4717 wmf VMogKlorqpRqn Ecuador 45 Norwalk NO
+130 omZRxxkQF fAt Slovakia 110 Norwalk YES 14-07-2020
+5107 bWoqIOunJPJByBf fvjISmDOWeeeADY SierraLeone 23 Rabies YES 07-01-2020
+5045 nDlmld UvBYaEIXzu Dominica 54 torovirus YES 21-07-2020
+5045 nDlmld UvBYaEIXzu Dominica 54 Epstein-Barr NO
+2851 BZWhDzYTPOFWPX kaAqYjmkxsHY SanMarino 35 Cercopithecine YES 08-04-2020
+7884 OrYPOEjkOL RJnMSClHba Tonga 77 Echovirus NO
+6143 tQQzWDKSysaxTi mlFdvtrGglYrv UnitedStates 89 Duvenhage YES 24-05-2020
+9553 hLqFwRlKxdmRlc CVyILYPcv Peru 42 Yaba-monkey NO
+6295 yLzR OIPmUu Fiji 62 Ebolavirus YES 08-02-2020
+3801 xsJUrjdNBOeZ qpQcNTdvtOFILrR Mauritius 34 SARS-1 YES 28-03-2020
+6935 OQroIbi FYnGeoTfYTOAdGw MyanmarBurma 93 Enterovirus NO
+5912 cTDZea rDRVrnmHcepUJsj Belgium 13 Encephalomyocarditis NO
+8784 SRPchHzIXqsbamw dONvsVWhsuHF Tonga 108 Cercopithecine NO
+7265 nuxdFALa GWPTNHniRh Iraq 27 Pichinde YES 11-07-2020
+1879 ItlEuZnJMT DXFJ Estonia 120 Chandipura YES 02-07-2020
+7724 JZvWHYL qMsuzALYCHXSFTs Norway 61 Chandipura NO
+3353 SUyHTQwWSwvTJM oElVZHsLeSOTxXw Belarus 75 Nipah NO
+1410 Fnxg gkrczIlf Benin 66 Rabies NO
+647 czLQcO pjBwOhQxBhcqbvQ SriLanka 79 Bunyavirus YES 05-07-2020
+1032 KxtPTfdNGW bsLjveKEIlZqCE NewZealand 100 Encephalomyocarditis YES 13-08-2020
+7039 JhVwpVw FGRnOsTPLLbo Italy 57 Cercopithecine NO
+8650 ShwpIHuC XEjMbpbAo Namibia 45 Isfahan NO
+160 lLDEAGKurtQBe wZxhPzerwbN Andorra 82 Pichinde NO
+5553 DFirOyT WkOoHnpKjWcdwPv Nepal 112 Cercopithecine YES 09-03-2020
+5027 YED ScbECoMhzGsXWd Tunisia 2 Rabies NO
+8150 XMVCc GJMtKFGq SanMarino 43 Pichinde NO
+2913 hwjhinD uihjWCkQe EquatorialGuinea 75 Norwalk YES 15-07-2020
+3239 kKMzWDrHiZLE mAePANbnxLFV Israel 88 SARS-1 NO
+871 SvCv dDSNM SolomonIslands 102 Rabies NO
+4150 ENWGyqBBBcDglU FuQIJaTXOuH Egypt 37 Horsepox NO
+3413 CBFTJDHgGXeQPZH gxWoBCXaJAjJ Brazil 9 Dugbe NO
+9492 BFbV aWKOdTGzYzky Chile 35 Encephalomyocarditis NO
+6553 NPmCwoTwfQXynkm ebOxfOxBaz Brunei 61 Hepatitis YES 13-04-2020
+5748 vFWsHDQFcY jqASwMkyjimHLE SaintVincentandtheGrenadines 31 HIV YES 23-08-2020
+4834 jzYJSgeT GAxH Kiribati 97 Isfahan NO
+9128 YJlorYlhzGXc OHmXXYhJl Mongolia 98 YellowFever NO
+3168 CmT eUdir Estonia 73 Cercopithecine YES 19-06-2020
+2865 rQbaAQza HhzZ Liberia 48 Cercopithecine NO
+5048 voNqNAzVYsKtJbs zcGjjZS Vanuatu 51 Pichinde NO
+888 xrHLHdNQwU ftJT Peru 66 Norwalk NO
+296 kjtoIQKnZZtJg SPD Morocco 82 Chikungunya YES 04-08-2020
+7041 QOpBimbFuVbF KovuwEzUUrAHR Ecuador 37 Chikungunya NO
+3907 QBCMLDuLvCd MgQ SouthAfrica 79 Echovirus YES 13-05-2020
+9849 aEudSBmtyKUFhs ctdhSwXmx Kuwait 91 Rabies NO
+9872 qzNQ aTru Mexico 81 YellowFever YES 16-07-2020
+9271 ThTaALmXPLdx OtyszFbFCQEqPj Mauritania 92 Norwalk YES 13-08-2020
+2195 TBdnCZjFreAhil ppwb Portugal 57 West-Nile YES 03-11-2020
+297 LSGxzJh wMamZCBablB Afghanistan 91 Encephalomyocarditis NO
+4535 TXY tPLqUjZKsPH Bhutan 100 polyomavirus NO
+271 LcRjEemGYZzra AdtWFLKobdN Tunisia 109 encephalitis YES 16-01-2020
+1309 EjG agpiNZvAkHd Portugal 73 Varicella-zoster NO
+254 dmrNuZBn YDvudEm Turkey 7 Cercopithecine YES 26-07-2020
+9495 wTllNIjcPInrI AMtxjLniaQC Liberia 3 Onyong-nyong YES 26-09-2020
+9094 jdEZK RfiNxw Iceland 77 Epstein-Barr YES 05-12-2020
+528 iEN YlJvibPM Swaziland 92 West-Nile NO
+8228 NXIksppQablWqh MfDuOViCgT Finland 96 Dugbe NO
+520 vWcFqNEaLcdbk xPnqgZ CongoDemocraticRep 19 Rabies NO
+5425 oIZLf iwsJCRqhECN Norway 112 Variola NO
+4116 Vtv qGirocNymy Colombia 77 Onyong-nyong YES 17-11-2020
+500 ptlaBk cADgxJnFjQMUdi Ukraine 61 Yaba-like NO

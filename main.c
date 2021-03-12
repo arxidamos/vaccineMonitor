@@ -45,20 +45,22 @@ int main(int argc, char **argv) {
     int age;
     char* virus;
     Date vaccDate;
+    State* stateHead = NULL;
+    State* state;
     Record* recordsHead = NULL;
     Record* record;
-
     BloomFilter* bloomsHead = NULL;
     int k =16;
-    int recordAccepted = 0;
-
+    int recordAccepted = 1;
     SkipList* skipVaccHead = NULL;
     SkipList* skipNonVaccHead = NULL;
 
-
-    // Read from inputFile and create structs
+        // Read from inputFile and create structs
     while (getline(&text, &textSize, inputFile) != -1) {
       //
+        // Record to be inserted in structs, unless faulty
+        recordAccepted = 1;
+
         // Get citizenID
         token = strtok(text, " ");
         citizenID = malloc(strlen(token)+1);
@@ -77,7 +79,7 @@ int main(int argc, char **argv) {
         // Get country
         token = strtok(NULL, " ");
         country = malloc(strlen(token)+1);
-        strcpy(country, token);
+        strcpy(country, token);       
 
         // Get age
         token = strtok(NULL, " ");
@@ -100,6 +102,7 @@ int main(int argc, char **argv) {
             // If NO, then record should have no date
             if (token = strtok(NULL, " ")) {
                 printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, country, age, virus);
+                recordAccepted = 0;
             }
             else {
                 vaccDate.day=0;
@@ -109,13 +112,19 @@ int main(int argc, char **argv) {
         }
      //
 
+        // Add new country in a linked list
+        if (stateHead == NULL && recordAccepted) {
+            //todo
+            //todo
+        }
+
         // Add new record in a linked list
-        if (recordsHead == NULL) {
+        if (recordsHead == NULL && recordAccepted) {
             recordsHead = createRecord(citizenID, fName, lName, country, age, virus, vaccDate);
             record = recordsHead;
             recordAccepted = 1;
         }
-        else if (recordsHead != NULL) {
+        else if (recordsHead != NULL && recordAccepted) {
             // Check if record is unique
             if (!checkDuplicate(recordsHead, citizenID, fName, lName, country, age, virus, vaccDate)) {
                 record = insertSortedRecord(&recordsHead, citizenID, fName, lName, country, age, virus, vaccDate);
@@ -183,6 +192,7 @@ int main(int argc, char **argv) {
     }
 
 
+
         free(text);
         // Bloom filter test cases
         // vaccineStatusBloom(bloomsHead, "945", "Variola");
@@ -190,7 +200,7 @@ int main(int argc, char **argv) {
         // vaccineStatusBloom(bloomsHead, "1190", "Chikungunya");
         // vaccineStatusBloom(bloomsHead, "1480", "Norwalk");
 
-        // printRecordsList(recordsHead);
+        printRecordsList(recordsHead);
         // printBloomsList(bloomsHead);
         // printSkipLists(skipVaccHead);
         // printSkipLists(skipNonVaccHead);

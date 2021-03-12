@@ -13,6 +13,11 @@ typedef struct Date {
     int empty;
 } Date;
 
+typedef struct State {
+    char* name;
+    struct State* next;
+} State;
+
 typedef struct Record {
     char* citizenID;
     char* firstName;
@@ -23,7 +28,6 @@ typedef struct Record {
     Date vaccDate;     // dd-mm-yyyy
     struct Record* next;
 } Record;
-
 
 typedef struct BloomFilter {
     char* virus;
@@ -38,7 +42,6 @@ typedef struct SkipNode {
     Record* record;
     int levels;
     // Array of nexts, one for each level
-    // struct SkipNode** next;
     struct SkipNode* next[max];
 } SkipNode;
 
@@ -49,6 +52,5 @@ typedef struct SkipList {
     char* virus;
     struct SkipList* next;
 } SkipList;
-
 
 #endif

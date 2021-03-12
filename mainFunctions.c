@@ -49,3 +49,4 @@ void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus) {
     printf("There is no Bloom Filter for the virus name you inserted.\n");
     return;
 }
+

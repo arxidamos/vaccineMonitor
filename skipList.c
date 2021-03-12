@@ -64,12 +64,6 @@ void insertInSkip(SkipList* skipListHead, Record* record, char* virus) {
             int compare;
             // Keep last visited for each level            
             SkipNode* lastVisited[max];
-            // for (int i=0; i<max; i++) {
-                //     lastVisited[i] = malloc(sizeof(SkipNode));
-            // }
-            // for (int i=0; i<max; i++) {
-            //     lastVisited[i] = NULL;
-            // }
             
             // Search Lists' nodes, starting from top level
             while ( (current != NULL) && (level>=0) ) {
@@ -106,16 +100,7 @@ void insertInSkip(SkipList* skipListHead, Record* record, char* virus) {
             newNode->record = record;
             newNode->levels = getHeight(max);
             // printf("New node will randomly have %d levels\n", newNode->levels);
-            
-            // for (int i=0; i<newNode->levels; i++){
-            //     newNode->next[i] = NULL;
-            // }
-
-            // for (int i=0; i<newNode->levels; i++){
-            //     lastVisited[i]->next[i] = NULL;
-            // }
-
-                        
+                                 
             for (int i=0; i<newNode->levels; i++) {
             // for (int i=newNode->levels-1; i>=0; i--) {
 
