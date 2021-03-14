@@ -1,7 +1,7 @@
-OBJS = main.o mainFunctions.o recordList.o bloomFilter.o skipList.o
+OBJS = main.o mainFunctions.o stateList.o recordList.o bloomFilter.o skipList.o
 # OBJS = main.o functions.o treeFunctions.o heapFunctions.o mainFunctions.o
 # SOURCE = main.c functions.c treeFunctions.c heapFunctions.c mainFunctions.c
-SOURCE = main.c mainFunctions.c recordList.c bloomFilter.c skipList.c
+SOURCE = main.c mainFunctions.c stateList.c recordList.c bloomFilter.c skipList.c
 HEADER = structs.h functions.h
 OUT = vaccineMonitor
 CC = gcc
@@ -15,6 +15,9 @@ vaccineMonitor.o:main.c
 
 mainFunctions.o:mainFunctions.c
 	$(CC) $(FLAGS) mainFunctions.c
+
+stateList.o:stateList.c
+	$(CC) $(FLAGS) stateList.c	
 
 recordList.o:recordList.c
 	$(CC) $(FLAGS) recordList.c

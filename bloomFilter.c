@@ -5,7 +5,7 @@
 #include "functions.h"
 
 // Hash aux function djb2
-unsigned long djb2(unsigned char *str) {
+unsigned long djb2 (unsigned char *str) {
     unsigned long hash = 5381;
     int c; 
     while ( (c = *str++) ) {
@@ -15,7 +15,7 @@ unsigned long djb2(unsigned char *str) {
 }
 
 // Hash aux function sdbm
-unsigned long sdbm(unsigned char *str) {
+unsigned long sdbm (unsigned char *str) {
     unsigned long hash = 0;
     int c;
     while ( (c = *str++) ) {
@@ -25,7 +25,7 @@ unsigned long sdbm(unsigned char *str) {
 }
 
 // Hash function hash_i
-unsigned long hash_i(unsigned char *str, unsigned int i) {
+unsigned long hash_i (unsigned char *str, unsigned int i) {
     return djb2(str) + i*sdbm(str) + i*i;
 }
 
@@ -60,7 +60,7 @@ void insertInBloom (BloomFilter* bloomsHead, char* citizenID, char* virus) {
     // Search for this virus' BF
     while (current) {
         if (!strcmp(current->virus, virus)) {
-            //hash klp klp
+            // Hash citizenID
             for (unsigned int i=0; i<(current->k-1); i++) {
                 // Hash the ID
                 hash = hash_i(id, i);
@@ -71,11 +71,8 @@ void insertInBloom (BloomFilter* bloomsHead, char* citizenID, char* virus) {
                 // And x%32 is the bit's position inside that index
                 
                 // Shift left the *set* bit
-                // printf("Set bit before shift: %d\t", set);
                 set = set << (x%32);
-                // printf("after shift: %d\n", set);
                 current->bitArray[x/32] = current->bitArray[x/32] | set;
-                // printf("%d\n", bloomsHead->bitArray[x/32]);
                 set = 1;
             } 
             // printf("X= %d\n", x);
@@ -87,6 +84,12 @@ void insertInBloom (BloomFilter* bloomsHead, char* citizenID, char* virus) {
 
 // Check if Bloom Filter for this virus exists
 int virusBloomExists (BloomFilter* bloomsHead, char* virus) {
+    
+    // No Blooms Filter yet
+    if (!bloomsHead) {
+        return 0;
+    }
+
     BloomFilter* current = bloomsHead;
     while (current) {
         if (!strcmp(current->virus, virus)) {
@@ -107,7 +110,7 @@ void printBloomsList (BloomFilter* head) {
 }
 
 // Free memory allocated for Bloom Filters
-void freeBlooms(BloomFilter* head) {
+void freeBlooms (BloomFilter* head) {
     BloomFilter* current = head;
     BloomFilter* tmp;
 

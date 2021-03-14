@@ -5,7 +5,7 @@
 #include "functions.h"
 
 // Create new Skip List for new virus. Keep vacc lists and non-vacc lists together
-SkipList* createList(SkipList* skipListHead, char* virus) {
+SkipList* createList (SkipList* skipListHead, char* virus) {
     SkipList* newList;
     newList = malloc(sizeof(SkipList));
     // newList->head = calloc(1, sizeof(SkipNode));
@@ -52,7 +52,7 @@ SkipList* createList(SkipList* skipListHead, char* virus) {
 }
 
 // Insert new element in Skip List
-void insertInSkip(SkipList* skipListHead, Record* record, char* virus) {
+void insertInSkip (SkipList* skipListHead, Record* record, char* virus) {
     SkipList* skipL = skipListHead;
 
     while (skipL) {
@@ -121,7 +121,7 @@ void insertInSkip(SkipList* skipListHead, Record* record, char* virus) {
 }
 
 // Check for citizenID in Skip List for this virus
-Record* searchSkipLists(SkipList* skipListHead, char* virus, char* citizenID) {
+Record* searchSkipLists (SkipList* skipListHead, char* virus, char* citizenID) {
     SkipNode* current = skipListHead->head;
     int level = skipListHead->head->levels - 1;
     int compare;
@@ -151,7 +151,7 @@ Record* searchSkipLists(SkipList* skipListHead, char* virus, char* citizenID) {
 }
 
 // Check if Skip List for this virus exists
-int virusSkipExists(SkipList* skipListHead, char* virus) {
+int virusSkipExists (SkipList* skipListHead, char* virus) {
     SkipList* current = skipListHead;
     while (current) {
         if (!strcmp(current->virus, virus)) {
@@ -165,7 +165,7 @@ int virusSkipExists(SkipList* skipListHead, char* virus) {
 }
 
 // Create random maximum height for new Skip Nodes
-int getHeight(int maximum) {
+int getHeight (int maximum) {
     // Generate random new height: 
     int result;
     int height=1;
@@ -189,7 +189,7 @@ void printSkipLists (SkipList* head) {
 }
 
 // Print Skip nodes inside Skip Lists
-void printSkipNodes(SkipList* skipList) {
+void printSkipNodes (SkipList* skipList) {
     SkipNode* current = skipList->head;
     int height = skipList->head->levels;
 
@@ -210,7 +210,7 @@ void printSkipNodes(SkipList* skipList) {
 }
 
 // Free memory allocated for Skip Lists
-void freeSkipLists(SkipList* head) {
+void freeSkipLists (SkipList* head) {
     SkipList* currentList = head;
     SkipList* tmpList;
 
@@ -229,7 +229,7 @@ void freeSkipLists(SkipList* head) {
 }
 
 // Free moemory allocated for Skip Nodes inside Skip Lists
-void freeSkipNodes(SkipList* skipList) {
+void freeSkipNodes (SkipList* skipList) {
     SkipNode* current = skipList->head;
     SkipNode* tmp;
 

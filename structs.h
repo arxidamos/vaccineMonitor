@@ -7,9 +7,9 @@
 #define max 32
 
 typedef struct Date {
-    int day;        //dd
-    int month;      //mm
-    int year;       //yyyy
+    int day;    //dd
+    int month;  //mm
+    int year;   //yyyy
     int empty;
 } Date;
 
@@ -24,8 +24,8 @@ typedef struct Record {
     char* lastName;
     int age;
     char* virus;
-    char* country;
-    Date vaccDate;     // dd-mm-yyyy
+    State* country;
+    Date vaccDate; // dd-mm-yyyy
     struct Record* next;
 } Record;
 
@@ -41,8 +41,7 @@ typedef struct SkipNode {
     char* citizenID;
     Record* record;
     int levels;
-    // Array of nexts, one for each level
-    struct SkipNode* next[max];
+    struct SkipNode* next[max]; // Array of nexts, one for each level
 } SkipNode;
 
 typedef struct SkipList {

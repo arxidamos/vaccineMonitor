@@ -4,37 +4,8 @@
 #include "structs.h"
 #include "functions.h"
 
-// Create new linked list record
-Record* createRecord (char* citizenID, char* fName, char* lName, char* country, int age, char* virus,  Date vaccDate) {
-    Record* head;
-    head = malloc(sizeof(Record));
-
-    head->citizenID = malloc(strlen(citizenID)+1);
-    strcpy(head->citizenID, citizenID);
-
-    head->firstName = malloc(strlen(fName)+1);
-    strcpy(head->firstName, fName);
-    
-    head->lastName = malloc(strlen(lName)+1);
-    strcpy(head->lastName, lName);
-
-    head->country = malloc(strlen(country)+1);
-    strcpy(head->country, country);
-
-    head->age = age;
-
-    head->virus = malloc(strlen(virus)+1);
-    strcpy(head->virus, virus); 
-
-    head->vaccDate = vaccDate;
-
-    head->next = NULL;
-
-    return head;
-}
-
 // Insert record to linked list in a sorted manner
-Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, char* country, int age, char* virus, Date vaccDate) {
+Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate) {
     Record* newNode;
     Record* current;
 
@@ -50,8 +21,7 @@ Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* l
     newNode->lastName = malloc(strlen(lName)+1);
     strcpy(newNode->lastName, lName);
 
-    newNode->country = malloc(strlen(country)+1);
-    strcpy(newNode->country, country);
+    newNode->country = state;
 
     newNode->age = age;
     
@@ -78,21 +48,27 @@ Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* l
 }
 
 // Validate that record (for same virus) doesn't exist
-int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, char* country, int age, char* virus, Date vaccDate) {  
+int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate) {  
+    
+    // First element to be added, no possible duplicates
+    if (!head) {
+        return 0;
+    }
+
     while (head) {
         // Check if same citizenID exists
         if (!strcmp(head->citizenID, citizenID)) {
             // Check if name, country, age are the same
-            if (!strcmp(head->firstName, fName) && !strcmp(head->lastName, lName) && !strcmp(head->country, country) && (head->age == age)) {
+            if (!strcmp(head->firstName, fName) && !strcmp(head->lastName, lName) && !strcmp(head->country->name, state->name) && (head->age == age)) {
                 // Check if virus is the same
                 if (!strcmp(head->virus, virus)) {
-                    printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, country, age, virus);
+                    printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);
                     return 1;
                 }
                 return 0;
             }
             else {
-                printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, country, age, virus);            
+                printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);            
                 return 1;                
             }
         }
@@ -104,7 +80,7 @@ int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, cha
 // Print linked list of records
 void printRecordsList (Record* record) {
     while (record) {
-        printf("List record: %s %s %s %s %d %s", record->citizenID, record->firstName, record->lastName, record->country, record->age, record->virus);
+        printf("List record: %s %s %s %s %d %s", record->citizenID, record->firstName, record->lastName, record->country->name, record->age, record->virus);
         if(record->vaccDate.year)
             printf(" %d-%d-%d", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
         printf("\n");
@@ -112,8 +88,8 @@ void printRecordsList (Record* record) {
     }
 }
 
-// Free memory allocated for linked list 
-void freeRecordList(Record* head) {
+// Free memory allocated for linked list of records
+void freeRecordList (Record* head) {
     Record* current = head;
     Record* tmp;
 
@@ -123,7 +99,6 @@ void freeRecordList(Record* head) {
         free(tmp->citizenID);
         free(tmp->firstName);
         free(tmp->lastName);
-        free(tmp->country);
         free(tmp->virus);
         free(tmp);
     }
