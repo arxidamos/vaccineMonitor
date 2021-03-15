@@ -4,7 +4,7 @@
 
 // stateList.c
 State* insertState (State** head, char* country);
-int stateExists (State* head, char* country);
+State* stateExists (State* head, char* country);
 void printStateList (State* state);
 void freeStateList (State* head);
 
@@ -28,7 +28,7 @@ void freeBlooms (BloomFilter* head);
 // skipList.c
 SkipList* createList (SkipList* skipListHead, char* virus);
 void insertInSkip (SkipList* skipListHead, Record* record, char* virus);
-Record* searchSkipLists (SkipList* skipListHead, char* virus, char* citizenID);
+Record* searchSkipLists (SkipList* skipListHead, char* citizenID);
 int virusSkipExists (SkipList* skipListHead, char* virus);
 int getHeight (int maximum);
 void printSkipLists (SkipList* head);
@@ -39,6 +39,10 @@ void freeSkipNodes (SkipList* skipList);
 // mainFunctions.c
 // Command functions
 void vaccineStatusBloom (BloomFilter* head, char* citizenID, char* virus);
+void vaccineStatus(SkipList* head, char* citizenID, char* virus);
+void vaccineStatusAll(SkipList* head, char* citizenID);
+
+
 
 // Auxiliary functions
 

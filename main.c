@@ -118,6 +118,9 @@ int main(int argc, char **argv) {
             if (!stateExists(stateHead, country)) {
                 state = insertState(&stateHead, country);
             }
+            else {
+                state = stateExists(stateHead, country);
+            }
 
             // Add record in Record linked list
             // Check if record is unique
@@ -199,7 +202,7 @@ int main(int argc, char **argv) {
         // Get the command
         command = strtok(input, " ");
 
-        // ● /vaccineStatusBloom citizenID virusName 
+        // /vaccineStatusBloom citizenID virusName 
         if (!strcmp(command, "/vaccineStatusBloom")) {
 
             // Get citizenID
@@ -219,6 +222,33 @@ int main(int argc, char **argv) {
             vaccineStatusBloom(bloomsHead, citizenID, virus);
             free(citizenID);
             free(virus);
+        }
+        // /vaccineStatus citizenID virusName
+        // /vaccineStatus citizenID
+        else if (!strcmp(command, "/vaccineStatus")) {
+            
+            // Get cizitenID
+            command = strtok(NULL, " ");
+            if (command) {
+                citizenID = malloc(strlen(command)+1);
+                strcpy(citizenID, command);
+            }
+
+            // Get virusName
+            command = strtok(NULL, " ");
+            // If virusName passed, call vaccineStatus function
+            if(command) {
+                virus = malloc(strlen(command)+1);
+                strcpy(virus, command);
+                // vaccineStatus(skipVaccHead, citizenID, virus);
+                free(virus);
+            }
+            // If virusName not passed, call vaccineStatusAll function
+            else {
+                vaccineStatusAll(skipVaccHead, citizenID);
+                vaccineStatusAll(skipNonVaccHead, citizenID);
+            }
+            free(citizenID);            
         }
         else if (!strcmp(command, "/exit")) {
 

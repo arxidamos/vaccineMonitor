@@ -121,29 +121,29 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus) {
 }
 
 // Check for citizenID in Skip List for this virus
-Record* searchSkipLists (SkipList* skipListHead, char* virus, char* citizenID) {
+Record* searchSkipLists (SkipList* skipListHead, char* citizenID) {
     SkipNode* current = skipListHead->head;
     int level = skipListHead->head->levels - 1;
     int compare;
-
     while ( (current != NULL) && (level>=0) ) {
-        compare = strcmp(current->next[level]->citizenID, citizenID);
-        // Found, return record pointer
-        if (!compare) {
-            return current->next[level]->record;
-        }
-        // Reached level's bigger ID
-        else if (compare>0) {
+        // No more nodes on this level                
+        if (current->next[level] == NULL) {
             level--;
         }
-        // Keep checkin on this level
+        // More nodes on this level
         else {
-            if (current->next[level]) {
-                current = current->next[level];
+            compare = strcmp(current->next[level]->citizenID, citizenID);
+            // Found, return record pointer
+            if (!compare) {
+                return current->next[level]->record;
             }
-            // Unless at level's end
-            else {
+            // Reached level's bigger ID
+            else if (compare>0) {
                 level--;
+            }
+            // Keep checkin on this level
+            else {
+                current = current->next[level];
             }
         }
     }
@@ -199,13 +199,10 @@ void printSkipNodes (SkipList* skipList) {
             // printf("[%s]-->", current->citizenID);
             current = current->next[i];
             // current = current->next[0];
-
         }
         current = skipList->head;
         // printf("[end[%d]]\n", i);
         // printf("[end[%d]]\n", 0);
-
-
     }
 }
 

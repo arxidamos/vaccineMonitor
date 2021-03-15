@@ -1,6 +1,6 @@
 6165 EQpWyGS TMyJXiFsw Israel 45 Horsepox YES 18-01-2020
 4350 Acoqf dliu SaudiArabia 52 Influenza YES 21-03-2020
-2135 wIwYvarlUK fObBNkIjbVnigX Niger 11 Nipah YES 18-10-2020
+3413 Fofonka Ederson Niger 11 Nipah YES 18-10-2020
 8803 ZMlj VhHQYwjpCBiX Luxembourg 21 HIV NO 18-10-2020
 1161 JhpN ynyLiqSMtAee Palau 28 Varicella-zoster NO
 9646 cXjbdb nEvYOVM Tunisia 71 T-lymphotropic YES 25-08-2020
@@ -11,7 +11,7 @@
 5044 QNMSlwNQcTSd VFySiiJHRKTeq Bhutan 81 Hepatitis NO
 5044 UQftbBCl xErgaKzfdCWd Guatemala 48 H1N1 NO
 2419 ayeZ EKueqy MyanmarBurma 81 Vaccinia YES 28-05-2020
-7643 zudssgug cifyctGQKbQemcI Namibia 5 Chandipura YES 11-02-2020
+3413 Fofonka Ederson Niger 11 Chandipura YES 11-02-2020
 5546 WsXthr YtdUpbaV Belarus 119 Norwalk YES 24-08-2020
 3795 AkKXQwy VykPnGd SriLanka 53 Bunyavirus YES 21-08-2020
 3740 vDlNztCZiIuJEnj hFmQx Haiti 43 HIV YES 13-02-2020
@@ -68,7 +68,7 @@
 3239 kKMzWDrHiZLE mAePANbnxLFV Israel 88 SARS-1 NO
 871 SvCv dDSNM SolomonIslands 102 Rabies NO
 4150 ENWGyqBBBcDglU FuQIJaTXOuH Egypt 37 Horsepox NO
-3413 CBFTJDHgGXeQPZH gxWoBCXaJAjJ Brazil 9 Dugbe NO
+3413 Fofonka Ederson Niger 11 Dugbe NO
 9492 BFbV aWKOdTGzYzky Chile 35 Encephalomyocarditis NO
 6553 NPmCwoTwfQXynkm ebOxfOxBaz Brunei 61 Hepatitis YES 13-04-2020
 5748 vFWsHDQFcY jqASwMkyjimHLE SaintVincentandtheGrenadines 31 HIV YES 23-08-2020

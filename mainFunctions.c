@@ -4,6 +4,7 @@
 #include "structs.h"
 #include "functions.h"
 
+// Check if citizenID belongs to virus' Bloom Filter
 void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus) {
     BloomFilter* current = head;
     unsigned char* id = (unsigned char*)citizenID;
@@ -50,3 +51,29 @@ void vaccineStatusBloom(BloomFilter* head, char* citizenID, char* virus) {
     return;
 }
 
+// Check if citizenID belongs to virus' Skip List 
+
+// Return all vacc and non-vacc occurences for citizenID
+void vaccineStatusAll(SkipList* head, char* citizenID) {
+    SkipList* current = head;
+    Record* record = NULL;
+
+    // Iterate through all Skip Lists
+    while (current) {
+        record =  searchSkipLists(current, citizenID);
+        if(record){
+            // Print virus
+            printf("%s ", record->virus);
+            // Print YES dd-mm-yyyy
+            if (record->vaccDate.year != 0) {
+                printf("YES %d-%d-%d\n", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
+            }
+            // Print NO
+            else {
+                printf("NO\n");
+            }
+        }
+        current = current->next;
+    }
+    return;
+}

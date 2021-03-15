@@ -32,20 +32,20 @@ State* insertState (State** head, char* country) {
     return newNode;
 }
 
-int stateExists (State* head, char* country) {
+State* stateExists (State* head, char* country) {
     State* current = head;
     
     if (!head) {
-        return 0;
+        return NULL;
     }
 
     while (current) {
         if (!strcmp(current->name, country)) {
-            return 1;
+            return current;
         }
         current = current->next;
     }
-    return 0;
+    return NULL;
 }
 
 // Print States linked list
