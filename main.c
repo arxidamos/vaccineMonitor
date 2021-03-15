@@ -131,11 +131,14 @@ int main(int argc, char **argv) {
             else {
                 recordAccepted = 0;
             }
-            
+        }
+
+        if (recordAccepted) {
+
             // Add vaccinated record in Bloom Filter
             if (vaccDate.year != 0) {
                 // Check if we have Bloom Filter for this virus
-                if (virusBloomExists(bloomsHead, virus) == 1) {
+                if (virusBloomExists(bloomsHead, virus)) {
                     insertInBloom(bloomsHead, citizenID, virus);
                 }
                 // Create new Bloom Filter for this virus
@@ -148,7 +151,7 @@ int main(int argc, char **argv) {
             // Add record in Skip List
             // Separate structure for vaccined Skip Lists
             if (vaccDate.year != 0) {
-                if (virusSkipExists(skipVaccHead, virus) == 1) {
+                if (virusSkipExists(skipVaccHead, virus)) {
                     insertInSkip(skipVaccHead, record, virus);
                 }
                 else {
@@ -158,7 +161,7 @@ int main(int argc, char **argv) {
             }
             // Separate structure for non-vaccined Skip Lists
             else {
-                if (virusSkipExists(skipNonVaccHead, virus) == 1) {
+                if (virusSkipExists(skipNonVaccHead, virus)) {
                     insertInSkip(skipNonVaccHead, record, virus);
                 }
                 else {
@@ -218,6 +221,9 @@ int main(int argc, char **argv) {
                 virus = malloc(strlen(command)+1);
                 strcpy(virus, command);
             }
+            else {
+                printf("Please enter a virus name\n");
+            }
 
             vaccineStatusBloom(bloomsHead, citizenID, virus);
             free(citizenID);
@@ -240,7 +246,7 @@ int main(int argc, char **argv) {
             if(command) {
                 virus = malloc(strlen(command)+1);
                 strcpy(virus, command);
-                // vaccineStatus(skipVaccHead, citizenID, virus);
+                vaccineStatus(skipVaccHead, citizenID, virus);
                 free(virus);
             }
             // If virusName not passed, call vaccineStatusAll function

@@ -39,8 +39,8 @@ void freeSkipNodes (SkipList* skipList);
 // mainFunctions.c
 // Command functions
 void vaccineStatusBloom (BloomFilter* head, char* citizenID, char* virus);
-void vaccineStatus(SkipList* head, char* citizenID, char* virus);
-void vaccineStatusAll(SkipList* head, char* citizenID);
+void vaccineStatus (SkipList* head, char* citizenID, char* virus);
+void vaccineStatusAll (SkipList* head, char* citizenID);
 
 
 
