@@ -213,24 +213,25 @@ int main(int argc, char **argv) {
             if (command) {
                 citizenID = malloc(strlen(command)+1);
                 strcpy(citizenID, command);
-            }
 
-            // Get virusName
-            command = strtok(NULL, " ");
-            if(command) {
-                virus = malloc(strlen(command)+1);
-                strcpy(virus, command);
+                // Get virusName
+                command = strtok(NULL, " ");
+                if(command) {
+                    virus = malloc(strlen(command)+1);
+                    strcpy(virus, command);
+                    vaccineStatusBloom(bloomsHead, citizenID, virus);
+                    free(virus);
+                }
+                else {
+                    printf("Please enter a virus name\n");
+                }
+                free(citizenID);
             }
             else {
-                printf("Please enter a virus name\n");
+                printf("Please enter a citizenID and a virus name\n");
             }
-
-            vaccineStatusBloom(bloomsHead, citizenID, virus);
-            free(citizenID);
-            free(virus);
         }
-        // /vaccineStatus citizenID virusName
-        // /vaccineStatus citizenID
+        // /vaccineStatus citizenID [virusName]
         else if (!strcmp(command, "/vaccineStatus")) {
             
             // Get cizitenID
@@ -238,24 +239,53 @@ int main(int argc, char **argv) {
             if (command) {
                 citizenID = malloc(strlen(command)+1);
                 strcpy(citizenID, command);
-            }
 
-            // Get virusName
-            command = strtok(NULL, " ");
-            // If virusName passed, call vaccineStatus function
-            if(command) {
-                virus = malloc(strlen(command)+1);
-                strcpy(virus, command);
-                vaccineStatus(skipVaccHead, citizenID, virus);
-                free(virus);
+                if (checkExistence(recordsHead, citizenID)) {
+                    // Get virusName
+                    command = strtok(NULL, " ");
+                    // If virusName passed, call vaccineStatus function
+                    if(command) {
+                        virus = malloc(strlen(command)+1);
+                        strcpy(virus, command);
+                        vaccineStatus(skipVaccHead, citizenID, virus);
+                        free(virus);
+                    }
+                    // If virusName not passed, call vaccineStatusAll function
+                    else {
+                        vaccineStatusAll(skipVaccHead, citizenID);
+                        vaccineStatusAll(skipNonVaccHead, citizenID);
+                    }
+                }
+                else {
+                    printf("Please enter a valid citizenID\n");
+                }
+                free(citizenID);
             }
-            // If virusName not passed, call vaccineStatusAll function
             else {
-                vaccineStatusAll(skipVaccHead, citizenID);
-                vaccineStatusAll(skipNonVaccHead, citizenID);
+                printf("Please enter a citizenID\n");
             }
-            free(citizenID);            
         }
+        // /populationStatus [country] virusName date1 date2
+        // else if (!strcmp(command, "/populationStatus")) {
+        //     // find, for each country, and for virusName, the count of people that
+        //     // are vaccined and the fraction: vaccined/ vaccined + nonVaccined
+
+        //     // Check if 1st argument country or virus or sth else
+            
+        //     // Get cizitenID
+        //     command = strtok(NULL, " ");
+        //     if (command) {
+        //         country = malloc(strlen(country)+1);
+        //         strcpy(country, command);
+        //     }
+
+
+
+
+
+
+
+        // }
         else if (!strcmp(command, "/exit")) {
 
             // Deallocate memory

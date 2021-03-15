@@ -12,6 +12,7 @@ void freeStateList (State* head);
 Record* createRecord (char* citizenID, char* fName, char* lName, char* country, int age, char* virus,  Date vaccDate);
 Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate);
 int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate);
+int checkExistence (Record* head, char* citizenID);
 void printRecordsList (Record* record);
 void freeRecordList (Record* head);
 

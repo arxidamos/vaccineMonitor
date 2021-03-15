@@ -77,6 +77,24 @@ int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, Sta
     return 0;
 }
 
+// Validate that citizendID record exists
+int checkExistence (Record* head, char* citizenID) {  
+    
+    // No possible existence
+    if (!head) {
+        return 0;
+    }
+
+    while (head) {
+        // Check if citizenID exists
+        if (!strcmp(head->citizenID, citizenID)) {
+            return 1;
+        }
+        head = head->next;
+    }
+    return 0;
+}
+
 // Print linked list of records
 void printRecordsList (Record* record) {
     while (record) {
