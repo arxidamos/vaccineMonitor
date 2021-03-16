@@ -29,8 +29,9 @@ void freeBlooms (BloomFilter* head);
 // skipList.c
 SkipList* createList (SkipList* skipListHead, char* virus);
 void insertInSkip (SkipList* skipListHead, Record* record, char* virus);
-Record* searchSkipLists (SkipList* skipListHead, char* citizenID);
-int virusSkipExists (SkipList* skipListHead, char* virus);
+Record* searchSkipList (SkipList* skipListHead, char* citizenID);
+int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Date date2);
+SkipList* virusSkipExists (SkipList* skipListHead, char* virus);
 int getHeight (int maximum);
 void printSkipLists (SkipList* head);
 void printSkipNodes (SkipList* skipList);
@@ -42,9 +43,10 @@ void freeSkipNodes (SkipList* skipList);
 void vaccineStatusBloom (BloomFilter* head, char* citizenID, char* virus);
 void vaccineStatus (SkipList* head, char* citizenID, char* virus);
 void vaccineStatusAll (SkipList* head, char* citizenID);
-
+void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2);
 
 
 // Auxiliary functions
+int compareDate (Date a, Date b);
 
 #endif

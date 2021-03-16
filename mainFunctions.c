@@ -54,8 +54,8 @@ void vaccineStatus (SkipList* head, char* citizenID, char* virus) {
     // Iterate through Skip Lists
     while (current) {
         if (virusSkipExists(current, virus)) {
-            if (searchSkipLists(current, citizenID)) {
-                record = searchSkipLists(current, citizenID);
+            if (searchSkipList(current, citizenID)) {
+                record = searchSkipList(current, citizenID);
                 printf("VACCINATED ON %d-%d-%d\n", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
                 return;
             }
@@ -66,16 +66,14 @@ void vaccineStatus (SkipList* head, char* citizenID, char* virus) {
     return;
 }
 
-
-
-// Return all vacc and non-vacc occurences for citizenID
+// Display all vacc and non-vacc occurences for citizenID
 void vaccineStatusAll (SkipList* head, char* citizenID) {
     SkipList* current = head;
     Record* record = NULL;
 
     // Iterate through Skip Lists
     while (current) {
-        record =  searchSkipLists(current, citizenID);
+        record =  searchSkipList(current, citizenID);
         if(record){
             // Print virus
             printf("%s ", record->virus);
@@ -91,4 +89,46 @@ void vaccineStatusAll (SkipList* head, char* citizenID) {
         current = current->next;
     }
     return;
+}
+
+// Display country's vaccined total and percentage of citizens for virus
+void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2) {
+    
+    int vaccined = 0;
+    int nonVaccined = 0;
+    float percentage = 0;
+    
+    // Country optional argument NOT passed
+    if (!country) {        
+        State* currentState = stateHead;
+        while (currentState) {
+            country = currentState->name;
+            vaccined = searchCountrySkipList(skipVaccHead, country, date1, date2);
+            nonVaccined = searchCountrySkipList(skipNonVaccHead, country, date1, date2);
+            printf("%s %d %d\n", country, vaccined, nonVaccined);
+
+            currentState = currentState->next;
+        }
+    }
+    // Country argument passed
+    else {
+        vaccined = searchCountrySkipList(skipVaccHead, country, date1, date2);
+        nonVaccined = searchCountrySkipList(skipNonVaccHead, country, date1, date2);
+        printf("%s %d %d\n", country, vaccined, nonVaccined);
+    }
+    return;
+}
+
+// Compare dates - Returns : "1", a older than b [a < b] | "0", a newer than b [a > b] | "-1": [a = b]
+int compareDate (Date a, Date b) {
+    if (a.year != b.year)
+        return a.year < b.year;
+    else if (a.month != b.month)
+        return a.month < b.month;
+    else if (a.day != b.day)
+        return a.day < b.day;
+    else {
+        // Dates are the same
+        return -1;
+    }
 }

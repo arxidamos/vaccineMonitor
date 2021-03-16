@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
             if(inputFile == NULL) {
                 fprintf(stderr, "Cannot open file: %s\n", argv[i+1]);
                 return 1;
-            }            
+            }
         }
 		else if (!strcmp("-b", argv[i])) {
 			bloomSize = atoi(argv[i+1]);
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
 		}
 	}
 
-    // Initialize  variables
+    // Initialize variables
     size_t textSize;
     char* text = NULL;
     char* token = NULL;
@@ -72,13 +72,13 @@ int main(int argc, char **argv) {
 
         // Get lastName
         token = strtok(NULL, " ");
-        lName = malloc(strlen(token)+1);        
+        lName = malloc(strlen(token)+1);
         strcpy(lName, token);
 
         // Get country
         token = strtok(NULL, " ");
         country = malloc(strlen(token)+1);
-        strcpy(country, token);       
+        strcpy(country, token);
 
         // Get age
         token = strtok(NULL, " ");
@@ -167,7 +167,7 @@ int main(int argc, char **argv) {
                 else {
                     skipNonVaccHead = createList(skipNonVaccHead, virus);
                     insertInSkip(skipNonVaccHead, record, virus);
-                }        
+                }
                 
             }
         }
@@ -240,17 +240,19 @@ int main(int argc, char **argv) {
                 citizenID = malloc(strlen(command)+1);
                 strcpy(citizenID, command);
 
+                // Check that citizenID is valid
                 if (checkExistence(recordsHead, citizenID)) {
+                    
                     // Get virusName
                     command = strtok(NULL, " ");
-                    // If virusName passed, call vaccineStatus function
+                    // Call vaccineStatus function
                     if(command) {
                         virus = malloc(strlen(command)+1);
                         strcpy(virus, command);
                         vaccineStatus(skipVaccHead, citizenID, virus);
                         free(virus);
                     }
-                    // If virusName not passed, call vaccineStatusAll function
+                    // Call vaccineStatusAll function
                     else {
                         vaccineStatusAll(skipVaccHead, citizenID);
                         vaccineStatusAll(skipNonVaccHead, citizenID);
@@ -266,26 +268,137 @@ int main(int argc, char **argv) {
             }
         }
         // /populationStatus [country] virusName date1 date2
-        // else if (!strcmp(command, "/populationStatus")) {
-        //     // find, for each country, and for virusName, the count of people that
-        //     // are vaccined and the fraction: vaccined/ vaccined + nonVaccined
-
-        //     // Check if 1st argument country or virus or sth else
+        else if (!strcmp(command, "/populationStatus")) {
+            // find, for each country, and for virusName, the count of people that are vaccined and the fraction: vaccined/ vaccined + nonVaccined
             
-        //     // Get cizitenID
-        //     command = strtok(NULL, " ");
-        //     if (command) {
-        //         country = malloc(strlen(country)+1);
-        //         strcpy(country, command);
-        //     }
+            // Get country OR virusName
+            command = strtok(NULL, " ");
+            if (command) {
+                // 1st argument: existing country
+                if (stateExists(stateHead, command)){
+                    country = malloc(strlen(command)+1);
+                    strcpy(country, command);
 
+                    // Get virusName
+                    command = strtok(NULL, " ");
+                    if (command) {
+                        // 2nd argument: existing virusName
+                        if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {                        
+                            virus = malloc(strlen(command)+1);
+                            strcpy(virus, command);
+                    
+                            Date date1;
+                            Date date2;
 
+                            // Get date1
+                            command = strtok(NULL, " ");
+                            if (command) {
+                                // 3rd argument: date1
+                                sscanf(command, "%d-%d-%d", &date1.day, &date1.month, &date1.year);
 
+                                // Get date2
+                                command = strtok(NULL, " ");
+                                if (command) {
+                                    // 4rth argument: date2
+                                    sscanf(command, "%d-%d-%d", &date2.day, &date2.month, &date2.year);
 
+                                    // Call function
+                                    SkipList* vaccSkipList = virusSkipExists(skipVaccHead, virus);
+                                    SkipList* nonVaccSkipList = virusSkipExists(skipNonVaccHead, virus);
+                                    populationStatus(vaccSkipList, nonVaccSkipList, country, stateHead, date1, date2);
+                                }
+                                // No date2, exit command
+                                else {
+                                    printf("ERROR:\nNo second date typed. Please submit the command again.\n");
+                                }
+                            }
+                            // No 3rd and 4th arguments
+                            else {
+                                // Min & max values to include all possible dates
+                                date1.day = -1;
+                                date1.month = -1;
+                                date1.year = -1;
+                                date2.day = 99;
+                                date2.month = 99;
+                                date2.year = 9999;
 
+                                // Call function
+                                SkipList* vaccSkipList = virusSkipExists(skipVaccHead, virus);
+                                SkipList* nonVaccSkipList = virusSkipExists(skipNonVaccHead, virus);
+                                populationStatus(vaccSkipList, nonVaccSkipList, country, stateHead, date1, date2);
+                            }
+                            free(virus);
+                        }
+                        else {
+                            printf("Please enter an existing virus name\n");
+                        }
+                    }
+                    else {
+                        printf("Please enter a virus name\n");
+                    }
+                    free(country);
+                }
+                // 1st argument: existing virusName
+                else if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {                    
+                    // No optional country argument passed
+                    virus = malloc(strlen(command)+1);
+                    strcpy(virus, command);
+                    printf("Ok, no country, only virus %s given\n", virus);
 
+                    Date date1;
+                    Date date2;
+                    country = NULL;
 
-        // }
+                    // Get date1
+                    command = strtok(NULL, " ");
+                    if (command) {
+                        // 3rd argument: date1
+                        sscanf(command, "%d-%d-%d", &date1.day, &date1.month, &date1.year);
+
+                        // Get date2
+                        command = strtok(NULL, " ");
+                        if (command) {
+                            // 4rth argument: date2
+                            sscanf(command, "%d-%d-%d", &date2.day, &date2.month, &date2.year);
+
+                            // Call function
+                            SkipList* vaccSkipList = virusSkipExists(skipVaccHead, virus);
+                            SkipList* nonVaccSkipList = virusSkipExists(skipNonVaccHead, virus);
+                            populationStatus(vaccSkipList, nonVaccSkipList, country, stateHead, date1, date2);
+                          }
+                        // No date2, exit command
+                        else {
+                            printf("ERROR:\nNo second date typed. Please submit the command again.\n");
+                        }
+                    }
+                    // No 3rd and 4th arguments
+                    else {
+                        // Min & max values to include all possible dates
+                        date1.day = -1;
+                        date1.month = -1;
+                        date1.year = -1;
+                        date2.day = 99;
+                        date2.month = 99;
+                        date2.year = 9999;
+
+                        // Call function
+                        SkipList* vaccSkipList = virusSkipExists(skipVaccHead, virus);
+                        SkipList* nonVaccSkipList = virusSkipExists(skipNonVaccHead, virus);
+                        populationStatus(vaccSkipList, nonVaccSkipList, country, stateHead, date1, date2);
+                    }
+
+                    free(virus);
+                }
+                // 1st argument: neither country nor virus
+                else {
+                    printf("Please enter an existing country or virus name\n");
+                }
+            }
+            else {
+                printf("More arguments needed. Proper command structure:\n");
+                printf("** /populationStatus [country] virusName date1 date2 **\n");
+            }
+        }
         else if (!strcmp(command, "/exit")) {
 
             // Deallocate memory

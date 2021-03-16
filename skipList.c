@@ -120,13 +120,13 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus) {
     }
 }
 
-// Check for citizenID in Skip List for this virus
-Record* searchSkipLists (SkipList* skipListHead, char* citizenID) {
+// Check for citizenID in Skip List
+Record* searchSkipList (SkipList* skipListHead, char* citizenID) {
     SkipNode* current = skipListHead->head;
     int level = skipListHead->head->levels - 1;
     int compare;
     while ( (current != NULL) && (level>=0) ) {
-        // No more nodes on this level                
+        // No more nodes on this level
         if (current->next[level] == NULL) {
             level--;
         }
@@ -150,18 +150,41 @@ Record* searchSkipLists (SkipList* skipListHead, char* citizenID) {
     return NULL;
 }
 
+// Check for country in Skip List
+int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Date date2) {
+    
+    // No Skip List for this virus
+    if (!skipListHead) {
+        return 0;
+    }
+
+    SkipNode* current = skipListHead->head;
+    int count = 0;
+
+    // Can't make use of SkipList's citizenID-based level-iteration
+    while (current->next[0]) {
+            
+        if (!strcmp(current->next[0]->record->country->name, country)) {
+            count++;
+        }
+        current = current->next[0];
+    }
+    // printf("Count is %d\n", count);
+    return count;
+}
+
 // Check if Skip List for this virus exists
-int virusSkipExists (SkipList* skipListHead, char* virus) {
+SkipList* virusSkipExists (SkipList* skipListHead, char* virus) {
     SkipList* current = skipListHead;
     while (current) {
         if (!strcmp(current->virus, virus)) {
-            // printf("Existing list %s\n", current->virus);            
-            return 1;
+            // printf("Existing list %s\n", current->virus);
+            return current;
         }
         current = current->next;
     }
     // printf("List %s to be added\n", virus);
-    return 0;
+    return NULL;
 }
 
 // Create random maximum height for new Skip Nodes
@@ -180,7 +203,7 @@ int getHeight (int maximum) {
 
 // Print lists (vacc and non-vacc) of Skip Lists
 void printSkipLists (SkipList* head) {
-    SkipList* current = head;    
+    SkipList* current = head;
     while (current) {
         printf("SL : %s\n", current->virus);
         printSkipNodes(current);
@@ -221,7 +244,7 @@ void freeSkipLists (SkipList* head) {
 
         // printf("Just freed %s.\n", tmpList->virus);
         free(tmpList->virus);
-        free(tmpList);    
+        free(tmpList);
     }
 }
 
