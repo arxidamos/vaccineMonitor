@@ -48,5 +48,5 @@ void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* 
 
 // Auxiliary functions
 int compareDate (Date a, Date b);
-
+int isBetweenDates (Date a, Date x, Date b);
 #endif

@@ -165,7 +165,9 @@ int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Da
     while (current->next[0]) {
             
         if (!strcmp(current->next[0]->record->country->name, country)) {
-            count++;
+            if (isBetweenDates(date1, current->next[0]->record->vaccDate, date2)) {
+                count++;
+            }
         }
         current = current->next[0];
     }

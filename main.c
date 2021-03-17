@@ -374,9 +374,9 @@ int main(int argc, char **argv) {
                     // No 3rd and 4th arguments
                     else {
                         // Min & max values to include all possible dates
-                        date1.day = -1;
-                        date1.month = -1;
-                        date1.year = -1;
+                        date1.day = 0;
+                        date1.month = 0;
+                        date1.year = 0;
                         date2.day = 99;
                         date2.month = 99;
                         date2.year = 9999;

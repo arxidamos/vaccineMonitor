@@ -95,8 +95,17 @@ void vaccineStatusAll (SkipList* head, char* citizenID) {
 void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2) {
     
     int vaccined = 0;
-    int nonVaccined = 0;
+    int vaccTotal = 0;
+    int nonVaccTotal = 0;
     float percentage = 0;
+    Date dateZero;
+    Date dateInf;
+    dateZero.day = 0;
+    dateZero.month = 0;
+    dateZero.year = 0;
+    dateInf.day = 99;
+    dateInf.month = 99;
+    dateInf.year = 9999;    
     
     // Country optional argument NOT passed
     if (!country) {        
@@ -104,17 +113,32 @@ void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* 
         while (currentState) {
             country = currentState->name;
             vaccined = searchCountrySkipList(skipVaccHead, country, date1, date2);
-            nonVaccined = searchCountrySkipList(skipNonVaccHead, country, date1, date2);
-            printf("%s %d %d\n", country, vaccined, nonVaccined);
-
+            vaccTotal = searchCountrySkipList(skipVaccHead, country, dateZero, dateInf);
+            nonVaccTotal = searchCountrySkipList(skipNonVaccHead, country, dateZero, dateInf);
+            // Check if denominator is zero
+            if (vaccTotal == 0 && nonVaccTotal == 0) {
+                percentage = 0;
+            }
+            else {
+                percentage = ( (float)vaccined / (float)(vaccTotal + nonVaccTotal) ) * 100;
+            }
+            printf("%s %d %.2f%%\n", country, vaccined, percentage);
             currentState = currentState->next;
         }
     }
     // Country argument passed
     else {
         vaccined = searchCountrySkipList(skipVaccHead, country, date1, date2);
-        nonVaccined = searchCountrySkipList(skipNonVaccHead, country, date1, date2);
-        printf("%s %d %d\n", country, vaccined, nonVaccined);
+        vaccTotal = searchCountrySkipList(skipVaccHead, country, dateZero, dateInf);
+        nonVaccTotal = searchCountrySkipList(skipNonVaccHead, country, dateZero, dateInf);
+        // Check if denominator is zero
+        if (vaccTotal == 0 && nonVaccTotal == 0) {
+            percentage = 0;
+        }
+        else {
+            percentage = ( (float)vaccined / (float)(vaccTotal + nonVaccTotal) ) * 100;
+        }
+        printf("%s %d %.2f%%\n", country, vaccined, percentage);
     }
     return;
 }
@@ -130,5 +154,15 @@ int compareDate (Date a, Date b) {
     else {
         // Dates are the same
         return -1;
+    }
+}
+
+// Find if Date x lies between Dates a, b
+int isBetweenDates (Date a, Date x, Date b) {
+    if ( (compareDate(a, x) == 1 || compareDate(a, x) == -1) && (compareDate(x, b) == 1 || compareDate(x, b) == -1) ) {
+        return 1;
+    }
+    else {
+        return 0;
     }
 }
