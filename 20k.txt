@@ -1,0 +1,1200 @@
+1 Andrew Moore Athens 30 Marburg YES 01-05-2019
+1 Andrew Moore Athens 30 Guaroa NO
+1 Andrew Moore Athens 30 Anaplasmosis YES 13-06-2050
+2 David Young Yemen 4 HPV NO
+2 David Young Yemen 4 Hepatitis-B NO
+3 Wyatt Rivera Yemen 113 Anthrax YES 06-06-2043
+3 Wyatt Rivera Yemen 113 Anthrax NO
+3 Wyatt Rivera Yemen 113 Hanta NO
+3 Wyatt Rivera Yemen 113 COVID-19 NO
+4 Dylan Martin Athens 10 COVID-19 NO
+4 Dylan Martin Athens 10 Rabies NO
+4 Dylan Martin Athens 10 Ebola YES 18-02-2008
+4 Dylan Martin Athens 10 Rabies YES 21-01-2034
+5 Joseph Hernandez Athens 49 Hepatitis-C YES 17-12-2010
+5 Joseph Hernandez Athens 49 Hanta YES 06-03-2029
+6 Caleb Brown Zimbabwe 21 Hepatitis-D YES 23-10-2008
+6 Caleb Brown Zimbabwe 21 HIV NO
+6 Caleb Brown Zimbabwe 21 Hepatitis-E YES 23-07-2015
+6 Caleb Brown Zimbabwe 21 Hepatitis-B YES 13-01-2048
+7 Benjamin Martinez Zambia 24 Hanta NO
+7 Benjamin Martinez Zambia 24 Ebola YES 02-01-2011
+7 Benjamin Martinez Zambia 24 Guaroa YES 12-09-2030
+8 Dylan Jones Zambia 107 Marburg NO
+8 Dylan Jones Zambia 107 Hepatitis-A NO
+8 Dylan Jones Zambia 107 Flu YES 01-07-2037
+9 Christopher Smith Athens 71 Dengue NO
+9 Christopher Smith Athens 71 Anthrax YES 27-04-2011
+9 Christopher Smith Athens 71 Dengue NO
+9 Christopher Smith Athens 71 Typhus NO
+9 Christopher Smith Athens 71 Junin YES 27-11-2032
+10 Mason Thomas Zambia 108 Rabies NO
+10 Mason Thomas Zambia 108 Hepatitis-C YES 21-09-2001
+11 Logan Clark Zambia 20 Typhus NO
+11 Logan Clark Zambia 20 HIV YES 12-07-2022
+12 Elijah Taylor Zimbabwe 10 COVID-19 NO
+12 Elijah Taylor Zimbabwe 10 Hepatitis-E NO
+12 Elijah Taylor Zimbabwe 10 Hepatitis-E YES 16-02-2002
+12 Elijah Taylor Zimbabwe 10 Guaroa YES 05-09-2037
+13 Ezra Taylor Yemen 90 Junin NO
+14 Nathan Martinez Zambia 97 Hepatitis-B NO
+14 Nathan Martinez Zambia 97 Hanta NO
+14 Nathan Martinez Zambia 97 COVID-19 YES 16-05-2001
+15 Owen Roberts Athens 56 Junin YES 09-10-2018
+15 Owen Roberts Athens 56 Ebola YES 19-02-2010
+16 Ryan Campbell Yemen 109 Hepatitis-D NO
+16 Ryan Campbell Yemen 109 Marburg YES 05-06-2009
+16 Ryan Campbell Yemen 109 Guaroa NO
+17 Lincoln Wilson Yemen 103 Dengue NO
+18 Oliver Torres Zimbabwe 28 Hepatitis-E NO
+18 Oliver Torres Zimbabwe 28 Flu YES 23-05-2029
+19 James Roberts Zimbabwe 42 Dengue YES 28-04-2002
+19 James Roberts Zimbabwe 42 Typhus NO
+20 Theodore Martin Zambia 113 Marburg NO
+20 Theodore Martin Zambia 113 Marburg YES 05-07-2003
+20 Theodore Martin Zambia 113 HIV NO
+21 Grayson Allen Yemen 49 Smallpox YES 05-02-2001
+21 Grayson Allen Yemen 49 Hepatitis-A YES 02-03-2020
+21 Grayson Allen Yemen 49 Hepatitis-C NO
+21 Grayson Allen Yemen 49 COVID-19 NO
+21 Grayson Allen Yemen 49 Dengue YES 26-10-2013
+22 James Flores Athens 49 COVID-19 YES 20-09-2012
+22 James Flores Athens 49 HPV YES 22-06-2024
+22 James Flores Athens 49 Anthrax YES 09-02-2024
+22 James Flores Athens 49 Smallpox NO
+22 James Flores Athens 49 Hanta YES 13-04-2042
+23 Lincoln Ramirez Zimbabwe 59 Flu YES 20-04-2043
+23 Lincoln Ramirez Zimbabwe 59 Smallpox YES 24-03-2024
+23 Lincoln Ramirez Zimbabwe 59 Anaplasmosis YES 16-06-2032
+23 Lincoln Ramirez Zimbabwe 59 COVID-19 YES 07-04-2049
+24 Charles Campbell Zimbabwe 19 Typhus NO
+25 John Campbell Zimbabwe 91 Hepatitis-B NO
+25 John Campbell Zimbabwe 91 HIV YES 30-03-2017
+25 John Campbell Zimbabwe 91 Ebola YES 05-12-2036
+26 Henry Smith Zimbabwe 69 HIV YES 15-06-2044
+26 Henry Smith Zimbabwe 69 Flu NO
+26 Henry Smith Zimbabwe 69 Rabies NO
+26 Henry Smith Zimbabwe 69 HIV NO
+27 Leo Davis Zambia 99 Flu NO
+27 Leo Davis Zambia 99 Hepatitis-D NO
+27 Leo Davis Zambia 99 Hepatitis-D NO
+28 Julian Torres Zimbabwe 32 Ebola NO
+28 Julian Torres Zimbabwe 32 Typhus NO
+28 Julian Torres Zimbabwe 32 Anthrax NO
+29 Carter Miller Zambia 37 Marburg NO
+29 Carter Miller Zambia 37 Ebola NO
+29 Carter Miller Zambia 37 Ebola NO
+30 Hudson Nguyen Zimbabwe 116 Marburg YES 18-10-2024
+30 Hudson Nguyen Zimbabwe 116 HIV YES 17-01-2045
+31 Charles Green Zambia 77 COVID-19 NO
+31 Charles Green Zambia 77 Hepatitis-D YES 13-08-2009
+31 Charles Green Zambia 77 Hepatitis-D NO
+31 Charles Green Zambia 77 Hepatitis-B YES 16-09-2034
+32 Noah Rodriguez Athens 34 Rabies YES 12-08-2038
+32 Noah Rodriguez Athens 34 COVID-19 NO
+33 Jayden Scott Zambia 32 Junin YES 05-08-2009
+33 Jayden Scott Zambia 32 Hanta YES 25-08-2034
+33 Jayden Scott Zambia 32 Hepatitis-E NO
+33 Jayden Scott Zambia 32 Hepatitis-E NO
+33 Jayden Scott Zambia 32 Flu NO
+34 Isaac Mitchell Zambia 43 Hepatitis-C YES 24-09-2038
+35 William Brown Yemen 73 Hanta YES 25-12-2033
+35 William Brown Yemen 73 Hepatitis-A YES 03-04-2038
+35 William Brown Yemen 73 Junin YES 30-01-2022
+35 William Brown Yemen 73 Hepatitis-D YES 02-09-2026
+36 Andrew Lopez Zambia 48 Ebola YES 30-10-2029
+36 Andrew Lopez Zambia 48 Rabies NO
+36 Andrew Lopez Zambia 48 Flu YES 14-04-2023
+36 Andrew Lopez Zambia 48 Junin NO
+36 Andrew Lopez Zambia 48 Junin NO
+37 Jayden Mitchell Yemen 71 Ebola NO
+37 Jayden Mitchell Yemen 71 Typhus NO
+37 Jayden Mitchell Yemen 71 Smallpox NO
+37 Jayden Mitchell Yemen 71 Rabies NO
+38 Levi Flores Yemen 48 Hepatitis-C YES 06-04-2031
+38 Levi Flores Yemen 48 Anaplasmosis NO
+39 Sebastian Martin Yemen 49 Junin NO
+39 Sebastian Martin Yemen 49 Smallpox NO
+39 Sebastian Martin Yemen 49 Guaroa NO
+39 Sebastian Martin Yemen 49 Hepatitis-A YES 02-09-2016
+39 Sebastian Martin Yemen 49 Dengue NO
+40 Jaxon Brown Athens 81 Rabies YES 08-09-2010
+41 Noah Miller Athens 1 Hepatitis-E NO
+41 Noah Miller Athens 1 Marburg YES 03-05-2018
+41 Noah Miller Athens 1 Hanta NO
+42 Alexander Martin Athens 29 Hepatitis-E NO
+42 Alexander Martin Athens 29 Hanta YES 22-06-2049
+43 Oliver Ramirez Zimbabwe 87 Hepatitis-B YES 06-12-2003
+43 Oliver Ramirez Zimbabwe 87 Anthrax YES 18-11-2030
+44 Julian Mitchell Zimbabwe 26 Marburg YES 05-04-2042
+44 Julian Mitchell Zimbabwe 26 Marburg NO
+45 Hudson Allen Zambia 54 Ebola NO
+45 Hudson Allen Zambia 54 Dengue NO
+45 Hudson Allen Zambia 54 Hepatitis-A NO
+45 Hudson Allen Zambia 54 HPV NO
+46 Sebastian Williams Zimbabwe 9 Rabies NO
+46 Sebastian Williams Zimbabwe 9 Ebola NO
+47 Logan Anderson Zambia 82 Flu YES 28-05-2021
+48 Matthew Miller Zambia 33 Hepatitis-A NO
+48 Matthew Miller Zambia 33 Smallpox NO
+49 Jaxon King Athens 87 Smallpox NO
+50 Thomas Thomas Zambia 119 Hepatitis-A YES 10-11-2040
+50 Thomas Thomas Zambia 119 Hepatitis-D NO
+50 Thomas Thomas Zambia 119 Smallpox NO
+50 Thomas Thomas Zambia 119 Ebola YES 21-04-2033
+50 Thomas Thomas Zambia 119 Guaroa NO
+51 Liam Green Zambia 51 Marburg YES 05-07-2050
+51 Liam Green Zambia 51 Hepatitis-D NO
+51 Liam Green Zambia 51 Ebola YES 11-07-2039
+52 Dylan Torres Zimbabwe 8 Hepatitis-B YES 03-05-2025
+52 Dylan Torres Zimbabwe 8 COVID-19 YES 16-08-2017
+52 Dylan Torres Zimbabwe 8 Hepatitis-C YES 25-07-2024
+53 Mateo Gonzalez Athens 63 Hepatitis-A YES 10-09-2023
+53 Mateo Gonzalez Athens 63 Hanta NO
+53 Mateo Gonzalez Athens 63 HPV NO
+53 Mateo Gonzalez Athens 63 Hepatitis-E NO
+53 Mateo Gonzalez Athens 63 Dengue NO
+54 William Moore Zambia 102 COVID-19 YES 30-09-2001
+55 Jackson Taylor Yemen 34 Anaplasmosis YES 12-04-2024
+55 Jackson Taylor Yemen 34 Junin YES 19-04-2034
+55 Jackson Taylor Yemen 34 Dengue YES 06-04-2019
+55 Jackson Taylor Yemen 34 Hepatitis-C NO
+55 Jackson Taylor Yemen 34 Anaplasmosis YES 23-04-2011
+56 Theodore Lee Zimbabwe 8 Junin NO
+56 Theodore Lee Zimbabwe 8 Hepatitis-B YES 14-07-2017
+56 Theodore Lee Zimbabwe 8 Ebola YES 20-04-2017
+56 Theodore Lee Zimbabwe 8 Marburg NO
+56 Theodore Lee Zimbabwe 8 Smallpox NO
+57 Logan Wright Yemen 50 Guaroa YES 15-05-2021
+57 Logan Wright Yemen 50 Typhus NO
+58 Aiden Nguyen Yemen 34 Hepatitis-D NO
+58 Aiden Nguyen Yemen 34 Typhus YES 25-11-2043
+58 Aiden Nguyen Yemen 34 Typhus NO
+59 Josiah Perez Yemen 51 Junin NO
+59 Josiah Perez Yemen 51 Rabies NO
+59 Josiah Perez Yemen 51 Hepatitis-E NO
+59 Josiah Perez Yemen 51 Hepatitis-A YES 17-08-2035
+60 Julian Rodriguez Yemen 43 Hepatitis-B NO
+60 Julian Rodriguez Yemen 43 Hepatitis-B YES 16-01-2012
+61 David Green Zimbabwe 31 Dengue NO
+61 David Green Zimbabwe 31 Junin YES 10-11-2015
+61 David Green Zimbabwe 31 Flu YES 07-10-2022
+62 Christopher Wilson Yemen 106 Smallpox YES 13-09-2006
+62 Christopher Wilson Yemen 106 HIV YES 14-04-2017
+62 Christopher Wilson Yemen 106 Hanta NO
+63 Aiden Wright Athens 14 Ebola YES 23-12-2035
+63 Aiden Wright Athens 14 Rabies YES 15-06-2034
+63 Aiden Wright Athens 14 HIV NO
+64 Grayson Flores Athens 52 Hepatitis-B YES 14-01-2024
+65 Isaiah Baker Yemen 31 Ebola YES 12-03-2029
+65 Isaiah Baker Yemen 31 Marburg YES 26-11-2031
+65 Isaiah Baker Yemen 31 Flu NO
+65 Isaiah Baker Yemen 31 Marburg YES 02-09-2012
+66 Logan Ramirez Zimbabwe 47 Smallpox NO
+66 Logan Ramirez Zimbabwe 47 Anaplasmosis NO
+66 Logan Ramirez Zimbabwe 47 Anthrax NO
+67 Aiden Wright Zambia 91 Rabies YES 30-03-2010
+67 Aiden Wright Zambia 91 Rabies NO
+67 Aiden Wright Zambia 91 Anthrax NO
+68 Henry Hernandez Athens 65 Junin NO
+68 Henry Hernandez Athens 65 Hepatitis-D YES 05-02-2009
+68 Henry Hernandez Athens 65 COVID-19 YES 27-08-2040
+69 Daniel Flores Yemen 70 Marburg YES 25-12-2038
+69 Daniel Flores Yemen 70 Ebola YES 15-08-2047
+69 Daniel Flores Yemen 70 Marburg NO
+69 Daniel Flores Yemen 70 Hanta YES 16-02-2026
+70 Henry Young Zimbabwe 1 Smallpox YES 05-12-2038
+70 Henry Young Zimbabwe 1 Ebola NO
+70 Henry Young Zimbabwe 1 Guaroa YES 23-03-2030
+70 Henry Young Zimbabwe 1 Smallpox NO
+70 Henry Young Zimbabwe 1 Rabies YES 07-02-2040
+71 Mateo Miller Athens 71 Marburg NO
+72 Samuel Thompson Zimbabwe 35 Hepatitis-E NO
+72 Samuel Thompson Zimbabwe 35 Typhus YES 19-11-2020
+73 Daniel Baker Athens 58 Typhus YES 30-02-2037
+73 Daniel Baker Athens 58 Marburg YES 12-03-2001
+73 Daniel Baker Athens 58 Hepatitis-C NO
+74 Thomas Lopez Zambia 17 Anthrax NO
+74 Thomas Lopez Zambia 17 Anthrax YES 02-11-2035
+74 Thomas Lopez Zambia 17 Marburg YES 17-10-2013
+75 Josiah Nelson Zambia 103 HIV YES 21-03-2023
+75 Josiah Nelson Zambia 103 HPV YES 21-04-2008
+75 Josiah Nelson Zambia 103 Rabies YES 13-03-2010
+75 Josiah Nelson Zambia 103 Dengue YES 22-03-2015
+75 Josiah Nelson Zambia 103 Hanta NO
+76 Leo Campbell Zambia 60 Hepatitis-E NO
+76 Leo Campbell Zambia 60 Hepatitis-B NO
+76 Leo Campbell Zambia 60 Rabies YES 10-03-2013
+76 Leo Campbell Zambia 60 Anthrax YES 23-11-2015
+77 Liam Allen Zambia 109 Ebola NO
+77 Liam Allen Zambia 109 Guaroa NO
+77 Liam Allen Zambia 109 Hepatitis-A NO
+78 Michael Ramirez Zimbabwe 108 Hepatitis-B NO
+79 Dylan Green Athens 101 HPV YES 12-03-2022
+79 Dylan Green Athens 101 Guaroa YES 10-02-2008
+79 Dylan Green Athens 101 Junin NO
+79 Dylan Green Athens 101 Ebola YES 22-11-2008
+80 Jackson Roberts Zimbabwe 33 Hepatitis-C NO
+81 Lincoln Mitchell Zimbabwe 60 Anthrax NO
+81 Lincoln Mitchell Zimbabwe 60 Anthrax NO
+81 Lincoln Mitchell Zimbabwe 60 COVID-19 YES 22-04-2049
+81 Lincoln Mitchell Zimbabwe 60 Typhus YES 23-10-2003
+81 Lincoln Mitchell Zimbabwe 60 Smallpox NO
+82 Oliver Baker Zimbabwe 69 Typhus YES 25-07-2046
+82 Oliver Baker Zimbabwe 69 Flu NO
+83 Anthony Hernandez Yemen 70 Anthrax YES 16-10-2033
+83 Anthony Hernandez Yemen 70 Hepatitis-B YES 05-01-2033
+83 Anthony Hernandez Yemen 70 Flu NO
+84 Oliver Brown Yemen 20 Guaroa NO
+84 Oliver Brown Yemen 20 Hepatitis-D YES 24-04-2035
+84 Oliver Brown Yemen 20 Rabies YES 28-08-2032
+85 Liam Lewis Athens 56 Hepatitis-A YES 08-10-2040
+85 Liam Lewis Athens 56 Dengue NO
+85 Liam Lewis Athens 56 Hepatitis-E YES 01-10-2024
+86 Ryan Nguyen Zambia 64 Guaroa NO
+86 Ryan Nguyen Zambia 64 Rabies NO
+86 Ryan Nguyen Zambia 64 Hepatitis-D NO
+86 Ryan Nguyen Zambia 64 Hepatitis-A NO
+87 Carter Perez Yemen 19 Hepatitis-C NO
+87 Carter Perez Yemen 19 Junin NO
+87 Carter Perez Yemen 19 Hepatitis-D NO
+87 Carter Perez Yemen 19 Junin NO
+87 Carter Perez Yemen 19 Ebola YES 09-03-2004
+88 Carter Gonzalez Yemen 115 Typhus NO
+88 Carter Gonzalez Yemen 115 HIV YES 03-02-2041
+88 Carter Gonzalez Yemen 115 Guaroa NO
+89 Carter Davis Zambia 41 Hepatitis-D YES 21-12-2029
+89 Carter Davis Zambia 41 Dengue NO
+89 Carter Davis Zambia 41 Guaroa NO
+89 Carter Davis Zambia 41 Guaroa NO
+89 Carter Davis Zambia 41 Rabies NO
+90 Luke Martinez Zimbabwe 72 HIV NO
+90 Luke Martinez Zimbabwe 72 Hepatitis-B NO
+90 Luke Martinez Zimbabwe 72 Anthrax NO
+90 Luke Martinez Zimbabwe 72 Dengue YES 20-12-2009
+90 Luke Martinez Zimbabwe 72 Typhus YES 03-07-2013
+91 Owen Allen Yemen 106 COVID-19 NO
+91 Owen Allen Yemen 106 Hepatitis-B NO
+91 Owen Allen Yemen 106 Dengue NO
+91 Owen Allen Yemen 106 Dengue YES 29-07-2041
+91 Owen Allen Yemen 106 Typhus NO
+92 Levi Miller Zambia 57 Hepatitis-D NO
+92 Levi Miller Zambia 57 HIV YES 19-10-2007
+92 Levi Miller Zambia 57 Anaplasmosis YES 14-12-2049
+92 Levi Miller Zambia 57 Anaplasmosis YES 21-03-2048
+93 Logan Green Yemen 115 Hepatitis-A NO
+93 Logan Green Yemen 115 Ebola YES 28-05-2039
+94 John Nguyen Zambia 88 Flu NO
+94 John Nguyen Zambia 88 Ebola NO
+94 John Nguyen Zambia 88 Typhus NO
+94 John Nguyen Zambia 88 Hepatitis-C YES 26-01-2044
+95 Isaiah Taylor Yemen 11 Anthrax NO
+95 Isaiah Taylor Yemen 11 HPV YES 17-02-2040
+95 Isaiah Taylor Yemen 11 Typhus YES 09-11-2040
+95 Isaiah Taylor Yemen 11 Dengue YES 21-02-2027
+96 Levi Carter Yemen 67 Junin NO
+97 Gabriel Baker Athens 44 Hepatitis-B YES 27-08-2014
+98 Oliver Carter Zimbabwe 34 Dengue NO
+98 Oliver Carter Zimbabwe 34 Hepatitis-E YES 10-08-2025
+98 Oliver Carter Zimbabwe 34 Hepatitis-C YES 28-01-2047
+98 Oliver Carter Zimbabwe 34 Junin NO
+99 Isaac Nelson Athens 53 Anaplasmosis YES 11-09-2012
+99 Isaac Nelson Athens 53 Hanta NO
+99 Isaac Nelson Athens 53 Flu YES 06-04-2027
+100 John Martinez Zimbabwe 56 Hepatitis-A YES 04-12-2001
+100 John Martinez Zimbabwe 56 Junin NO
+100 John Martinez Zimbabwe 56 Rabies YES 15-11-2048
+100 John Martinez Zimbabwe 56 HIV YES 02-12-2029
+100 John Martinez Zimbabwe 56 Anthrax NO
+101 Wyatt Perez Athens 96 Hepatitis-A YES 18-12-2035
+102 Sebastian Carter Zimbabwe 72 Hanta NO
+103 Logan Smith Zambia 107 Hanta YES 06-06-2018
+103 Logan Smith Zambia 107 Typhus NO
+104 Matthew Hill Yemen 89 Rabies NO
+104 Matthew Hill Yemen 89 Dengue YES 30-10-2019
+104 Matthew Hill Yemen 89 COVID-19 NO
+104 Matthew Hill Yemen 89 HPV YES 29-07-2026
+104 Matthew Hill Yemen 89 Smallpox YES 15-08-2014
+105 Samuel Scott Yemen 94 COVID-19 NO
+105 Samuel Scott Yemen 94 HPV YES 16-03-2020
+105 Samuel Scott Yemen 94 HPV NO
+105 Samuel Scott Yemen 94 Hepatitis-E NO
+106 Wyatt Young Yemen 36 Dengue YES 17-05-2023
+106 Wyatt Young Yemen 36 Hepatitis-E NO
+107 Liam Baker Athens 96 Marburg YES 09-11-2023
+107 Liam Baker Athens 96 Ebola YES 29-03-2008
+107 Liam Baker Athens 96 Guaroa YES 19-11-2027
+107 Liam Baker Athens 96 Hanta YES 09-12-2043
+108 James Hall Zimbabwe 53 Hepatitis-E YES 18-05-2034
+109 Levi Walker Yemen 84 Ebola NO
+109 Levi Walker Yemen 84 Junin NO
+109 Levi Walker Yemen 84 HIV NO
+109 Levi Walker Yemen 84 HPV YES 24-06-2024
+109 Levi Walker Yemen 84 Smallpox YES 01-09-2032
+110 David Hall Yemen 114 Hepatitis-C YES 24-07-2004
+110 David Hall Yemen 114 Hepatitis-C YES 06-11-2018
+111 James Carter Yemen 87 Marburg YES 30-07-2007
+111 James Carter Yemen 87 Flu NO
+111 James Carter Yemen 87 Hanta YES 19-08-2020
+112 Logan Torres Zambia 97 Ebola YES 29-06-2002
+112 Logan Torres Zambia 97 Ebola NO
+112 Logan Torres Zambia 97 Marburg YES 27-01-2014
+113 Samuel Jones Zambia 74 Junin YES 08-08-2011
+113 Samuel Jones Zambia 74 Hanta YES 05-09-2019
+113 Samuel Jones Zambia 74 Hepatitis-C YES 05-02-2019
+114 Mateo Anderson Yemen 95 Flu NO
+114 Mateo Anderson Yemen 95 Typhus NO
+114 Mateo Anderson Yemen 95 Hepatitis-A YES 23-02-2033
+114 Mateo Anderson Yemen 95 Flu YES 14-10-2049
+114 Mateo Anderson Yemen 95 Rabies YES 12-03-2031
+115 Charles Roberts Yemen 40 Hanta NO
+116 Samuel Torres Zambia 21 Flu NO
+117 Isaac Garcia Yemen 38 Rabies YES 11-03-2027
+118 Daniel Martinez Zambia 74 Anthrax NO
+118 Daniel Martinez Zambia 74 Marburg YES 28-04-2012
+118 Daniel Martinez Zambia 74 Typhus YES 06-11-2011
+119 Matthew Scott Zambia 43 Hepatitis-C NO
+119 Matthew Scott Zambia 43 Junin NO
+119 Matthew Scott Zambia 43 Hepatitis-E NO
+120 Luke Torres Yemen 101 COVID-19 YES 26-11-2024
+120 Luke Torres Yemen 101 Flu YES 05-07-2002
+120 Luke Torres Yemen 101 Dengue YES 28-04-2047
+120 Luke Torres Yemen 101 HIV NO
+121 Matthew Ramirez Athens 67 Ebola YES 16-09-2037
+121 Matthew Ramirez Athens 67 Guaroa YES 25-12-2047
+121 Matthew Ramirez Athens 67 Hanta YES 13-10-2035
+121 Matthew Ramirez Athens 67 Ebola NO
+122 Wyatt Roberts Zimbabwe 106 Hepatitis-D NO
+122 Wyatt Roberts Zimbabwe 106 Guaroa NO
+123 Logan Rivera Yemen 1 Marburg NO
+123 Logan Rivera Yemen 1 Dengue NO
+123 Logan Rivera Yemen 1 Typhus YES 14-08-2028
+123 Logan Rivera Yemen 1 HIV NO
+123 Logan Rivera Yemen 1 Ebola YES 05-11-2037
+124 Jack Nguyen Yemen 65 Dengue YES 11-12-2017
+124 Jack Nguyen Yemen 65 Typhus YES 02-01-2011
+125 Mason Rodriguez Zambia 61 Ebola YES 01-11-2018
+125 Mason Rodriguez Zambia 61 Hepatitis-B YES 22-06-2018
+125 Mason Rodriguez Zambia 61 Smallpox NO
+125 Mason Rodriguez Zambia 61 Anaplasmosis NO
+125 Mason Rodriguez Zambia 61 Rabies NO
+126 Benjamin Martinez Zambia 70 Hepatitis-B YES 08-12-2025
+126 Benjamin Martinez Zambia 70 Smallpox YES 05-09-2038
+127 Benjamin Miller Zambia 16 Junin YES 20-06-2000
+128 Julian Campbell Zambia 84 Hanta YES 20-06-2013
+128 Julian Campbell Zambia 84 Hepatitis-B YES 22-09-2045
+128 Julian Campbell Zambia 84 Junin YES 14-03-2013
+129 Joshua Nguyen Zimbabwe 32 Ebola YES 25-05-2037
+129 Joshua Nguyen Zimbabwe 32 HPV YES 30-12-2004
+130 Jayden Brown Zambia 112 Hepatitis-D NO
+131 Charles Lopez Zimbabwe 35 HPV NO
+131 Charles Lopez Zimbabwe 35 HIV YES 29-01-2015
+132 Sebastian Robinson Zambia 71 HIV NO
+132 Sebastian Robinson Zambia 71 Marburg NO
+132 Sebastian Robinson Zambia 71 Typhus YES 05-05-2039
+132 Sebastian Robinson Zambia 71 Anthrax NO
+132 Sebastian Robinson Zambia 71 Hepatitis-B NO
+133 Alexander Wilson Athens 26 Smallpox NO
+133 Alexander Wilson Athens 26 Dengue NO
+134 Alexander Roberts Zimbabwe 75 Anaplasmosis YES 18-07-2024
+134 Alexander Roberts Zimbabwe 75 Guaroa NO
+134 Alexander Roberts Zimbabwe 75 Hepatitis-A YES 07-10-2021
+134 Alexander Roberts Zimbabwe 75 Junin NO
+135 Grayson Lee Zimbabwe 43 Anthrax YES 06-11-2023
+135 Grayson Lee Zimbabwe 43 HPV NO
+135 Grayson Lee Zimbabwe 43 Hepatitis-C YES 03-04-2030
+135 Grayson Lee Zimbabwe 43 Hepatitis-C YES 04-07-2015
+136 Joseph Taylor Athens 66 Dengue NO
+136 Joseph Taylor Athens 66 Hepatitis-C YES 12-05-2047
+136 Joseph Taylor Athens 66 Hepatitis-C YES 22-10-2026
+136 Joseph Taylor Athens 66 Hepatitis-A YES 30-11-2041
+137 Mason Davis Zimbabwe 47 Typhus YES 22-04-2046
+137 Mason Davis Zimbabwe 47 HIV NO
+137 Mason Davis Zimbabwe 47 Smallpox YES 10-10-2047
+138 Wyatt Lee Yemen 74 Rabies NO
+138 Wyatt Lee Yemen 74 Anaplasmosis YES 24-10-2039
+138 Wyatt Lee Yemen 74 COVID-19 NO
+138 Wyatt Lee Yemen 74 Hepatitis-C NO
+139 Ethan Wright Athens 101 Hepatitis-E YES 06-10-2027
+139 Ethan Wright Athens 101 Hepatitis-D YES 12-01-2027
+139 Ethan Wright Athens 101 Rabies YES 19-12-2016
+140 Mateo Walker Yemen 34 HIV YES 08-06-2029
+140 Mateo Walker Yemen 34 Hepatitis-D NO
+140 Mateo Walker Yemen 34 Anaplasmosis YES 21-11-2012
+140 Mateo Walker Yemen 34 Hepatitis-D YES 21-08-2004
+140 Mateo Walker Yemen 34 Guaroa YES 28-03-2014
+141 Anthony Martin Zimbabwe 103 Rabies YES 17-09-2016
+141 Anthony Martin Zimbabwe 103 Dengue NO
+141 Anthony Martin Zimbabwe 103 Hanta YES 16-06-2012
+141 Anthony Martin Zimbabwe 103 Junin YES 06-09-2004
+141 Anthony Martin Zimbabwe 103 HPV NO
+142 Luke Walker Athens 59 Anaplasmosis YES 23-02-2012
+142 Luke Walker Athens 59 Anaplasmosis YES 10-10-2011
+142 Luke Walker Athens 59 Marburg YES 04-02-2036
+142 Luke Walker Athens 59 HPV YES 05-10-2002
+143 Owen Hill Yemen 94 Hepatitis-A YES 09-08-2005
+143 Owen Hill Yemen 94 Guaroa YES 12-05-2040
+143 Owen Hill Yemen 94 Hanta YES 16-12-2047
+143 Owen Hill Yemen 94 Marburg NO
+143 Owen Hill Yemen 94 Rabies YES 11-01-2031
+144 Asher Jackson Zambia 104 Rabies NO
+144 Asher Jackson Zambia 104 HIV YES 09-09-2047
+144 Asher Jackson Zambia 104 Dengue YES 03-10-2045
+144 Asher Jackson Zambia 104 Hepatitis-A YES 22-05-2048
+144 Asher Jackson Zambia 104 Flu YES 06-11-2012
+145 Benjamin Torres Yemen 31 Smallpox YES 07-04-2046
+145 Benjamin Torres Yemen 31 Anaplasmosis YES 22-11-2045
+146 Noah Perez Yemen 8 Hepatitis-D NO
+146 Noah Perez Yemen 8 Guaroa YES 06-12-2043
+147 Alexander Johnson Zimbabwe 32 Hanta YES 19-09-2022
+147 Alexander Johnson Zimbabwe 32 Ebola YES 01-04-2049
+147 Alexander Johnson Zimbabwe 32 Junin YES 08-02-2004
+148 Theodore Baker Zimbabwe 7 Marburg YES 09-08-2005
+148 Theodore Baker Zimbabwe 7 Hepatitis-C YES 07-06-2047
+148 Theodore Baker Zimbabwe 7 Hepatitis-B YES 28-04-2037
+148 Theodore Baker Zimbabwe 7 Hepatitis-E NO
+148 Theodore Baker Zimbabwe 7 Hepatitis-B YES 19-11-2034
+149 Matthew Hernandez Zambia 26 Dengue NO
+149 Matthew Hernandez Zambia 26 Guaroa YES 10-05-2026
+149 Matthew Hernandez Zambia 26 Hanta YES 10-01-2004
+149 Matthew Hernandez Zambia 26 COVID-19 NO
+150 Mason Davis Yemen 33 Marburg NO
+150 Mason Davis Yemen 33 Flu YES 27-10-2025
+150 Mason Davis Yemen 33 HPV YES 04-07-2044
+150 Mason Davis Yemen 33 Hepatitis-C NO
+151 Daniel Brown Yemen 44 Hepatitis-E NO
+151 Daniel Brown Yemen 44 Hepatitis-B NO
+151 Daniel Brown Yemen 44 Guaroa YES 19-01-2047
+151 Daniel Brown Yemen 44 Marburg NO
+151 Daniel Brown Yemen 44 Hepatitis-B NO
+152 Lincoln Martin Zimbabwe 114 HIV NO
+152 Lincoln Martin Zimbabwe 114 COVID-19 NO
+152 Lincoln Martin Zimbabwe 114 Anaplasmosis NO
+153 Logan Johnson Yemen 99 Junin YES 05-03-2042
+154 Isaac Ramirez Athens 34 Hanta NO
+154 Isaac Ramirez Athens 34 Junin NO
+154 Isaac Ramirez Athens 34 COVID-19 YES 07-03-2001
+154 Isaac Ramirez Athens 34 Guaroa YES 21-07-2044
+155 Dylan Martin Yemen 46 HIV YES 11-07-2015
+155 Dylan Martin Yemen 46 Anthrax YES 11-02-2002
+155 Dylan Martin Yemen 46 Hepatitis-D YES 02-06-2033
+155 Dylan Martin Yemen 46 Hanta YES 29-12-2016
+155 Dylan Martin Yemen 46 Marburg YES 30-11-2017
+156 Joshua Nguyen Zimbabwe 52 Hepatitis-C NO
+156 Joshua Nguyen Zimbabwe 52 Hepatitis-D NO
+156 Joshua Nguyen Zimbabwe 52 Hepatitis-C NO
+156 Joshua Nguyen Zimbabwe 52 Anaplasmosis NO
+156 Joshua Nguyen Zimbabwe 52 Hepatitis-B YES 28-09-2029
+157 John King Zambia 100 COVID-19 YES 14-04-2022
+158 Andrew Davis Yemen 28 Anthrax NO
+159 Gabriel King Zimbabwe 120 Flu NO
+159 Gabriel King Zimbabwe 120 Anthrax YES 04-05-2004
+159 Gabriel King Zimbabwe 120 Rabies NO
+159 Gabriel King Zimbabwe 120 HPV NO
+159 Gabriel King Zimbabwe 120 Smallpox NO
+160 Christopher Wilson Zimbabwe 25 Rabies NO
+3471 Leo Baker Athens 24 Smallpox NO
+3471 Leo Baker Athens 24 Junin YES 22-02-2019
+3471 Leo Baker Athens 24 Hepatitis-B NO
+3471 Leo Baker Athens 24 Junin NO
+3472 Mason Green Zambia 85 HPV YES 17-05-2001
+3472 Mason Green Zambia 85 Hanta NO
+3472 Mason Green Zambia 85 Ebola YES 08-08-2033
+3472 Mason Green Zambia 85 Junin NO
+3472 Mason Green Zambia 85 Rabies NO
+3473 Isaiah Sanchez Zimbabwe 87 Junin NO
+3473 Isaiah Sanchez Zimbabwe 87 Flu YES 08-01-2009
+3473 Isaiah Sanchez Zimbabwe 87 Junin NO
+3473 Isaiah Sanchez Zimbabwe 87 Guaroa NO
+3474 Carter Carter Yemen 106 Anthrax NO
+3474 Carter Carter Yemen 106 HIV YES 24-07-2007
+3474 Carter Carter Yemen 106 Hanta YES 12-05-2021
+3475 Joshua Walker Yemen 22 HIV NO
+3475 Joshua Walker Yemen 22 COVID-19 NO
+3476 Wyatt Harris Zimbabwe 120 Dengue YES 05-05-2049
+3476 Wyatt Harris Zimbabwe 120 Junin YES 28-12-2002
+3476 Wyatt Harris Zimbabwe 120 Anaplasmosis YES 02-02-2015
+3476 Wyatt Harris Zimbabwe 120 Hepatitis-B NO
+3476 Wyatt Harris Zimbabwe 120 Hepatitis-B YES 28-03-2046
+3477 Ezra Clark Zimbabwe 57 Dengue NO
+3478 Lincoln Lee Zambia 21 HIV NO
+3478 Lincoln Lee Zambia 21 HPV NO
+3478 Lincoln Lee Zambia 21 Anthrax YES 28-04-2030
+3479 Jaxon Lee Yemen 61 Hepatitis-B YES 17-01-2032
+3479 Jaxon Lee Yemen 61 Flu YES 08-06-2016
+3480 Jack Robinson Zimbabwe 112 Anaplasmosis NO
+3480 Jack Robinson Zimbabwe 112 HIV YES 06-03-2040
+3480 Jack Robinson Zimbabwe 112 Hepatitis-D YES 08-07-2028
+3480 Jack Robinson Zimbabwe 112 Marburg NO
+3481 Wyatt Lewis Athens 71 HPV NO
+3481 Wyatt Lewis Athens 71 Hepatitis-C YES 05-11-2013
+3481 Wyatt Lewis Athens 71 Hepatitis-E YES 27-12-2025
+3482 Joseph Taylor Zimbabwe 5 Junin YES 16-11-2035
+3483 Grayson Hill Athens 76 Hepatitis-B YES 16-04-2041
+3483 Grayson Hill Athens 76 COVID-19 YES 27-12-2022
+3483 Grayson Hill Athens 76 COVID-19 YES 06-11-2003
+3483 Grayson Hill Athens 76 Anthrax YES 30-01-2023
+3483 Grayson Hill Athens 76 Rabies NO
+3484 Lincoln Adams Zimbabwe 54 Dengue NO
+3484 Lincoln Adams Zimbabwe 54 Hepatitis-C NO
+3484 Lincoln Adams Zimbabwe 54 HPV YES 23-12-2011
+3485 Ethan Jones Yemen 76 Marburg YES 30-02-2023
+3485 Ethan Jones Yemen 76 Hanta YES 29-01-2016
+3485 Ethan Jones Yemen 76 HPV YES 19-03-2027
+3485 Ethan Jones Yemen 76 Marburg YES 28-05-2015
+3485 Ethan Jones Yemen 76 HIV NO
+3486 Aiden Lee Zimbabwe 32 Hepatitis-B NO
+3486 Aiden Lee Zimbabwe 32 Rabies YES 12-02-2012
+3486 Aiden Lee Zimbabwe 32 Hepatitis-A YES 09-12-2014
+3487 Liam Rodriguez Athens 20 HPV NO
+3487 Liam Rodriguez Athens 20 Marburg NO
+3487 Liam Rodriguez Athens 20 COVID-19 NO
+3488 Henry Walker Zambia 1 Anaplasmosis NO
+3488 Henry Walker Zambia 1 Hepatitis-E NO
+3488 Henry Walker Zambia 1 COVID-19 NO
+3488 Henry Walker Zambia 1 Dengue NO
+3489 Alexander Harris Zambia 60 Anaplasmosis YES 07-11-2036
+3489 Alexander Harris Zambia 60 COVID-19 YES 15-11-2021
+3489 Alexander Harris Zambia 60 Smallpox NO
+3489 Alexander Harris Zambia 60 Anthrax YES 06-03-2029
+3489 Alexander Harris Zambia 60 Hanta YES 24-11-2042
+3490 Thomas Brown Zimbabwe 33 HIV NO
+3490 Thomas Brown Zimbabwe 33 Hepatitis-C YES 02-09-2008
+3490 Thomas Brown Zimbabwe 33 Hepatitis-B NO
+3490 Thomas Brown Zimbabwe 33 Hepatitis-A YES 01-02-2042
+3491 Lucas Perez Yemen 103 Guaroa NO
+3491 Lucas Perez Yemen 103 Hepatitis-D NO
+3491 Lucas Perez Yemen 103 Marburg YES 09-05-2016
+3492 James Nelson Yemen 7 Junin NO
+3493 Caleb Perez Athens 100 Junin NO
+3493 Caleb Perez Athens 100 Flu NO
+3494 James Harris Zimbabwe 24 Hepatitis-D YES 15-01-2033
+3494 James Harris Zimbabwe 24 HPV YES 10-02-2032
+3495 Nathan Miller Athens 24 HPV NO
+3495 Nathan Miller Athens 24 Flu YES 03-10-2007
+3495 Nathan Miller Athens 24 Marburg NO
+3495 Nathan Miller Athens 24 Hepatitis-B YES 28-11-2004
+3496 Anthony Mitchell Zimbabwe 1 HPV NO
+3496 Anthony Mitchell Zimbabwe 1 Flu NO
+3496 Anthony Mitchell Zimbabwe 1 HIV YES 27-11-2040
+3497 Leo Martin Yemen 8 Hepatitis-B NO
+3497 Leo Martin Yemen 8 Dengue NO
+3497 Leo Martin Yemen 8 Ebola YES 28-11-2048
+3497 Leo Martin Yemen 8 Hepatitis-E YES 27-03-2034
+3497 Leo Martin Yemen 8 Typhus YES 03-03-2035
+3498 Isaiah Hill Athens 58 Junin YES 22-12-2037
+3498 Isaiah Hill Athens 58 Anthrax NO
+3499 James Hall Yemen 59 Junin NO
+3500 Charles Roberts Zambia 91 Hanta NO
+3500 Charles Roberts Zambia 91 Guaroa NO
+3501 James Jones Yemen 97 Anthrax NO
+3501 James Jones Yemen 97 Flu YES 07-06-2015
+3501 James Jones Yemen 97 HIV NO
+3501 James Jones Yemen 97 Hepatitis-B YES 22-06-2029
+3501 James Jones Yemen 97 Guaroa NO
+3502 Lincoln Nguyen Yemen 84 Guaroa NO
+3502 Lincoln Nguyen Yemen 84 HIV NO
+3502 Lincoln Nguyen Yemen 84 HPV YES 05-06-2019
+3503 Sebastian Ramirez Yemen 49 Anthrax YES 02-04-2001
+3503 Sebastian Ramirez Yemen 49 Rabies NO
+3503 Sebastian Ramirez Yemen 49 Hepatitis-A NO
+3503 Sebastian Ramirez Yemen 49 HPV NO
+3503 Sebastian Ramirez Yemen 49 Dengue NO
+3504 Theodore Williams Athens 107 Junin YES 29-08-2041
+3504 Theodore Williams Athens 107 Dengue YES 24-01-2007
+3504 Theodore Williams Athens 107 COVID-19 NO
+3504 Theodore Williams Athens 107 COVID-19 YES 28-03-2010
+3505 Christopher Sanchez Athens 41 Guaroa NO
+3505 Christopher Sanchez Athens 41 COVID-19 YES 15-04-2023
+3505 Christopher Sanchez Athens 41 Hepatitis-E YES 04-06-2026
+3506 Alexander Robinson Zimbabwe 119 Anaplasmosis NO
+3506 Alexander Robinson Zimbabwe 119 Marburg YES 24-10-2017
+3507 Wyatt Adams Zambia 21 Typhus YES 15-04-2030
+3507 Wyatt Adams Zambia 21 Hepatitis-A YES 06-02-2036
+3507 Wyatt Adams Zambia 21 HIV NO
+3507 Wyatt Adams Zambia 21 Hepatitis-C YES 05-12-2030
+3508 Caleb Baker Zambia 7 Rabies YES 08-07-2002
+3509 Josiah Martin Yemen 11 HPV NO
+3510 Nathan Thompson Zambia 109 Guaroa YES 03-05-2006
+3510 Nathan Thompson Zambia 109 Rabies NO
+3510 Nathan Thompson Zambia 109 Anaplasmosis NO
+3511 Logan Wilson Athens 92 Typhus NO
+3511 Logan Wilson Athens 92 Ebola YES 27-12-2046
+3511 Logan Wilson Athens 92 Typhus YES 26-09-2030
+3511 Logan Wilson Athens 92 Junin YES 24-04-2023
+3511 Logan Wilson Athens 92 Anaplasmosis YES 26-10-2007
+3512 Samuel Ramirez Yemen 85 Dengue NO
+3512 Samuel Ramirez Yemen 85 Dengue YES 15-05-2017
+3512 Samuel Ramirez Yemen 85 Anaplasmosis NO
+3512 Samuel Ramirez Yemen 85 HIV NO
+3513 Henry Moore Yemen 106 Hepatitis-C NO
+3513 Henry Moore Yemen 106 Hepatitis-A YES 10-07-2025
+3513 Henry Moore Yemen 106 Smallpox NO
+3513 Henry Moore Yemen 106 Dengue YES 29-03-2019
+3514 Samuel Moore Yemen 113 Hepatitis-C NO
+3514 Samuel Moore Yemen 113 Smallpox YES 02-10-2012
+3515 Leo Lopez Athens 114 Rabies NO
+3515 Leo Lopez Athens 114 Marburg NO
+3515 Leo Lopez Athens 114 Hepatitis-E NO
+3515 Leo Lopez Athens 114 HPV NO
+3515 Leo Lopez Athens 114 Rabies NO
+3516 Samuel Perez Zimbabwe 37 Hepatitis-B YES 08-05-2025
+3516 Samuel Perez Zimbabwe 37 Smallpox NO
+3516 Samuel Perez Zimbabwe 37 Hanta YES 25-03-2016
+3516 Samuel Perez Zimbabwe 37 Hepatitis-E NO
+3517 Jaxon Johnson Yemen 51 Hepatitis-C NO
+3517 Jaxon Johnson Yemen 51 Hanta YES 10-01-2006
+3518 Samuel Baker Athens 25 Hepatitis-C NO
+3518 Samuel Baker Athens 25 Smallpox YES 09-12-2014
+3518 Samuel Baker Athens 25 COVID-19 YES 03-07-2047
+3518 Samuel Baker Athens 25 Smallpox YES 27-10-2049
+3519 Jaxon Campbell Athens 49 Hepatitis-A YES 28-06-2010
+3519 Jaxon Campbell Athens 49 Hanta YES 29-04-2002
+3519 Jaxon Campbell Athens 49 Anaplasmosis NO
+3520 Hudson Young Athens 54 COVID-19 NO
+3520 Hudson Young Athens 54 Anthrax YES 09-03-2021
+3520 Hudson Young Athens 54 Hanta YES 30-08-2009
+3520 Hudson Young Athens 54 Hepatitis-B YES 24-02-2017
+3520 Hudson Young Athens 54 HIV YES 11-04-2002
+3521 Matthew Thompson Athens 65 Hepatitis-A NO
+3522 Gabriel Taylor Zambia 34 Anaplasmosis YES 20-02-2019
+3522 Gabriel Taylor Zambia 34 HIV NO
+3522 Gabriel Taylor Zambia 34 Anthrax NO
+3522 Gabriel Taylor Zambia 34 Dengue NO
+3523 Levi Ramirez Yemen 14 Hepatitis-C YES 24-04-2033
+3523 Levi Ramirez Yemen 14 Anthrax NO
+3523 Levi Ramirez Yemen 14 Dengue YES 28-01-2021
+3523 Levi Ramirez Yemen 14 Flu NO
+3524 Ethan Martin Zimbabwe 39 Hepatitis-A NO
+3524 Ethan Martin Zimbabwe 39 Junin NO
+3524 Ethan Martin Zimbabwe 39 Ebola YES 11-01-2035
+3524 Ethan Martin Zimbabwe 39 Typhus YES 14-10-2027
+3524 Ethan Martin Zimbabwe 39 Junin YES 22-08-2043
+3525 Anthony Smith Athens 83 Junin NO
+3525 Anthony Smith Athens 83 Marburg YES 14-06-2027
+3525 Anthony Smith Athens 83 HIV YES 03-09-2048
+3525 Anthony Smith Athens 83 Anthrax YES 29-10-2043
+3526 Alexander Hernandez Zimbabwe 21 Anaplasmosis YES 01-10-2040
+3526 Alexander Hernandez Zimbabwe 21 HPV NO
+3526 Alexander Hernandez Zimbabwe 21 Hepatitis-E NO
+3526 Alexander Hernandez Zimbabwe 21 Hepatitis-E YES 13-09-2040
+3526 Alexander Hernandez Zimbabwe 21 Hepatitis-E NO
+3527 Caleb Walker Zimbabwe 26 Typhus NO
+3527 Caleb Walker Zimbabwe 26 Hepatitis-E NO
+3527 Caleb Walker Zimbabwe 26 Flu NO
+3527 Caleb Walker Zimbabwe 26 Guaroa YES 22-10-2030
+3528 Sebastian Jackson Athens 48 Junin YES 28-06-2021
+3529 Levi Thomas Zimbabwe 46 Anaplasmosis NO
+3529 Levi Thomas Zimbabwe 46 Hepatitis-D NO
+3530 Liam Harris Athens 99 Ebola YES 05-01-2016
+3530 Liam Harris Athens 99 Marburg YES 07-06-2000
+3530 Liam Harris Athens 99 Ebola YES 16-07-2032
+3530 Liam Harris Athens 99 COVID-19 NO
+3530 Liam Harris Athens 99 Hanta YES 19-04-2017
+3531 Lucas Brown Zambia 28 Dengue NO
+3532 Levi Nelson Athens 104 Hepatitis-B NO
+3532 Levi Nelson Athens 104 Hanta YES 23-04-2033
+3532 Levi Nelson Athens 104 Anthrax NO
+3532 Levi Nelson Athens 104 Hepatitis-D YES 16-09-2043
+3532 Levi Nelson Athens 104 Hepatitis-D NO
+3533 Aiden Sanchez Athens 43 HIV YES 01-07-2042
+3533 Aiden Sanchez Athens 43 Hepatitis-E YES 24-10-2016
+3533 Aiden Sanchez Athens 43 Hepatitis-D NO
+3533 Aiden Sanchez Athens 43 Smallpox YES 19-03-2032
+3533 Aiden Sanchez Athens 43 Anaplasmosis YES 14-03-2026
+3534 Levi Flores Yemen 8 Smallpox YES 10-09-2040
+3534 Levi Flores Yemen 8 HIV NO
+3534 Levi Flores Yemen 8 Hepatitis-A NO
+3535 Asher Clark Yemen 16 Hepatitis-A NO
+3535 Asher Clark Yemen 16 Guaroa YES 15-06-2039
+3535 Asher Clark Yemen 16 Anaplasmosis NO
+3535 Asher Clark Yemen 16 Hanta NO
+3536 Josiah Gonzalez Zimbabwe 16 Junin NO
+3536 Josiah Gonzalez Zimbabwe 16 Hepatitis-A NO
+3537 Matthew Martinez Zambia 37 Hepatitis-C NO
+3537 Matthew Martinez Zambia 37 Hepatitis-C YES 27-07-2006
+3537 Matthew Martinez Zambia 37 Ebola YES 09-03-2038
+3538 William Lewis Athens 41 HPV YES 21-06-2018
+3538 William Lewis Athens 41 Anthrax YES 30-11-2019
+3539 Benjamin Torres Athens 101 Junin YES 22-12-2048
+3539 Benjamin Torres Athens 101 Guaroa NO
+3539 Benjamin Torres Athens 101 Rabies NO
+3539 Benjamin Torres Athens 101 Dengue YES 11-03-2044
+3540 Carter King Zambia 1 Typhus YES 14-05-2016
+3540 Carter King Zambia 1 Dengue YES 08-12-2050
+3540 Carter King Zambia 1 HIV NO
+3540 Carter King Zambia 1 Typhus NO
+3540 Carter King Zambia 1 HIV NO
+3541 Jackson Martinez Athens 96 Anthrax YES 04-07-2031
+3541 Jackson Martinez Athens 96 Smallpox NO
+3541 Jackson Martinez Athens 96 HPV NO
+3541 Jackson Martinez Athens 96 Typhus NO
+3541 Jackson Martinez Athens 96 Ebola YES 17-10-2017
+3542 Mason Moore Zambia 73 Anthrax YES 29-01-2030
+3543 Charles Davis Zambia 19 Hepatitis-D YES 13-02-2021
+3543 Charles Davis Zambia 19 Hepatitis-D NO
+3543 Charles Davis Zambia 19 HPV NO
+3543 Charles Davis Zambia 19 HPV NO
+3543 Charles Davis Zambia 19 Flu NO
+3544 David Brown Yemen 76 Typhus YES 21-12-2029
+3544 David Brown Yemen 76 Typhus NO
+3544 David Brown Yemen 76 Dengue NO
+3545 Carter Wright Athens 90 Hepatitis-C NO
+3545 Carter Wright Athens 90 Smallpox NO
+3546 Joshua Lewis Zambia 120 Hepatitis-E NO
+3546 Joshua Lewis Zambia 120 Anthrax NO
+3546 Joshua Lewis Zambia 120 Marburg NO
+3546 Joshua Lewis Zambia 120 Ebola NO
+3546 Joshua Lewis Zambia 120 Hepatitis-A YES 02-09-2050
+3547 Mateo Lopez Zimbabwe 49 Marburg YES 28-04-2007
+3547 Mateo Lopez Zimbabwe 49 Hepatitis-D NO
+3548 James Jones Zambia 80 Hepatitis-B YES 21-09-2042
+3548 James Jones Zambia 80 Hepatitis-D NO
+3548 James Jones Zambia 80 Marburg NO
+3548 James Jones Zambia 80 Anthrax YES 23-07-2036
+3548 James Jones Zambia 80 Hepatitis-B NO
+3549 Joshua Clark Athens 3 Hepatitis-B YES 16-09-2039
+3549 Joshua Clark Athens 3 Hepatitis-B NO
+3549 Joshua Clark Athens 3 Hepatitis-B YES 21-11-2004
+3550 Luke Wright Yemen 92 Hepatitis-E YES 17-10-2006
+3551 Jayden Adams Athens 36 Typhus YES 04-03-2011
+3551 Jayden Adams Athens 36 Hepatitis-E YES 01-09-2041
+3551 Jayden Adams Athens 36 Junin NO
+3551 Jayden Adams Athens 36 Hepatitis-B YES 13-03-2005
+3551 Jayden Adams Athens 36 Smallpox YES 13-01-2043
+3552 Charles Johnson Zimbabwe 111 Marburg YES 03-09-2044
+3552 Charles Johnson Zimbabwe 111 Hepatitis-E YES 07-10-2020
+3552 Charles Johnson Zimbabwe 111 Anthrax NO
+3552 Charles Johnson Zimbabwe 111 Junin YES 28-02-2032
+3553 Jack Lewis Zimbabwe 56 Hepatitis-E NO
+3553 Jack Lewis Zimbabwe 56 Hepatitis-A YES 26-11-2012
+3554 Isaiah Green Zimbabwe 52 Flu NO
+3554 Isaiah Green Zimbabwe 52 Hepatitis-C YES 01-07-2037
+3554 Isaiah Green Zimbabwe 52 Smallpox NO
+3554 Isaiah Green Zimbabwe 52 Smallpox NO
+3554 Isaiah Green Zimbabwe 52 Dengue NO
+3555 Mason Adams Yemen 79 Flu NO
+3555 Mason Adams Yemen 79 Hepatitis-C YES 29-03-2001
+3555 Mason Adams Yemen 79 Rabies NO
+3555 Mason Adams Yemen 79 Junin NO
+3555 Mason Adams Yemen 79 Hepatitis-A NO
+3556 Grayson Roberts Zimbabwe 26 Anaplasmosis NO
+3556 Grayson Roberts Zimbabwe 26 Typhus NO
+3556 Grayson Roberts Zimbabwe 26 HIV YES 05-03-2042
+3556 Grayson Roberts Zimbabwe 26 HPV YES 14-09-2008
+3557 Anthony Rivera Zambia 41 COVID-19 NO
+3557 Anthony Rivera Zambia 41 Hepatitis-E NO
+3557 Anthony Rivera Zambia 41 HIV YES 15-05-2037
+3557 Anthony Rivera Zambia 41 Junin YES 01-09-2031
+3557 Anthony Rivera Zambia 41 Flu YES 11-02-2030
+3558 Aiden Green Zimbabwe 28 HIV YES 16-07-2050
+3558 Aiden Green Zimbabwe 28 Flu YES 06-10-2043
+3559 Josiah Scott Zimbabwe 108 HIV YES 11-11-2044
+3559 Josiah Scott Zimbabwe 108 HPV NO
+3559 Josiah Scott Zimbabwe 108 Hanta YES 14-04-2020
+3559 Josiah Scott Zimbabwe 108 Ebola NO
+3560 Elijah Carter Zimbabwe 25 HPV YES 04-04-2045
+3560 Elijah Carter Zimbabwe 25 Anthrax YES 14-09-2048
+3560 Elijah Carter Zimbabwe 25 Ebola YES 17-07-2039
+3561 John Flores Zambia 59 Hepatitis-E YES 30-01-2038
+3561 John Flores Zambia 59 Hepatitis-A NO
+3561 John Flores Zambia 59 Guaroa NO
+3561 John Flores Zambia 59 Smallpox NO
+3562 Liam Roberts Zambia 92 HIV YES 26-11-2001
+3562 Liam Roberts Zambia 92 Hepatitis-A NO
+3562 Liam Roberts Zambia 92 Hepatitis-C NO
+3562 Liam Roberts Zambia 92 Hepatitis-E YES 27-05-2009
+3563 Asher Garcia Zimbabwe 17 Hepatitis-D YES 30-04-2003
+3563 Asher Garcia Zimbabwe 17 Anaplasmosis NO
+3563 Asher Garcia Zimbabwe 17 Ebola YES 27-11-2032
+3563 Asher Garcia Zimbabwe 17 Anaplasmosis NO
+3563 Asher Garcia Zimbabwe 17 Hepatitis-B YES 18-08-2017
+3564 Joshua White Zimbabwe 92 Typhus YES 11-08-2044
+3564 Joshua White Zimbabwe 92 Anthrax YES 22-06-2043
+3564 Joshua White Zimbabwe 92 Hepatitis-C YES 24-03-2026
+3564 Joshua White Zimbabwe 92 Hepatitis-B YES 11-08-2023
+3564 Joshua White Zimbabwe 92 Anaplasmosis NO
+3565 Julian Campbell Zimbabwe 55 HIV NO
+3565 Julian Campbell Zimbabwe 55 Junin NO
+3565 Julian Campbell Zimbabwe 55 Marburg YES 20-09-2023
+3566 Leo Nguyen Athens 36 Hepatitis-E YES 10-06-2049
+3566 Leo Nguyen Athens 36 Smallpox YES 07-05-2016
+3567 Leo Rivera Athens 44 Marburg YES 18-10-2016
+3567 Leo Rivera Athens 44 Ebola NO
+3567 Leo Rivera Athens 44 Hepatitis-C YES 16-03-2027
+3567 Leo Rivera Athens 44 Junin NO
+3567 Leo Rivera Athens 44 Dengue YES 18-02-2045
+3568 Michael Hall Zambia 9 Junin NO
+3568 Michael Hall Zambia 9 Hepatitis-B YES 27-07-2044
+3568 Michael Hall Zambia 9 Hepatitis-A YES 21-04-2011
+3568 Michael Hall Zambia 9 Ebola NO
+3568 Michael Hall Zambia 9 Flu NO
+3569 Ryan Anderson Zimbabwe 87 Hanta NO
+3569 Ryan Anderson Zimbabwe 87 Smallpox NO
+3569 Ryan Anderson Zimbabwe 87 Smallpox NO
+3570 Isaiah Wright Athens 72 Rabies NO
+3571 Charles Mitchell Zambia 74 Anthrax NO
+3571 Charles Mitchell Zambia 74 Hepatitis-B NO
+3571 Charles Mitchell Zambia 74 Dengue YES 25-11-2045
+3572 Noah Martinez Zambia 81 Anthrax NO
+3572 Noah Martinez Zambia 81 Hepatitis-D YES 27-10-2004
+3572 Noah Martinez Zambia 81 Junin YES 02-07-2042
+3573 Lucas Rodriguez Athens 89 Guaroa NO
+3573 Lucas Rodriguez Athens 89 Anthrax YES 28-08-2036
+3573 Lucas Rodriguez Athens 89 Hanta YES 08-12-2021
+3573 Lucas Rodriguez Athens 89 Junin YES 26-02-2016
+3574 William Wilson Yemen 3 Hanta YES 26-08-2021
+3574 William Wilson Yemen 3 HIV YES 12-08-2046
+3574 William Wilson Yemen 3 Hanta YES 16-02-2009
+3574 William Wilson Yemen 3 Ebola YES 19-08-2032
+3574 William Wilson Yemen 3 Dengue NO
+3575 Thomas Jones Athens 83 Typhus NO
+3575 Thomas Jones Athens 83 Junin YES 24-02-2043
+3575 Thomas Jones Athens 83 Hepatitis-C YES 04-02-2025
+3575 Thomas Jones Athens 83 Rabies YES 23-03-2049
+3575 Thomas Jones Athens 83 Junin YES 01-11-2040
+3576 Julian King Yemen 65 Hepatitis-E YES 24-10-2004
+3576 Julian King Yemen 65 Hepatitis-B NO
+3577 Isaac Williams Zimbabwe 109 Hepatitis-D YES 18-02-2032
+3577 Isaac Williams Zimbabwe 109 Hepatitis-B YES 30-11-2035
+3578 James Sanchez Yemen 98 HPV NO
+3578 James Sanchez Yemen 98 Marburg NO
+3578 James Sanchez Yemen 98 Guaroa NO
+3578 James Sanchez Yemen 98 Anaplasmosis NO
+3579 Hudson Thompson Yemen 97 Smallpox NO
+3579 Hudson Thompson Yemen 97 Hepatitis-B YES 03-02-2045
+3579 Hudson Thompson Yemen 97 Smallpox YES 25-07-2004
+3579 Hudson Thompson Yemen 97 Hepatitis-D NO
+3580 Levi Green Zimbabwe 109 Marburg YES 18-06-2005
+3581 Benjamin Mitchell Zambia 48 Ebola YES 26-01-2020
+3581 Benjamin Mitchell Zambia 48 Junin NO
+3582 Alexander Harris Yemen 78 Dengue NO
+3582 Alexander Harris Yemen 78 Hepatitis-D NO
+3582 Alexander Harris Yemen 78 COVID-19 NO
+3582 Alexander Harris Yemen 78 Rabies NO
+3582 Alexander Harris Yemen 78 Guaroa NO
+3583 Logan Campbell Athens 17 Hepatitis-E NO
+3583 Logan Campbell Athens 17 Hepatitis-D NO
+3583 Logan Campbell Athens 17 COVID-19 NO
+3584 Levi Allen Zimbabwe 90 Hepatitis-B NO
+3584 Levi Allen Zimbabwe 90 Hepatitis-B YES 10-03-2033
+3584 Levi Allen Zimbabwe 90 Hanta YES 05-06-2008
+3585 Dylan Jackson Zimbabwe 111 Anaplasmosis YES 18-09-2040
+3585 Dylan Jackson Zimbabwe 111 Marburg YES 24-12-2038
+3586 Jacob Lee Zimbabwe 82 Hanta NO
+3586 Jacob Lee Zimbabwe 82 Dengue NO
+3587 Julian Adams Yemen 79 Ebola NO
+3588 John White Athens 58 Hepatitis-A YES 15-04-2047
+3588 John White Athens 58 Typhus NO
+3588 John White Athens 58 Hepatitis-D YES 24-03-2041
+3589 Levi Jones Athens 14 Anthrax NO
+3589 Levi Jones Athens 14 Ebola NO
+3590 Henry Clark Zambia 116 HIV YES 10-12-2005
+3590 Henry Clark Zambia 116 Guaroa YES 29-12-2011
+3590 Henry Clark Zambia 116 Typhus YES 29-07-2004
+3590 Henry Clark Zambia 116 Ebola NO
+3590 Henry Clark Zambia 116 Smallpox NO
+3591 Andrew Lopez Zimbabwe 57 COVID-19 NO
+3591 Andrew Lopez Zimbabwe 57 HIV YES 03-12-2002
+3591 Andrew Lopez Zimbabwe 57 Hanta YES 04-01-2012
+3591 Andrew Lopez Zimbabwe 57 Ebola YES 10-05-2016
+3592 Benjamin Brown Athens 30 Hanta YES 15-02-2001
+3593 Asher King Zimbabwe 9 Smallpox NO
+3593 Asher King Zimbabwe 9 Guaroa NO
+3593 Asher King Zimbabwe 9 Flu NO
+3593 Asher King Zimbabwe 9 HIV NO
+3594 Lucas Lopez Zimbabwe 25 Hepatitis-D NO
+3594 Lucas Lopez Zimbabwe 25 Hepatitis-D NO
+3594 Lucas Lopez Zimbabwe 25 Hepatitis-E YES 18-04-2023
+3595 Leo Clark Zimbabwe 117 Ebola YES 02-02-2040
+3595 Leo Clark Zimbabwe 117 Flu YES 12-03-2033
+3595 Leo Clark Zimbabwe 117 Flu NO
+3595 Leo Clark Zimbabwe 117 HPV NO
+3595 Leo Clark Zimbabwe 117 Hepatitis-D YES 21-01-2030
+3596 Josiah Williams Zimbabwe 45 Hepatitis-A YES 23-09-2022
+3596 Josiah Williams Zimbabwe 45 Hepatitis-B NO
+3596 Josiah Williams Zimbabwe 45 COVID-19 NO
+3596 Josiah Williams Zimbabwe 45 COVID-19 NO
+3597 Ezra Smith Yemen 23 Hanta NO
+3597 Ezra Smith Yemen 23 Hanta NO
+3597 Ezra Smith Yemen 23 Hepatitis-A YES 02-03-2029
+3598 Dylan Martin Zimbabwe 4 Hepatitis-B NO
+3598 Dylan Martin Zimbabwe 4 Anaplasmosis YES 11-07-2041
+3598 Dylan Martin Zimbabwe 4 COVID-19 YES 29-01-2035
+3598 Dylan Martin Zimbabwe 4 Rabies YES 30-04-2004
+3599 Thomas Garcia Yemen 29 Marburg YES 01-04-2005
+3599 Thomas Garcia Yemen 29 Rabies YES 17-09-2006
+3599 Thomas Garcia Yemen 29 Rabies NO
+3599 Thomas Garcia Yemen 29 Junin YES 10-01-2033
+3600 Sebastian Carter Athens 99 COVID-19 YES 24-02-2042
+3601 Mateo Harris Athens 103 HPV NO
+3601 Mateo Harris Athens 103 Hepatitis-C NO
+3601 Mateo Harris Athens 103 Anaplasmosis YES 09-08-2013
+3602 Grayson Nelson Yemen 85 Marburg YES 17-03-2037
+3602 Grayson Nelson Yemen 85 Rabies NO
+3602 Grayson Nelson Yemen 85 Anthrax NO
+3602 Grayson Nelson Yemen 85 HIV NO
+3603 John Williams Zimbabwe 75 Typhus YES 16-07-2011
+3603 John Williams Zimbabwe 75 Marburg YES 08-03-2030
+3604 Samuel Roberts Zimbabwe 116 Dengue NO
+3604 Samuel Roberts Zimbabwe 116 Rabies YES 12-06-2031
+3604 Samuel Roberts Zimbabwe 116 Rabies NO
+3604 Samuel Roberts Zimbabwe 116 Hanta NO
+3605 James King Yemen 62 Hepatitis-C NO
+3605 James King Yemen 62 Hanta YES 08-07-2021
+3606 Elijah Anderson Zambia 31 HIV NO
+3606 Elijah Anderson Zambia 31 Hepatitis-B NO
+3606 Elijah Anderson Zambia 31 COVID-19 YES 08-08-2043
+3606 Elijah Anderson Zambia 31 Guaroa YES 25-12-2019
+3607 Andrew Anderson Zambia 47 Smallpox YES 28-04-2030
+3607 Andrew Anderson Zambia 47 Hepatitis-D YES 19-04-2014
+3608 Jackson Campbell Zambia 28 Guaroa NO
+3608 Jackson Campbell Zambia 28 COVID-19 NO
+3608 Jackson Campbell Zambia 28 Anaplasmosis NO
+3609 Leo Anderson Zambia 20 HIV YES 16-09-2040
+3610 Lucas Anderson Athens 103 Hepatitis-E YES 19-08-2024
+3610 Lucas Anderson Athens 103 COVID-19 NO
+3610 Lucas Anderson Athens 103 Hanta YES 06-10-2037
+3611 Owen Rodriguez Zimbabwe 35 Anthrax NO
+3611 Owen Rodriguez Zimbabwe 35 Guaroa YES 17-05-2006
+3611 Owen Rodriguez Zimbabwe 35 COVID-19 YES 07-02-2019
+3611 Owen Rodriguez Zimbabwe 35 Typhus NO
+3611 Owen Rodriguez Zimbabwe 35 HPV NO
+3612 Isaiah Scott Zimbabwe 22 Smallpox YES 02-04-2013
+3613 Joseph Carter Athens 48 Typhus YES 30-06-2012
+3613 Joseph Carter Athens 48 Guaroa NO
+3613 Joseph Carter Athens 48 HIV NO
+3614 Jackson King Zimbabwe 100 Hepatitis-B YES 30-02-2016
+3615 Jaxon Ramirez Zimbabwe 62 Hepatitis-E NO
+3615 Jaxon Ramirez Zimbabwe 62 Hanta NO
+3615 Jaxon Ramirez Zimbabwe 62 Typhus YES 04-10-2005
+3616 Christopher Lewis Zambia 88 Anaplasmosis NO
+3616 Christopher Lewis Zambia 88 Dengue NO
+3616 Christopher Lewis Zambia 88 HPV NO
+3617 Ezra Clark Yemen 44 HIV YES 28-10-2021
+3617 Ezra Clark Yemen 44 Anthrax YES 05-08-2032
+3617 Ezra Clark Yemen 44 Hepatitis-A NO
+3617 Ezra Clark Yemen 44 Anthrax YES 12-04-2045
+3618 Michael Mitchell Yemen 69 Hepatitis-B NO
+3618 Michael Mitchell Yemen 69 HPV NO
+3618 Michael Mitchell Yemen 69 Dengue YES 17-03-2003
+3618 Michael Mitchell Yemen 69 Junin NO
+3619 Lincoln Harris Athens 52 Marburg NO
+3620 Lucas Garcia Zimbabwe 58 Typhus NO
+3620 Lucas Garcia Zimbabwe 58 Anthrax YES 18-05-2015
+3620 Lucas Garcia Zimbabwe 58 Hepatitis-E YES 17-04-2010
+3621 Logan White Yemen 103 Guaroa NO
+3621 Logan White Yemen 103 Rabies NO
+3621 Logan White Yemen 103 Anthrax YES 08-09-2035
+3621 Logan White Yemen 103 Guaroa YES 23-08-2043
+3621 Logan White Yemen 103 Flu NO
+3622 Anthony Wilson Athens 113 Hanta YES 08-02-2029
+3622 Anthony Wilson Athens 113 Hepatitis-B NO
+3622 Anthony Wilson Athens 113 Flu YES 19-11-2008
+3622 Anthony Wilson Athens 113 Junin YES 23-09-2024
+3622 Anthony Wilson Athens 113 Hepatitis-C YES 10-05-2050
+3623 James Jones Yemen 36 Hepatitis-E YES 17-10-2003
+3623 James Jones Yemen 36 Flu NO
+3623 James Jones Yemen 36 Ebola NO
+3624 Nathan Garcia Yemen 63 Hepatitis-B YES 11-06-2023
+3624 Nathan Garcia Yemen 63 HPV YES 15-06-2014
+3625 Charles Hernandez Zimbabwe 106 Typhus NO
+3625 Charles Hernandez Zimbabwe 106 Hanta NO
+3626 Christopher Adams Athens 74 Hepatitis-B YES 06-05-2024
+3627 Nathan Nguyen Yemen 38 Hepatitis-A NO
+3627 Nathan Nguyen Yemen 38 Hepatitis-A NO
+3627 Nathan Nguyen Yemen 38 Marburg YES 14-10-2028
+3627 Nathan Nguyen Yemen 38 Flu YES 25-02-2027
+3627 Nathan Nguyen Yemen 38 Anaplasmosis YES 01-10-2043
+3628 Noah Lee Yemen 57 Junin YES 05-07-2049
+3628 Noah Lee Yemen 57 Ebola NO
+3628 Noah Lee Yemen 57 COVID-19 YES 23-07-2025
+3628 Noah Lee Yemen 57 Smallpox YES 07-03-2013
+3629 William Davis Athens 88 Guaroa YES 27-11-2007
+3629 William Davis Athens 88 Marburg NO
+3629 William Davis Athens 88 Guaroa NO
+3629 William Davis Athens 88 Hepatitis-A NO
+3629 William Davis Athens 88 Hepatitis-A YES 01-10-2015
+3630 Isaiah Robinson Athens 71 HPV NO
+3630 Isaiah Robinson Athens 71 Hepatitis-E YES 04-06-2050
+3630 Isaiah Robinson Athens 71 Hepatitis-A YES 10-01-2002
+3630 Isaiah Robinson Athens 71 HIV YES 08-07-2040
+3631 Jackson Harris Athens 117 Dengue NO
+3631 Jackson Harris Athens 117 Hepatitis-D NO
+3631 Jackson Harris Athens 117 Hepatitis-B YES 07-01-2042
+3631 Jackson Harris Athens 117 Hanta NO
+3632 Oliver Robinson Athens 111 Hepatitis-D YES 19-10-2048
+3632 Oliver Robinson Athens 111 HIV NO
+3632 Oliver Robinson Athens 111 Hanta YES 02-01-2030
+3632 Oliver Robinson Athens 111 HPV YES 07-01-2009
+3633 Owen Young Athens 82 COVID-19 NO
+3633 Owen Young Athens 82 Guaroa NO
+3634 Anthony Harris Athens 74 Hepatitis-C NO
+3634 Anthony Harris Athens 74 COVID-19 NO
+3634 Anthony Harris Athens 74 Rabies NO
+3635 Noah Torres Zambia 107 Junin YES 27-12-2016
+3635 Noah Torres Zambia 107 Hepatitis-B NO
+3635 Noah Torres Zambia 107 Flu YES 30-05-2045
+3635 Noah Torres Zambia 107 Dengue YES 24-07-2006
+3635 Noah Torres Zambia 107 COVID-19 YES 09-02-2027
+3636 Caleb Jones Zimbabwe 84 Anaplasmosis NO
+3636 Caleb Jones Zimbabwe 84 Hepatitis-E NO
+3636 Caleb Jones Zimbabwe 84 Marburg NO
+3636 Caleb Jones Zimbabwe 84 Flu YES 05-01-2044
+3636 Caleb Jones Zimbabwe 84 Anthrax NO
+3637 Caleb Clark Zimbabwe 46 Hepatitis-C YES 29-09-2029
+3637 Caleb Clark Zimbabwe 46 Smallpox NO
+3638 Hudson Flores Zimbabwe 12 Anthrax YES 25-01-2037
+3638 Hudson Flores Zimbabwe 12 Hepatitis-A NO
+3638 Hudson Flores Zimbabwe 12 Hepatitis-A YES 28-09-2049
+3638 Hudson Flores Zimbabwe 12 Marburg NO
+3639 Carter Walker Zimbabwe 70 Marburg NO
+3639 Carter Walker Zimbabwe 70 Hepatitis-D YES 27-02-2046
+3639 Carter Walker Zimbabwe 70 Dengue NO
+3640 Nathan Allen Athens 36 Anaplasmosis YES 20-01-2007
+3640 Nathan Allen Athens 36 Hanta NO
+3640 Nathan Allen Athens 36 Hepatitis-D NO
+3640 Nathan Allen Athens 36 Ebola NO
+3640 Nathan Allen Athens 36 Guaroa NO
+3641 Aiden Scott Zimbabwe 18 Typhus YES 06-11-2011
+3641 Aiden Scott Zimbabwe 18 Typhus NO
+3641 Aiden Scott Zimbabwe 18 Smallpox YES 08-10-2048
+3642 Julian Hernandez Zambia 21 Flu YES 18-02-2014
+3642 Julian Hernandez Zambia 21 Junin YES 18-10-2006
+3642 Julian Hernandez Zambia 21 Hepatitis-E NO
+3643 James Gonzalez Zambia 117 COVID-19 YES 17-03-2027
+3644 Daniel Johnson Yemen 80 HIV NO
+3644 Daniel Johnson Yemen 80 Hanta NO
+3644 Daniel Johnson Yemen 80 Hepatitis-B YES 11-04-2017
+3644 Daniel Johnson Yemen 80 Hepatitis-C NO
+3645 Noah Hill Athens 86 Hanta NO
+3645 Noah Hill Athens 86 Junin NO
+3645 Noah Hill Athens 86 Hepatitis-A YES 08-01-2015
+3646 Sebastian Thomas Zimbabwe 6 COVID-19 NO
+3646 Sebastian Thomas Zimbabwe 6 Dengue YES 27-12-2028
+3647 Mateo Hill Yemen 79 Guaroa NO
+3647 Mateo Hill Yemen 79 Marburg YES 24-10-2031
+3648 Logan Gonzalez Zambia 98 Smallpox YES 23-01-2021
+3648 Logan Gonzalez Zambia 98 Hepatitis-C YES 27-12-2004
+3649 Thomas Roberts Yemen 94 Flu YES 12-04-2028
+3650 Dylan Smith Zimbabwe 62 Flu NO
+3650 Dylan Smith Zimbabwe 62 Marburg NO
+3651 John Moore Yemen 87 Hepatitis-B YES 17-03-2034
+3651 John Moore Yemen 87 Flu NO
+3651 John Moore Yemen 87 Anthrax NO
+3651 John Moore Yemen 87 Anaplasmosis NO
+3652 Theodore Anderson Zimbabwe 84 Hepatitis-C NO
+3652 Theodore Anderson Zimbabwe 84 Hepatitis-C YES 20-11-2037
+3652 Theodore Anderson Zimbabwe 84 Anthrax NO
+3653 Owen Perez Zambia 69 Ebola YES 21-07-2001
+3653 Owen Perez Zambia 69 Marburg NO
+3654 Matthew Hill Zambia 40 Rabies YES 05-03-2029
+3654 Matthew Hill Zambia 40 Dengue NO
+3654 Matthew Hill Zambia 40 Ebola YES 27-05-2037
+3655 Levi Adams Yemen 5 HPV YES 15-07-2026
+3655 Levi Adams Yemen 5 Typhus NO
+3655 Levi Adams Yemen 5 COVID-19 NO
+3656 Matthew Roberts Athens 102 Guaroa NO
+3656 Matthew Roberts Athens 102 Junin NO
+3657 Daniel Lee Zimbabwe 105 Typhus YES 24-09-2021
+3658 Christopher Nelson Athens 115 Hepatitis-E YES 19-12-2003
+3659 Luke Torres Zimbabwe 56 Marburg NO
+3659 Luke Torres Zimbabwe 56 Anaplasmosis NO
+3659 Luke Torres Zimbabwe 56 COVID-19 NO
+3659 Luke Torres Zimbabwe 56 Hepatitis-C YES 17-07-2008
+3660 Caleb Scott Yemen 94 Anaplasmosis YES 23-11-2011
+3660 Caleb Scott Yemen 94 Flu NO
+3660 Caleb Scott Yemen 94 Guaroa NO
+3661 Ryan Ramirez Zimbabwe 115 Junin YES 04-03-2016
+3661 Ryan Ramirez Zimbabwe 115 Typhus YES 30-11-2022
+3662 Jacob Roberts Yemen 80 HIV NO
+3663 Caleb Jones Athens 79 Junin NO
+3663 Caleb Jones Athens 79 Guaroa NO
+3664 Ethan Campbell Zambia 24 Rabies YES 19-12-2028
+3665 Sebastian Scott Athens 22 Anthrax NO
+3665 Sebastian Scott Athens 22 Hanta YES 04-11-2006
+3666 Thomas Walker Zambia 76 Ebola YES 10-09-2004
+3666 Thomas Walker Zambia 76 Junin YES 02-07-2008
+3666 Thomas Walker Zambia 76 Hepatitis-A YES 03-04-2036
+3667 Daniel Martinez Zimbabwe 2 Smallpox YES 06-07-2028
+3667 Daniel Martinez Zimbabwe 2 Anthrax NO
+3667 Daniel Martinez Zimbabwe 2 Dengue NO
+3667 Daniel Martinez Zimbabwe 2 Flu YES 08-06-2047
+3667 Daniel Martinez Zimbabwe 2 Hepatitis-B NO
+3668 Alexander Baker Yemen 48 Typhus YES 25-08-2039
+3668 Alexander Baker Yemen 48 Typhus NO
+3668 Alexander Baker Yemen 48 Anaplasmosis NO
+3668 Alexander Baker Yemen 48 Typhus YES 22-05-2034
+3668 Alexander Baker Yemen 48 Hepatitis-A YES 30-12-2050
+3669 Dylan Johnson Zambia 84 Dengue NO
+3669 Dylan Johnson Zambia 84 Hepatitis-D NO
+3669 Dylan Johnson Zambia 84 Hepatitis-A NO
+3669 Dylan Johnson Zambia 84 HIV YES 13-03-2032
+3670 Joshua Lopez Yemen 42 Hanta YES 02-01-2047
+3670 Joshua Lopez Yemen 42 Hepatitis-D YES 07-11-2042
+3671 Michael Smith Zimbabwe 52 Hepatitis-B YES 01-07-2027
+3671 Michael Smith Zimbabwe 52 Ebola NO
+3671 Michael Smith Zimbabwe 52 Typhus YES 06-01-2029
+3671 Michael Smith Zimbabwe 52 Junin NO
+3671 Michael Smith Zimbabwe 52 Typhus NO
+3672 Luke Clark Zimbabwe 15 Anthrax YES 21-01-2037
+3673 John Martinez Athens 77 Guaroa YES 08-10-2013
+3673 John Martinez Athens 77 HIV YES 04-10-2044
+3673 John Martinez Athens 77 Typhus YES 07-06-2006
+3673 John Martinez Athens 77 Hepatitis-D YES 21-07-2040
+3674 Charles King Athens 15 Flu YES 25-12-2011
+3674 Charles King Athens 15 HPV NO
+3674 Charles King Athens 15 Hepatitis-C NO
+3674 Charles King Athens 15 Hepatitis-C NO
+3675 Alexander White Yemen 33 HPV YES 04-10-2046
+3675 Alexander White Yemen 33 Marburg YES 04-09-2027
+3675 Alexander White Yemen 33 Typhus YES 12-02-2033
+3675 Alexander White Yemen 33 Typhus YES 09-08-2039
+3675 Alexander White Yemen 33 COVID-19 YES 28-08-2039
+3676 Hudson Miller Athens 9 Junin NO
+3677 Sebastian Young Zimbabwe 114 HIV NO
+3677 Sebastian Young Zimbabwe 114 COVID-19 NO
+3677 Sebastian Young Zimbabwe 114 Ebola YES 11-09-2041
+3677 Sebastian Young Zimbabwe 114 Junin YES 09-02-2002
+3677 Sebastian Young Zimbabwe 114 Smallpox NO
+3678 Josiah Young Yemen 63 Typhus NO
+3678 Josiah Young Yemen 63 Hepatitis-B NO
+3679 Theodore Young Zambia 98 Hepatitis-D NO
+3679 Theodore Young Zambia 98 Dengue NO
+3679 Theodore Young Zambia 98 Hepatitis-E NO
+3679 Theodore Young Zambia 98 Hepatitis-D NO
+3679 Theodore Young Zambia 98 Junin NO
+3680 Theodore Hall Zimbabwe 14 Smallpox NO
+3680 Theodore Hall Zimbabwe 14 COVID-19 NO
+3680 Theodore Hall Zimbabwe 14 Smallpox NO
+3681 Gabriel Harris Zambia 48 HPV NO
+3681 Gabriel Harris Zambia 48 Marburg YES 21-01-2003
+3681 Gabriel Harris Zambia 48 Typhus YES 01-08-2012
+3682 Noah Lee Athens 27 Dengue YES 24-05-2004
+3682 Noah Lee Athens 27 Marburg NO
+3682 Noah Lee Athens 27 Guaroa NO
+3683 Carter Nguyen Athens 50 Hepatitis-D NO
+3683 Carter Nguyen Athens 50 Typhus YES 04-01-2041
+3683 Carter Nguyen Athens 50 HPV NO
+3683 Carter Nguyen Athens 50 Marburg YES 18-05-2045
+3683 Carter Nguyen Athens 50 Anthrax NO
+3684 Nathan Sanchez Athens 86 Typhus NO
+3684 Nathan Sanchez Athens 86 Ebola YES 15-03-2014
+3684 Nathan Sanchez Athens 86 COVID-19 YES 29-11-2050
+3685 Noah Johnson Zambia 73 Hepatitis-B YES 04-03-2007
+3685 Noah Johnson Zambia 73 HIV NO
+3686 Jackson Miller Zimbabwe 47 Ebola YES 19-05-2028
+3686 Jackson Miller Zimbabwe 47 Rabies NO
+3686 Jackson Miller Zimbabwe 47 Hepatitis-C NO
+3687 Josiah Scott Zimbabwe 105 Smallpox NO
+3687 Josiah Scott Zimbabwe 105 Flu NO
+3687 Josiah Scott Zimbabwe 105 Smallpox YES 13-05-2047
+3688 Joshua Green Athens 90 Hanta NO
+3688 Joshua Green Athens 90 Flu NO
+3688 Joshua Green Athens 90 Hepatitis-D YES 20-03-2012
+3688 Joshua Green Athens 90 Hepatitis-D YES 08-06-2041
+3688 Joshua Green Athens 90 Guaroa NO
+3689 James Thomas Yemen 54 HIV NO
+3689 James Thomas Yemen 54 Junin YES 11-02-2024
+3689 James Thomas Yemen 54 Hanta NO
+3689 James Thomas Yemen 54 Hanta YES 16-01-2048

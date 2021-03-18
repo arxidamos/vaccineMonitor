@@ -48,22 +48,15 @@ void vaccineStatusBloom (BloomFilter* head, char* citizenID, char* virus) {
 
 // Check if citizenID belongs to virus' Skip List 
 void vaccineStatus (SkipList* head, char* citizenID, char* virus) {
-    SkipList* current = head;
-    Record* record = NULL;
-
-    // Iterate through Skip Lists
-    while (current) {
-        if (virusSkipExists(current, virus)) {
-            if (searchSkipList(current, citizenID)) {
-                record = searchSkipList(current, citizenID);
-                printf("VACCINATED ON %d-%d-%d\n", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
-                return;
-            }
-        }
-        current = current->next;
+    head = virusSkipExists(head, virus);
+    Record* record = searchSkipList(head, citizenID);
+    if (record) {
+        printf("VACCINATED ON %d-%d-%d\n", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
     }
-    printf("NOT VACCINATED\n");
-    return;
+    else {
+        printf("NOT VACCINATED\n");
+        return;
+    }
 }
 
 // Display all vacc and non-vacc occurences for citizenID
@@ -76,7 +69,7 @@ void vaccineStatusAll (SkipList* head, char* citizenID) {
         record =  searchSkipList(current, citizenID);
         if(record){
             // Print virus
-            printf("%s ", record->virus);
+            printf("%s ", current->virus);
             // Print YES dd-mm-yyyy
             if (record->vaccDate.year != 0) {
                 printf("YES %d-%d-%d\n", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
