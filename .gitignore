@@ -1,3 +1,5 @@
 # Untracked files:
 *.o
+.vscode
+.vscode/settings.json
 vaccineMonitor

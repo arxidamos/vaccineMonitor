@@ -49,7 +49,6 @@ Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* l
 
 // Validate that record (for same virus) doesn't exist
 int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate) {  
-    
     // First element to be added, no possible duplicates
     if (!head) {
         return 0;
@@ -65,7 +64,6 @@ int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, Sta
                     printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);
                     return 1;
                 }
-                return 0;
             }
             else {
                 printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);            
@@ -78,8 +76,7 @@ int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, Sta
 }
 
 // Validate that citizendID record exists
-int checkExistence (Record* head, char* citizenID) {  
-    
+int checkExistence (Record* head, char* citizenID) {    
     // No possible existence
     if (!head) {
         return 0;

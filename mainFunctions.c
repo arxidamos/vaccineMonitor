@@ -136,6 +136,105 @@ void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* 
     return;
 }
 
+// Display country's vaccined total and percentage of citizens for virus, per age category
+void popStatusByAge (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2) {
+    int* vaccined;
+    int* vaccTotal;
+    int* nonVaccTotal;
+    float* percentage;
+    
+    Date dateZero;
+    Date dateInf;
+    dateZero.day = 0;
+    dateZero.month = 0;
+    dateZero.year = 0;
+    dateInf.day = 99;
+    dateInf.month = 99;
+    dateInf.year = 9999;    
+    
+    // Country optional argument NOT passed
+    if (!country) {        
+        State* currentState = stateHead;
+        while (currentState) {
+            country = currentState->name;
+            vaccined = searchCountryByAge(skipVaccHead, country, date1, date2);
+            vaccTotal = searchCountryByAge(skipVaccHead, country, dateZero, dateInf);
+            nonVaccTotal = searchCountryByAge(skipNonVaccHead, country, dateZero, dateInf);
+            percentage = malloc(4*sizeof(float));
+
+            
+            printf("%s\n", country);
+            // Check if denominator is zero
+            for (int i=0; i<4; i++) {
+                if (vaccTotal[i] == 0 && nonVaccTotal[i] == 0) {
+                    percentage[i] = 0.f;
+                }
+                else {
+                    percentage[i] = ( (float)vaccined[i] / (float)(vaccTotal[i] + nonVaccTotal[i]) ) * 100;
+                }
+                if (i==0) {
+                    printf("0-20  ");
+                }
+                else if (i==1) {
+                    printf("20-40 ");
+                }
+                else if (i==2) {
+                    printf("40-60 ");
+                }
+                else if (i==3) {
+                    printf("60+   ");
+                }
+                printf("%d %.2f%%\n", vaccined[i], percentage[i]);
+            }
+            printf("\n");
+            free(vaccined);
+            free(vaccTotal);
+            free(nonVaccTotal);
+            free(percentage);
+            currentState = currentState->next;
+        }
+    }
+    // Country argument passed
+    else {
+        vaccined = searchCountryByAge(skipVaccHead, country, date1, date2);
+        vaccTotal = searchCountryByAge(skipVaccHead, country, dateZero, dateInf);
+        nonVaccTotal = searchCountryByAge(skipNonVaccHead, country, dateZero, dateInf);
+        percentage = malloc(4*sizeof(float));
+
+        // Check if denominator is zero
+        printf("%s\n", country);
+        // Check if denominator is zero
+        for (int i=0; i<4; i++) {
+            if (vaccTotal[i] == 0 && nonVaccTotal[i] == 0) {
+                percentage[i] = 0;
+            }
+            else {
+                percentage[i] = ( (float)vaccined[i] / (float)(vaccTotal[i] + nonVaccTotal[i]) ) * 100;
+            }
+            if (i==0) {
+                printf("0-20  ");
+            }
+            else if (i==1) {
+                printf("20-40 ");
+            }
+            else if (i==2) {
+                printf("40-60 ");
+            }
+            else if (i==3) {
+                printf("60+   ");
+            }
+            printf("%d %.2f%%\n", vaccined[i], percentage[i]);
+        }
+        printf("\n");
+
+        free(vaccined);
+        free(vaccTotal);
+        free(nonVaccTotal);
+        free(percentage);
+    }
+    return;
+}
+
 // Compare dates - Returns : "1", a older than b [a < b] | "0", a newer than b [a > b] | "-1": [a = b]
 int compareDate (Date a, Date b) {
     if (a.year != b.year)

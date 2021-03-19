@@ -151,8 +151,7 @@ Record* searchSkipList (SkipList* skipListHead, char* citizenID) {
 }
 
 // Check for country in Skip List
-int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Date date2) {
-    
+int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Date date2) {   
     // No Skip List for this virus
     if (!skipListHead) {
         return 0;
@@ -163,7 +162,6 @@ int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Da
 
     // Can't make use of SkipList's citizenID-based level-iteration
     while (current->next[0]) {
-            
         if (!strcmp(current->next[0]->record->country->name, country)) {
             if (isBetweenDates(date1, current->next[0]->record->vaccDate, date2)) {
                 count++;
@@ -171,8 +169,50 @@ int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Da
         }
         current = current->next[0];
     }
-    // printf("Count is %d\n", count);
     return count;
+}
+
+// Check for country in Skip List, per age category
+int* searchCountryByAge (SkipList* skipListHead, char* country, Date date1, Date date2) {
+    // int count0_20 = 0;
+    // int count20_40 = 0;
+    // int count40_60 = 0;
+    // int count60_ = 0;
+    // Store each age category's counter under the corresponding array index
+    int* vaccArray = malloc(4*sizeof(int));
+    for (int i=0; i<4; i++) {
+        vaccArray[i] = 0;
+    }    
+
+    // No Skip List for this virus
+    if (!skipListHead) {
+        return vaccArray;
+    }
+
+    SkipNode* current = skipListHead->head;
+
+    // Can't make use of SkipList's citizenID-based level-iteration
+    while (current->next[0]) {  
+        if (!strcmp(current->next[0]->record->country->name, country)) {
+            if (isBetweenDates(date1, current->next[0]->record->vaccDate, date2)) {
+                // Increment the proper age category counter
+                if (current->next[0]->record->age > 0 && current->next[0]->record->age < 20) {
+                    vaccArray[0]++;
+                }
+                else if (current->next[0]->record->age >= 20 && current->next[0]->record->age < 40) {
+                    vaccArray[1]++;
+                }
+                else if (current->next[0]->record->age >= 40 && current->next[0]->record->age < 60) {
+                    vaccArray[2]++;
+                }
+                else if (current->next[0]->record->age >= 60) {
+                    vaccArray[3]++;
+                }
+            }
+        }
+        current = current->next[0];
+    }
+    return vaccArray;
 }
 
 // Check if Skip List for this virus exists
