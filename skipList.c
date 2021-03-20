@@ -255,19 +255,32 @@ void printSkipLists (SkipList* head) {
 
 // Print Skip nodes inside Skip Lists
 void printSkipNodes (SkipList* skipList) {
-    SkipNode* current = skipList->head;
-    int height = skipList->head->levels;
+    // int height = skipList->head->levels;
+    // for (int i=height-1; i>=0; i--) {
+    //     while (current) {
+    //         // printf("[%s]-->", current->citizenID);
+    //         current = current->next[i];
+    //         // current = current->next[0];
+    //     }
+    //     current = skipList->head;
+    //     // printf("[end[%d]]\n", i);
+    // }
 
-    for (int i=height-1; i>=0; i--) {
+    // No Skip List for this virus
+    if (!skipList->head) {
+        return;
+    }
 
-        while (current) {
-            // printf("[%s]-->", current->citizenID);
-            current = current->next[i];
-            // current = current->next[0];
-        }
-        current = skipList->head;
-        // printf("[end[%d]]\n", i);
-        // printf("[end[%d]]\n", 0);
+    // Start from 1st node after head
+    SkipNode* current = skipList->head->next[0];
+    while (current) {
+        printf("%s %s %s %s %d\n",
+        current->citizenID,
+        current->record->firstName,
+        current->record->lastName,
+        current->record->country->name,
+        current->record->age);
+        current = current->next[0];
     }
 }
 

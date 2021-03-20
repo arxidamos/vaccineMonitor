@@ -201,8 +201,8 @@ int main(int argc, char **argv) {
     while (1) {
 
         getline(&input, &inputSize, stdin);
-        input[strlen(input)-1] = '\0'; // Cut terminating '\n' from string (with null terminator)
-
+        input[strlen(input)-1] = '\0'; // Cut terminating '\n' from string
+        
         // Get the command
         command = strtok(input, " ");
 
@@ -524,6 +524,31 @@ int main(int argc, char **argv) {
             else {
                 printf("More arguments needed. Proper command structure:\n");
                 printf("** /popStatusByAge [country] virusName date1 date2 **\n");
+            }
+        }
+        // /list-nonVaccinated-Persons virusName
+        else if (!strcmp(command, "/list-nonVaccinated-Persons")) {
+            
+            // Get virusName
+            command = strtok(NULL, " ");
+            if (command) {
+                // Check if Skip List for virusName exists
+                if (virusSkipExists(skipNonVaccHead, command)) {
+                    virus = malloc(strlen(command)+1);
+                    strcpy(virus, command);
+                    SkipList* nonVaccSkipList = virusSkipExists(skipNonVaccHead, virus);
+
+                    // Call vaccineStatus function
+                    printSkipNodes(nonVaccSkipList);
+                    free(virus);
+                }
+                else {
+                    printf("Please enter an existing virus name\n");
+                }
+
+            }
+            else {
+                printf("Please enter a virus name\n");
             }
         }
         else if (!strcmp(command, "/exit")) {
