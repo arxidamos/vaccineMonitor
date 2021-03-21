@@ -23,22 +23,6 @@ SkipList* createList (SkipList* skipListHead, char* virus) {
     newList->virus = malloc(strlen(virus)+1);
     strcpy(newList->virus, virus);
 
-    // newList->last = malloc(sizeof(SkipNode));
-    // newList->head->citizenID = malloc(strlen("@")+1);
-    // strcpy(newList->head->citizenID, "@");
-
-    // newList->head->citizenID = "@";
-    // newList->last->citizenID = "z";
-
-    // newList->head->next = malloc(sizeof(SkipNode*)*(newList->maxLevel));
-    // // Initialize all levels' next pointers
-    // for (int i=0; i<newList->maxLevel; i++) {
-    // // for (int i=0; i<=0; i++) {
-
-    //     // newList->head->next[i] = malloc(sizeof(SkipNode));
-    //     newList->head->next[i] = NULL;
-    // }
-
     // Put new skipList in head
     if (skipListHead) {
         // printf("new skipList for %s\n", virus);
@@ -52,13 +36,12 @@ SkipList* createList (SkipList* skipListHead, char* virus) {
 }
 
 // Insert new element in Skip List
-void insertInSkip (SkipList* skipListHead, Record* record, char* virus) {
+void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vaccDate) {
     SkipList* skipL = skipListHead;
 
     while (skipL) {
         if (!strcmp(skipL->virus, virus)) {
             // We are in the right list
-            // printf("Inserting in list %s\n", skipL->virus);
             SkipNode* current = skipL->head;
             int level = skipL->head->levels - 1;
             int compare;
@@ -97,6 +80,7 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus) {
             SkipNode* newNode = malloc(sizeof(SkipNode));
             newNode->citizenID = malloc(strlen(record->citizenID)+1);
             strcpy(newNode->citizenID, record->citizenID);
+            newNode->vaccDate = vaccDate;
             newNode->record = record;
             newNode->levels = getHeight(max);
             // printf("New node will randomly have %d levels\n", newNode->levels);
@@ -121,7 +105,7 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus) {
 }
 
 // Check for citizenID in Skip List
-Record* searchSkipList (SkipList* skipListHead, char* citizenID) {
+SkipNode* searchSkipList (SkipList* skipListHead, char* citizenID) {
     SkipNode* current = skipListHead->head;
     int level = skipListHead->head->levels - 1;
     int compare;
@@ -135,7 +119,7 @@ Record* searchSkipList (SkipList* skipListHead, char* citizenID) {
             compare = strcmp(current->next[level]->citizenID, citizenID);
             // Found, return record pointer
             if (!compare) {
-                return current->next[level]->record;
+                return current->next[level];
             }
             // Reached level's bigger ID
             else if (compare>0) {
@@ -163,7 +147,7 @@ int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Da
     // Can't make use of SkipList's citizenID-based level-iteration
     while (current->next[0]) {
         if (!strcmp(current->next[0]->record->country->name, country)) {
-            if (isBetweenDates(date1, current->next[0]->record->vaccDate, date2)) {
+            if (isBetweenDates(date1, current->next[0]->vaccDate, date2)) {
                 count++;
             }
         }
@@ -174,10 +158,6 @@ int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Da
 
 // Check for country in Skip List, per age category
 int* searchCountryByAge (SkipList* skipListHead, char* country, Date date1, Date date2) {
-    // int count0_20 = 0;
-    // int count20_40 = 0;
-    // int count40_60 = 0;
-    // int count60_ = 0;
     // Store each age category's counter under the corresponding array index
     int* vaccArray = malloc(4*sizeof(int));
     for (int i=0; i<4; i++) {
@@ -192,9 +172,9 @@ int* searchCountryByAge (SkipList* skipListHead, char* country, Date date1, Date
     SkipNode* current = skipListHead->head;
 
     // Can't make use of SkipList's citizenID-based level-iteration
-    while (current->next[0]) {  
+    while (current->next[0]) {
         if (!strcmp(current->next[0]->record->country->name, country)) {
-            if (isBetweenDates(date1, current->next[0]->record->vaccDate, date2)) {
+            if (isBetweenDates(date1, current->next[0]->vaccDate, date2)) {
                 // Increment the proper age category counter
                 if (current->next[0]->record->age > 0 && current->next[0]->record->age < 20) {
                     vaccArray[0]++;

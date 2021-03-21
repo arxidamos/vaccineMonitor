@@ -5,10 +5,9 @@
 #include "functions.h"
 
 // Insert record to linked list in a sorted manner
-Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate) {
+Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus) {
     Record* newNode;
     Record* current;
-
     newNode = malloc(sizeof(Record));
     newNode->next = NULL;
 
@@ -25,10 +24,16 @@ Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* l
 
     newNode->age = age;
     
-    newNode->virus = malloc(strlen(virus)+1);
-    strcpy(newNode->virus, virus);
+    // newNode->virus = malloc(strlen(virus)+1);
+    // strcpy(newNode->virus, virus);
+    newNode->virusCount = 1;
+    newNode->virus = malloc(sizeof(char*)*(newNode->virusCount));
+    
+    
+    newNode->virus[0] = malloc(strlen(virus)+1);
+    strcpy(newNode->virus[0], virus);
 
-    newNode->vaccDate = vaccDate;
+    // newNode->vaccDate = vaccDate;
 
     // Check if to insert on head
     if (!*head || (strcmp((*head)->citizenID, citizenID)) > 0) {
@@ -44,26 +49,68 @@ Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* l
         newNode->next = current->next;
         current->next = newNode;
     }
+
     return newNode;
 }
 
+Record* insertVirusOnly (Record** head, char* citizenID, char* virus) {
+    Record* current = *head;
+    while (current) {
+        if (!strcmp(current->citizenID, citizenID)) {
+            current->virusCount++;
+            current->virus = realloc(current->virus, sizeof(char*)*(current->virusCount));    
+            current->virus[current->virusCount-1] = malloc(strlen(virus)+1);
+            strcpy(current->virus[current->virusCount-1], virus);
+            return current;
+        }
+        current = current->next;
+    }
+    return NULL;
+}
+
 // Validate that record (for same virus) doesn't exist
-int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate) {  
+int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus) {
+
     // First element to be added, no possible duplicates
     if (!head) {
         return 0;
     }
+
+    // while (head) {
+        //     // Check if same citizenID exists
+        //     if (!strcmp(head->citizenID, citizenID)) {
+        //         // Check if name, country, age are the same
+        //         if (!strcmp(head->firstName, fName) && !strcmp(head->lastName, lName) && !strcmp(head->country->name, state->name) && (head->age == age)) {
+        //             // Check if virus is the same
+        //             if (!strcmp(head->virus[0], virus)) {
+        //                 printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);
+        //                 return 1;
+        //             }
+        //         }
+        //         else {
+        //             printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);            
+        //             return 1;                
+        //         }
+        //     }
+        //     head = head->next;
+        // }
+    // return 0;
 
     while (head) {
         // Check if same citizenID exists
         if (!strcmp(head->citizenID, citizenID)) {
             // Check if name, country, age are the same
             if (!strcmp(head->firstName, fName) && !strcmp(head->lastName, lName) && !strcmp(head->country->name, state->name) && (head->age == age)) {
-                // Check if virus is the same
-                if (!strcmp(head->virus, virus)) {
-                    printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);
-                    return 1;
+                // Check if one of the record's viruses is the same
+                for (int i=0; i<head->virusCount; i++){    
+                    // If virus is the same, reject incoming record
+                    if (!strcmp(head->virus[i], virus)) {
+                        printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);
+                        return 1;
+                    }
                 }
+                // If new virus, add it to record's virus list
+                return 2;
             }
             else {
                 printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);            
@@ -72,7 +119,7 @@ int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, Sta
         }
         head = head->next;
     }
-    return 0;
+    return 0;    
 }
 
 // Validate that citizendID record exists
@@ -95,9 +142,13 @@ int checkExistence (Record* head, char* citizenID) {
 // Print linked list of records
 void printRecordsList (Record* record) {
     while (record) {
-        printf("List record: %s %s %s %s %d %s", record->citizenID, record->firstName, record->lastName, record->country->name, record->age, record->virus);
-        if(record->vaccDate.year)
-            printf(" %d-%d-%d", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
+
+        printf("List record: %s %s %s %s %d ", record->citizenID, record->firstName, record->lastName, record->country->name, record->age); 
+        for (int i=0; i<record->virusCount; i++) {
+            printf("%s, ", record->virus[i]);
+        }
+        // if(record->vaccDate.year)
+        //     printf(" %d-%d-%d", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
         printf("\n");
         record = record->next;
     }
@@ -114,6 +165,9 @@ void freeRecordList (Record* head) {
         free(tmp->citizenID);
         free(tmp->firstName);
         free(tmp->lastName);
+        for (int i=0; i<tmp->virusCount; i++) {
+            free(tmp->virus[i]);
+        }
         free(tmp->virus);
         free(tmp);
     }

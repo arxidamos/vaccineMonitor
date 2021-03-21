@@ -23,7 +23,8 @@ typedef struct Record {
     char* firstName;
     char* lastName;
     int age;
-    char* virus;
+    char** virus;
+    int virusCount;
     State* country;
     Date vaccDate; // dd-mm-yyyy
     struct Record* next;
@@ -39,6 +40,7 @@ typedef struct BloomFilter {
 
 typedef struct SkipNode {
     char* citizenID;
+    Date vaccDate; // dd-mm-yyyy
     Record* record;
     int levels;
     struct SkipNode* next[max]; // Array of nexts, one for each level

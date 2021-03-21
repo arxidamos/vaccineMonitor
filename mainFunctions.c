@@ -49,9 +49,9 @@ void vaccineStatusBloom (BloomFilter* head, char* citizenID, char* virus) {
 // Check if citizenID belongs to virus' Skip List 
 void vaccineStatus (SkipList* head, char* citizenID, char* virus) {
     head = virusSkipExists(head, virus);
-    Record* record = searchSkipList(head, citizenID);
-    if (record) {
-        printf("VACCINATED ON %d-%d-%d\n", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
+    SkipNode* node = searchSkipList(head, citizenID);
+    if (node) {
+        printf("VACCINATED ON %d-%d-%d\n", node->vaccDate.day, node->vaccDate.month, node->vaccDate.year);
     }
     else {
         printf("NOT VACCINATED\n");
@@ -62,17 +62,18 @@ void vaccineStatus (SkipList* head, char* citizenID, char* virus) {
 // Display all vacc and non-vacc occurences for citizenID
 void vaccineStatusAll (SkipList* head, char* citizenID) {
     SkipList* current = head;
-    Record* record = NULL;
+    // Record* record = NULL;
+    SkipNode* node = NULL;
 
     // Iterate through Skip Lists
     while (current) {
-        record =  searchSkipList(current, citizenID);
-        if(record){
+        node =  searchSkipList(current, citizenID);
+        if(node){
             // Print virus
             printf("%s ", current->virus);
             // Print YES dd-mm-yyyy
-            if (record->vaccDate.year != 0) {
-                printf("YES %d-%d-%d\n", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
+            if (node->vaccDate.year != 0) {
+                printf("YES %d-%d-%d\n", node->vaccDate.day, node->vaccDate.month, node->vaccDate.year);
             }
             // Print NO
             else {
@@ -196,8 +197,11 @@ void popStatusByAge (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* co
     }
     // Country argument passed
     else {
+        printf("--------\n");
         vaccined = searchCountryByAge(skipVaccHead, country, date1, date2);
+        printf("--------\n");
         vaccTotal = searchCountryByAge(skipVaccHead, country, dateZero, dateInf);
+        printf("--------\n");
         nonVaccTotal = searchCountryByAge(skipNonVaccHead, country, dateZero, dateInf);
         percentage = malloc(4*sizeof(float));
 

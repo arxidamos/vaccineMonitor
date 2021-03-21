@@ -10,8 +10,9 @@ void freeStateList (State* head);
 
 // recordList.c
 Record* createRecord (char* citizenID, char* fName, char* lName, char* country, int age, char* virus,  Date vaccDate);
-Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate);
-int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus, Date vaccDate);
+Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus);
+Record* insertVirusOnly (Record** head, char* citizenID, char* virus);
+int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus);
 int checkExistence (Record* head, char* citizenID);
 void printRecordsList (Record* record);
 void freeRecordList (Record* head);
@@ -28,8 +29,8 @@ void freeBlooms (BloomFilter* head);
 
 // skipList.c
 SkipList* createList (SkipList* skipListHead, char* virus);
-void insertInSkip (SkipList* skipListHead, Record* record, char* virus);
-Record* searchSkipList (SkipList* skipListHead, char* citizenID);
+void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vaccDate);
+SkipNode* searchSkipList (SkipList* skipListHead, char* citizenID);
 int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Date date2);
 int* searchCountryByAge (SkipList* skipListHead, char* country, Date date1, Date date2);
 SkipList* virusSkipExists (SkipList* skipListHead, char* virus);
