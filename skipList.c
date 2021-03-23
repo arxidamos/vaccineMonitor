@@ -117,7 +117,7 @@ SkipNode* searchSkipList (SkipList* skipListHead, char* citizenID) {
         // More nodes on this level
         else {
             compare = strcmp(current->next[level]->citizenID, citizenID);
-            // Found, return record pointer
+            // Found, return Skip Node pointer
             if (!compare) {
                 return current->next[level];
             }
@@ -200,12 +200,10 @@ SkipList* virusSkipExists (SkipList* skipListHead, char* virus) {
     SkipList* current = skipListHead;
     while (current) {
         if (!strcmp(current->virus, virus)) {
-            // printf("Existing list %s\n", current->virus);
             return current;
         }
         current = current->next;
     }
-    // printf("List %s to be added\n", virus);
     return NULL;
 }
 

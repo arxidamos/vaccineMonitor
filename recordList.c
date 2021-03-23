@@ -70,7 +70,6 @@ Record* insertVirusOnly (Record** head, char* citizenID, char* virus) {
 
 // Validate that record (for same virus) doesn't exist
 int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus) {
-
     // First element to be added, no possible duplicates
     if (!head) {
         return 0;
