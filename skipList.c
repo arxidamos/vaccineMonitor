@@ -49,11 +49,10 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vac
             SkipNode* lastVisited[max];
             
             // Search Lists' nodes, starting from top level
-            while ( (current != NULL) && (level>=0) ) {
+            while ( (current) && (level>=0) ) {
                 lastVisited[level] = current;
                 // No more nodes on this level                
                 if (current->next[level] == NULL) {
-                    // printf("reached level #%d end\n", level);
                     level--;
                 }
                 // More nodes on this level
@@ -65,12 +64,10 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vac
                     }
                     // Reached level's bigger ID
                     else if (compare>0) {
-                        // printf("Bigger node in level #%d\n", level);
                         level--;
                     }
                     // Keep checkin on this level
                     else {
-                        // printf("Move on, on same level #%d\n", level);
                         current = current->next[level];
                     }
                 }
@@ -82,22 +79,11 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vac
             strcpy(newNode->citizenID, record->citizenID);
             newNode->vaccDate = vaccDate;
             newNode->record = record;
-            newNode->levels = getHeight(max);
-            // printf("New node will randomly have %d levels\n", newNode->levels);
-                                 
+            newNode->levels = getHeight(max);                       
             for (int i=0; i<newNode->levels; i++) {
-            // for (int i=newNode->levels-1; i>=0; i--) {
-
-                // printf("%dh fora\n", i);
                 newNode->next[i] = lastVisited[i]->next[i];
                 lastVisited[i]->next[i] = newNode;
             }
-            // if (newNode->next[0] != NULL) {
-            //     printf("New node put: %s--%s--%s\n\n", lastVisited[0]->citizenID, newNode->citizenID, newNode->next[0]->citizenID);
-            // }
-            // else {
-            //     printf("New node put: %s--%s--Null\n\n", lastVisited[0]->citizenID, newNode->citizenID);
-            // }
             return;
         }
         skipL = skipL->next;    
@@ -205,6 +191,58 @@ SkipList* virusSkipExists (SkipList* skipListHead, char* virus) {
         current = current->next;
     }
     return NULL;
+}
+
+// Remove Node from Skip List
+void removeFromSkip (SkipList* skipListHead, SkipNode* node) {
+
+    SkipNode* current = skipListHead->head;
+    SkipNode* tmp = NULL;
+    int level = current->levels - 1;
+    int compare;
+    // Keep last visited for each level
+    SkipNode* lastVisited[max];
+    
+    // Search Lists' nodes, starting from top level
+    while ( (current) && (level>=0) ) {
+        lastVisited[level] = current;
+        // No more nodes on this level                
+        if (current->next[level] == NULL) {
+            // printf("reached level #%d end\n", level);
+            level--;
+        }
+        // More nodes on this level
+        else {                
+            compare = strcmp(current->next[level]->citizenID, node->citizenID);
+            // Found citizenID
+            if (!compare) {
+                level--;
+            }
+            // Reached level's bigger citizenID
+            else if (compare>0) {
+                level--;
+            }
+            // Keep checkin on this level
+            else {
+                current = current->next[level];
+            }
+        }
+    }
+
+    if (current) {
+        // Found citizenID
+        if (!compare) {
+            // Connect last and next nodes
+            tmp = current->next[0];
+            for (int i=0; i<tmp->levels; i++) {
+                lastVisited[i]->next[i] = tmp->next[i];
+            }
+            // Free memory allocated
+            free(tmp->citizenID);
+            free(tmp);
+        }
+    }
+    return;
 }
 
 // Create random maximum height for new Skip Nodes

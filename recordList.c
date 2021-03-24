@@ -75,26 +75,6 @@ int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, Sta
         return 0;
     }
 
-    // while (head) {
-        //     // Check if same citizenID exists
-        //     if (!strcmp(head->citizenID, citizenID)) {
-        //         // Check if name, country, age are the same
-        //         if (!strcmp(head->firstName, fName) && !strcmp(head->lastName, lName) && !strcmp(head->country->name, state->name) && (head->age == age)) {
-        //             // Check if virus is the same
-        //             if (!strcmp(head->virus[0], virus)) {
-        //                 printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);
-        //                 return 1;
-        //             }
-        //         }
-        //         else {
-        //             printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, state->name, age, virus);            
-        //             return 1;                
-        //         }
-        //     }
-        //     head = head->next;
-        // }
-    // return 0;
-
     while (head) {
         // Check if same citizenID exists
         if (!strcmp(head->citizenID, citizenID)) {
@@ -150,6 +130,22 @@ void printRecordsList (Record* record) {
         //     printf(" %d-%d-%d", record->vaccDate.day, record->vaccDate.month, record->vaccDate.year);
         printf("\n");
         record = record->next;
+    }
+}
+
+// Print single record
+void printSingleRecord (Record* record, char* citizenID) {
+    Record* current = record;
+    while (current) {
+        if (!strcmp(current->citizenID, citizenID)) {
+            printf("CITIZENID %s %s %s %s %d ", current->citizenID, current->firstName, current->lastName, current->country->name, current->age);
+            for (int i=0; i<current->virusCount; i++) {
+                printf("%s ", current->virus[i]);
+            }
+            printf("\n");            
+            return;
+        }
+        current = current->next;
     }
 }
 

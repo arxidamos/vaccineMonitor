@@ -239,6 +239,38 @@ void popStatusByAge (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* co
     return;
 }
 
+// Validate citizenID for Insert command
+int insertCitizenCheck (Record* head, char* citizenID, char* fName, char* lName, char* country, int age, char* virus) {
+    // First element to be added, no possible duplicates
+    if (!head) {
+        return 0;
+    }
+
+    while (head) {
+        // Check if same citizenID exists
+        if (!strcmp(head->citizenID, citizenID)) {
+            // Check if name, country, age are the same
+            if (!strcmp(head->firstName, fName) && !strcmp(head->lastName, lName) && !strcmp(head->country->name, country) && (head->age == age)) {
+                // Check if one of the record's viruses is the same
+                for (int i=0; i<head->virusCount; i++){    
+                    // If virus is the same, no need to add it to record's viruses
+                    if (!strcmp(head->virus[i], virus)) {
+                        return 0;
+                    }
+                }
+                // If new virus, add it to record's virus list
+                return 2;
+            }
+            else {
+                printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, country, age, virus);            
+                return 1;                
+            }
+        }
+        head = head->next;
+    }
+    return 0;    
+}
+
 // Compare dates - Returns : "1", a older than b [a < b] | "0", a newer than b [a > b] | "-1": [a = b]
 int compareDate (Date a, Date b) {
     if (a.year != b.year)

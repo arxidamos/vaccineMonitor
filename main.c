@@ -534,6 +534,16 @@ int main(int argc, char **argv) {
                 printf("** /popStatusByAge [country] virusName date1 date2 **\n");
             }
         }
+        else if (!strcmp(command, "/printRecord")) {
+                // Get citizenID
+                command = strtok(NULL, " ");
+                if (command) {
+                    citizenID = malloc(strlen(command)+1);
+                    strcpy(citizenID, command);
+                    printSingleRecord(recordsHead, citizenID);
+                    free(citizenID);
+                }
+        }
         // /insertCitizenRecord citizenID firstName lastName country age virusName YES/NO [date]
         else if (!strcmp(command, "/insertCitizenRecord")) {
 // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -576,7 +586,7 @@ int main(int argc, char **argv) {
                                                     command = strtok(NULL, " ");
                                                     if (command) {
                                                         if (sscanf(command, "%d-%d-%d", &vaccDate.day, &vaccDate.month, &vaccDate.year) == 3 ) {
-                                                            int check = checkDuplicate(recordsHead, citizenID, fName, lName, state, age, virus);
+                                                            int check = insertCitizenCheck(recordsHead, citizenID, fName, lName, country, age, virus);
                                                             // Check if new record is inconsistent
                                                             if (check == 1) {
                                                                 printf("CitizenID %s already in use for another record. Please enter a different one.\n", citizenID);
@@ -635,7 +645,7 @@ int main(int argc, char **argv) {
                                                                     // CitizenID in this Skip List exists
                                                                     if (node = searchSkipList(nonVList, citizenID)) {
                                                                         // Remove node from non vaccinated Skip List
-                                                                        // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                                                                        removeFromSkip (nonVList, node);
                                                                     }
                                                                 }                                           
                                                             }

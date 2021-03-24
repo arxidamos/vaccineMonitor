@@ -15,6 +15,7 @@ Record* insertVirusOnly (Record** head, char* citizenID, char* virus);
 int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus);
 int checkExistence (Record* head, char* citizenID);
 void printRecordsList (Record* record);
+void printSingleRecord (Record* record, char* citizenID);
 void freeRecordList (Record* head);
 
 // bloomFilter.c
@@ -34,6 +35,7 @@ SkipNode* searchSkipList (SkipList* skipListHead, char* citizenID);
 int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Date date2);
 int* searchCountryByAge (SkipList* skipListHead, char* country, Date date1, Date date2);
 SkipList* virusSkipExists (SkipList* skipListHead, char* virus);
+void removeFromSkip (SkipList* skipListHead, SkipNode* node);
 int getHeight (int maximum);
 void printSkipLists (SkipList* head);
 void printSkipNodes (SkipList* skipList);
@@ -47,6 +49,7 @@ void vaccineStatus (SkipList* head, char* citizenID, char* virus);
 void vaccineStatusAll (SkipList* head, char* citizenID);
 void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2);
 void popStatusByAge (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2);
+int insertCitizenCheck (Record* head, char* citizenID, char* fName, char* lName, char* country, int age, char* virus);
 
 // Auxiliary functions
 int compareDate (Date a, Date b);
