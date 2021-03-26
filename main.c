@@ -659,10 +659,62 @@ int main(int argc, char **argv) {
                                                     }
                                                 }
                                                 else if (!strcmp(command, "NO")) {
-                                                    //call functions
-                                                    // if skipListVirus tote if (ID) tote ERROR
-                                                    // If nonSkipVIrus tote if (ID) tote ERROR else insert (ID)
-                                                    // else createVirusNOnSkip kai INsert (ID) meta
+                                                    int check = insertCitizenCheck(recordsHead, citizenID, fName, lName, country, age, virus);
+                                                    // Check if new record is inconsistent
+                                                    if (check == 1) {
+                                                        printf("CitizenID %s already in use for another record. Please enter a different one.\n", citizenID);
+                                                    }        
+                                                    // New record is consistent
+                                                    else {
+                                                        // if skipListVirus tote if (ID) tote ERROR
+                                                        // If nonSkipVIrus tote if (ID) tote ERROR else insert (ID)
+                                                        // else createVirusNOnSkip kai INsert (ID) meta
+                                                        SkipList* vList;
+                                                        SkipList* nonVList;
+                                                        SkipNode* node;
+
+                                                        // Add country in State linked list
+                                                        state = stateExists(stateHead, country);
+                                                        if (!state) {
+                                                            state = insertState(&stateHead, country);
+                                                        }
+
+                                                        // Record already exists. Add new virus for record
+                                                        if (check == 2) {
+                                                            record = insertVirusOnly(&recordsHead, citizenID, virus);
+                                                        }
+                                                        // Record is new. Add new record in record linked list
+                                                        else if (!check) {
+                                                            record = insertSortedRecord(&recordsHead, citizenID, fName, lName, state, age, virus);
+                                                        }
+
+                                                        // Vaccinated Skip List for this virus exists
+                                                        if (vList = virusSkipExists(skipVaccHead, virus)) {
+                                                            // CitizenID already vaccinated
+                                                            if (node = searchSkipList(vList, citizenID)) {
+                                                                printf("ERROR: CITIZEN %s ALREADY VACCINATED ON %d-%d-%d\n", citizenID, node->vaccDate.day, node->vaccDate.month, node->vaccDate.year);
+                                                            }
+                                                            else {
+                                                                // Non vaccinated Skip List for this virus exists
+                                                                if (nonVList = virusSkipExists(skipNonVaccHead, virus)) {
+                                                                
+                                                                    // CitizenID in this Skip List exists
+                                                                    if (node = searchSkipList(nonVList, citizenID)) {
+                                                                        // No need to add existing CitizenID in non vaccinated Skip List
+                                                                        printf("ERROR: RECORD FOR CITIZEN %s ALREADY EXISTS FOR VIRUS %s\n", citizenID, nonVList->virus);
+                                                                    }
+                                                                    else {
+                                                                        // Add record in non vaccinated Skip List
+                                                                        vaccDate.day=0;
+                                                                        vaccDate.month=0;
+                                                                        vaccDate.year=0;                                                                        
+                                                                        insertInSkip(skipNonVaccHead, record, virus, vaccDate);                                                                        
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+
+                                                    }
                                                 }
                                                 else {
                                                     printf("The 7th parameter can only be a YES or NO\n");

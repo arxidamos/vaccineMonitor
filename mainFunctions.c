@@ -197,11 +197,8 @@ void popStatusByAge (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* co
     }
     // Country argument passed
     else {
-        printf("--------\n");
         vaccined = searchCountryByAge(skipVaccHead, country, date1, date2);
-        printf("--------\n");
         vaccTotal = searchCountryByAge(skipVaccHead, country, dateZero, dateInf);
-        printf("--------\n");
         nonVaccTotal = searchCountryByAge(skipNonVaccHead, country, dateZero, dateInf);
         percentage = malloc(4*sizeof(float));
 
