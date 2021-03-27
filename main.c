@@ -185,7 +185,6 @@ int main(int argc, char **argv) {
         free(country);
         free(virus);
     }
-
     // Bloom filter test cases
     // vaccineStatusBloom(bloomsHead, "2135", "Nipah"); // Maybe
     // vaccineStatusBloom(bloomsHead, "2135", "Rabies"); // Not
@@ -534,19 +533,8 @@ int main(int argc, char **argv) {
                 printf("** /popStatusByAge [country] virusName date1 date2 **\n");
             }
         }
-        else if (!strcmp(command, "/printRecord")) {
-                // Get citizenID
-                command = strtok(NULL, " ");
-                if (command) {
-                    citizenID = malloc(strlen(command)+1);
-                    strcpy(citizenID, command);
-                    printSingleRecord(recordsHead, citizenID);
-                    free(citizenID);
-                }
-        }
         // /insertCitizenRecord citizenID firstName lastName country age virusName YES/NO [date]
         else if (!strcmp(command, "/insertCitizenRecord")) {
-// /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 // Get citizenID
                 command = strtok(NULL, " ");
                 if (command) {
@@ -756,8 +744,140 @@ int main(int argc, char **argv) {
                 else {
                     printf("Please enter the following parameters: citizenID, firstName, lastName, country, age, virusName, YES/NO, [date] \n");
                 }
-// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
+        // /vaccinateNow citizenID firstName lastName country age virusName
+        else if (!strcmp(command, "/vaccinateNow")) {
+                // Get citizenID
+                command = strtok(NULL, " ");
+                if (command) {
+                    // Validate that citizenID is an integer
+                    if (strspn(command, "0123456789") == strlen(command)) {
+                        citizenID = malloc(strlen(command)+1);
+                        strcpy(citizenID, command);
+                        // Get firstName
+                        command = strtok(NULL, " ");
+                        if (command) {
+                            fName = malloc(strlen(command)+1);
+                            strcpy(fName, command);
+                            // Get lastName
+                            command = strtok(NULL, " ");
+                            if (command) {
+                                lName = malloc(strlen(command)+1);
+                                strcpy(lName, command);
+                                // Get country
+                                command = strtok(NULL, " ");
+                                if (command) {
+                                    country = malloc(strlen(command)+1);
+                                    strcpy(country, command);
+                                    // Get age
+                                    command = strtok(NULL, " ");
+                                    if (command) {
+                                        sscanf(command, "%d", &age);
+                                        // Get virusName
+                                        command = strtok(NULL, " ");
+                                        if (command) {
+                                            virus = malloc(strlen(command)+1);
+                                            strcpy(virus, command);
+                                            
+                                            int check = insertCitizenCheck(recordsHead, citizenID, fName, lName, country, age, virus);
+                                            // Check if new record is inconsistent
+                                            if (check == 1) {
+                                                printf("CitizenID %s already in use for another record. Please enter a different one.\n", citizenID);
+                                            }
+                                            // New record is consistent
+                                            else {
+                                                SkipList* vList;
+                                                SkipList* nonVList;
+                                                SkipNode* node;
+                                                // Use current date as record's date
+                                                vaccDate = getTime();
+
+                                                // Add country in State linked list
+                                                state = stateExists(stateHead, country);
+                                                if (!state) {
+                                                    state = insertState(&stateHead, country);
+                                                }
+
+                                                // Record already exists. Add new virus for record
+                                                if (check == 2) {
+                                                    record = insertVirusOnly(&recordsHead, citizenID, virus);
+                                                }
+                                                // Record is new. Add new record in record linked list
+                                                else if (!check) {
+                                                    record = insertSortedRecord(&recordsHead, citizenID, fName, lName, state, age, virus);
+                                                }
+
+                                                // Vaccinated Skip List for this virus exists
+                                                if (vList = virusSkipExists(skipVaccHead, virus)) {
+                                                    // CitizenID already vaccinated
+                                                    if (node = searchSkipList(vList, citizenID)) {
+                                                        printf("ERROR: CITIZEN %s ALREADY VACCINATED ON %d-%d-%d\n", citizenID, node->vaccDate.day, node->vaccDate.month, node->vaccDate.year);
+                                                    }
+                                                    // CitizenID not yet vaccinated
+                                                    else {
+                                                        // Add record in Bloom Filter
+                                                        insertInBloom(bloomsHead, citizenID, virus);
+                                                        // Add record in Skip List
+                                                        insertInSkip(skipVaccHead, record, virus, vaccDate);                                                                        
+                                                    }
+                                                }
+                                                // Vaccinated Skip List for this virus doesn't exist
+                                                else {
+                                                    // Create Skip List for this virus
+                                                    skipVaccHead = createList(skipVaccHead, virus);
+                                                    // Add record in Skip List
+                                                    insertInSkip(skipVaccHead, record, virus, vaccDate);
+                                                
+                                                    // Create Bloom Filter for this virus
+                                                    bloomsHead = createBloom(bloomsHead, virus, bloomSize, k);
+                                                    // Add record in Bloom Filter
+                                                    insertInBloom(bloomsHead, citizenID, virus);
+                                                }
+
+                                                // Non vaccinated Skip List for this virus exists
+                                                if (nonVList = virusSkipExists(skipNonVaccHead, virus)) {
+                                                
+                                                    // CitizenID in this Skip List exists
+                                                    if (node = searchSkipList(nonVList, citizenID)) {
+                                                        // Remove node from non vaccinated Skip List
+                                                        removeFromSkip (nonVList, node);
+                                                    }
+                                                }
+                                            }
+                                            free(virus);
+                                        }
+                                        else {
+                                            printf("Please also enter a virusName parameter.\n");
+                                        }
+                                    }
+                                    else {
+                                        printf("Please also enter the following parameters: age, virusName\n");
+                                    }
+                                    free(country);
+                                }
+                                else {
+                                    printf("Please also enter the following parameters: country, age, virusName\n");
+                                }
+                                free(lName);
+                            }
+                            else {
+                                printf("Please also enter the following parameters: lastName, country, age, virusName\n");
+                            }
+                            free(fName);
+                        }
+                        else {
+                            printf("Please also enter the following parameters: firstName, lastName, country, age, virusName\n");
+                        }
+                        free(citizenID);
+                    }
+                    else {
+                        printf("Please enter a numbers-only citizenID\n");
+                    }
+                }
+                else {
+                    printf("Please enter the following parameters: citizenID, firstName, lastName, country, age, virusName\n");
+                }
+        }        
         // /list-nonVaccinated-Persons virusName
         else if (!strcmp(command, "/list-nonVaccinated-Persons")) {
             
@@ -783,6 +903,7 @@ int main(int argc, char **argv) {
                 printf("Please enter a virus name\n");
             }
         }
+        // /exit app
         else if (!strcmp(command, "/exit")) {
 
             // Deallocate memory
@@ -800,6 +921,17 @@ int main(int argc, char **argv) {
 
             return 1;
         }
+        // /printRecord auxiliary function to print individual records 
+        else if (!strcmp(command, "/printRecord")) {
+            // Get citizenID
+            command = strtok(NULL, " ");
+            if (command) {
+                citizenID = malloc(strlen(command)+1);
+                strcpy(citizenID, command);
+                printSingleRecord(recordsHead, citizenID);
+                free(citizenID);
+            }
+        }        
         else {
             printf("Command '%s' is unknown\n", command);
             printf("Please type a known command:\n");

@@ -54,4 +54,5 @@ int insertCitizenCheck (Record* head, char* citizenID, char* fName, char* lName,
 // Auxiliary functions
 int compareDate (Date a, Date b);
 int isBetweenDates (Date a, Date x, Date b);
+Date getTime ();
 #endif

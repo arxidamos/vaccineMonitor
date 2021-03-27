@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "structs.h"
 #include "functions.h"
 
@@ -290,4 +291,20 @@ int isBetweenDates (Date a, Date x, Date b) {
     else {
         return 0;
     }
+}
+
+// Return current system date
+Date getTime () {
+    Date currentDate;
+    time_t t;
+    time(&t);
+    struct tm *timeInfo = localtime(&t);
+    char*buffer = malloc(strlen(ctime(&t) + 1));
+    strftime(buffer, strlen(ctime(&t) + 1), "%e-%m-%Y", timeInfo); // %m: month  %Y: year %e: day of month without leading zeros
+    sscanf(buffer, "%d-%d-%d", &currentDate.day, &currentDate.month, &currentDate.year);
+    
+    // printf("Current date is %d-%d-%d\n", currentDate.day, currentDate.month, currentDate.year);
+    free(buffer);
+
+    return currentDate;
 }
