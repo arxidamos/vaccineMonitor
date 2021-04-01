@@ -4,14 +4,15 @@
 #include "structs.h"
 #include "functions.h"
 
-// Create new Skip List for new virus. Keep vacc lists and non-vacc lists together
+// Create new Skip List for new virus. Keep vacc lists and non-vacc lists in separate groups
 SkipList* createList (SkipList* skipListHead, char* virus) {
     SkipList* newList;
+
     newList = malloc(sizeof(SkipList));
-    // newList->head = calloc(1, sizeof(SkipNode));
     newList->head = malloc(sizeof(SkipNode));
 
     newList->head->levels = max;
+
     newList->head->citizenID = malloc(strlen("@")+1);
     strcpy(newList->head->citizenID, "@");
 
@@ -20,16 +21,15 @@ SkipList* createList (SkipList* skipListHead, char* virus) {
     }
 
     newList->maxLevel = max; // ~log2(world population)
+
     newList->virus = malloc(strlen(virus)+1);
     strcpy(newList->virus, virus);
 
     // Put new skipList in head
     if (skipListHead) {
-        // printf("new skipList for %s\n", virus);
         newList->next = skipListHead;
     }
     else {
-        // printf("1st skipList for %s\n", virus);
         newList->next = NULL;
     }
     return newList;
@@ -41,22 +41,22 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vac
 
     while (skipL) {
         if (!strcmp(skipL->virus, virus)) {
-            // We are in the right list
+            // Right list found
             SkipNode* current = skipL->head;
             int level = skipL->head->levels - 1;
             int compare;
-            // Keep last visited for each level            
+            // Keep last visited for each level
             SkipNode* lastVisited[max];
             
             // Search Lists' nodes, starting from top level
             while ( (current) && (level>=0) ) {
                 lastVisited[level] = current;
-                // No more nodes on this level                
+                // No more nodes on this level
                 if (current->next[level] == NULL) {
                     level--;
                 }
                 // More nodes on this level
-                else {                
+                else {
                     compare = strcmp(current->next[level]->citizenID, record->citizenID);
                     // ID already exists
                     if (!compare) {
@@ -79,14 +79,14 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vac
             strcpy(newNode->citizenID, record->citizenID);
             newNode->vaccDate = vaccDate;
             newNode->record = record;
-            newNode->levels = getHeight(max);                       
+            newNode->levels = getHeight(max);
             for (int i=0; i<newNode->levels; i++) {
                 newNode->next[i] = lastVisited[i]->next[i];
                 lastVisited[i]->next[i] = newNode;
             }
             return;
         }
-        skipL = skipL->next;    
+        skipL = skipL->next;
     }
 }
 
@@ -121,7 +121,7 @@ SkipNode* searchSkipList (SkipList* skipListHead, char* citizenID) {
 }
 
 // Check for country in Skip List
-int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Date date2) {   
+int searchCountrySkipList (SkipList* skipListHead, char* country, Date date1, Date date2) {
     // No Skip List for this virus
     if (!skipListHead) {
         return 0;
@@ -148,7 +148,7 @@ int* searchCountryByAge (SkipList* skipListHead, char* country, Date date1, Date
     int* vaccArray = malloc(4*sizeof(int));
     for (int i=0; i<4; i++) {
         vaccArray[i] = 0;
-    }    
+    }
 
     // No Skip List for this virus
     if (!skipListHead) {
@@ -195,7 +195,6 @@ SkipList* virusSkipExists (SkipList* skipListHead, char* virus) {
 
 // Remove Node from Skip List
 void removeFromSkip (SkipList* skipListHead, SkipNode* node) {
-
     SkipNode* current = skipListHead->head;
     SkipNode* tmp = NULL;
     int level = current->levels - 1;
@@ -206,13 +205,13 @@ void removeFromSkip (SkipList* skipListHead, SkipNode* node) {
     // Search Lists' nodes, starting from top level
     while ( (current) && (level>=0) ) {
         lastVisited[level] = current;
-        // No more nodes on this level                
+        // No more nodes on this level
         if (current->next[level] == NULL) {
             // printf("reached level #%d end\n", level);
             level--;
         }
         // More nodes on this level
-        else {                
+        else {
             compare = strcmp(current->next[level]->citizenID, node->citizenID);
             // Found citizenID
             if (!compare) {
@@ -271,17 +270,6 @@ void printSkipLists (SkipList* head) {
 
 // Print Skip nodes inside Skip Lists
 void printSkipNodes (SkipList* skipList) {
-    // int height = skipList->head->levels;
-    // for (int i=height-1; i>=0; i--) {
-    //     while (current) {
-    //         // printf("[%s]-->", current->citizenID);
-    //         current = current->next[i];
-    //         // current = current->next[0];
-    //     }
-    //     current = skipList->head;
-    //     // printf("[end[%d]]\n", i);
-    // }
-
     // No Skip List for this virus
     if (!skipList->head) {
         return;

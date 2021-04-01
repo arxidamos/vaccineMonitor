@@ -9,7 +9,7 @@ void printStateList (State* state);
 void freeStateList (State* head);
 
 // recordList.c
-Record* createRecord (char* citizenID, char* fName, char* lName, char* country, int age, char* virus,  Date vaccDate);
+Record* createRecord (char* citizenID, char* fName, char* lName, char* country, int age, char* virus, Date vaccDate);
 Record* insertSortedRecord (Record** head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus);
 Record* insertVirusOnly (Record** head, char* citizenID, char* virus);
 int checkDuplicate (Record* head, char* citizenID, char* fName, char* lName, State* state, int age, char* virus);
@@ -50,9 +50,9 @@ void vaccineStatusAll (SkipList* head, char* citizenID);
 void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2);
 void popStatusByAge (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2);
 int insertCitizenCheck (Record* head, char* citizenID, char* fName, char* lName, char* country, int age, char* virus);
-
 // Auxiliary functions
 int compareDate (Date a, Date b);
 int isBetweenDates (Date a, Date x, Date b);
 Date getTime ();
+
 #endif

@@ -21,22 +21,15 @@ void vaccineStatusBloom (BloomFilter* head, char* citizenID, char* virus) {
                 hash = hash_i(id, i);
                 // Get the equivalent bit position that may be 1
                 x = hash%(current->size*8);
-                // An int is 32 bits
-                // So x/32 is the index in the bitArray
-                // And x%32 is the bit's position inside that index
-                
                 // Shift left the *set* bit
                 set = set << (x%32);
-                // printf("after shift: %d\n", set);
 
-                // printf("Comparing set and bitarray bit: %d\n", result);
                 // Check if bitArray has *1* in the same spot
                 if ((current->bitArray[x/32] & set) == 0) {
-                    // printf("x=%d, bitArray[%d/32]=%d, setBit=%d\n", x, x, current->bitArray[x/32], set);
                     printf("NOT VACCINATED\n");
                     return;
                 }
-                set = 1;                
+                set = 1;
             }
             printf("MAYBE\n");
             return;
@@ -68,7 +61,7 @@ void vaccineStatusAll (SkipList* head, char* citizenID) {
 
     // Iterate through Skip Lists
     while (current) {
-        node =  searchSkipList(current, citizenID);
+        node = searchSkipList(current, citizenID);
         if(node){
             // Print virus
             printf("%s ", current->virus);
@@ -100,10 +93,10 @@ void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* 
     dateZero.year = 0;
     dateInf.day = 99;
     dateInf.month = 99;
-    dateInf.year = 9999;    
+    dateInf.year = 9999;
     
     // Country optional argument NOT passed
-    if (!country) {        
+    if (!country) {
         State* currentState = stateHead;
         while (currentState) {
             country = currentState->name;
@@ -152,10 +145,10 @@ void popStatusByAge (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* co
     dateZero.year = 0;
     dateInf.day = 99;
     dateInf.month = 99;
-    dateInf.year = 9999;    
+    dateInf.year = 9999;
     
     // Country optional argument NOT passed
-    if (!country) {        
+    if (!country) {
         State* currentState = stateHead;
         while (currentState) {
             country = currentState->name;
@@ -164,7 +157,6 @@ void popStatusByAge (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* co
             nonVaccTotal = searchCountryByAge(skipNonVaccHead, country, dateZero, dateInf);
             percentage = malloc(4*sizeof(float));
 
-            
             printf("%s\n", country);
             // Check if denominator is zero
             for (int i=0; i<4; i++) {
@@ -250,7 +242,7 @@ int insertCitizenCheck (Record* head, char* citizenID, char* fName, char* lName,
             // Check if name, country, age are the same
             if (!strcmp(head->firstName, fName) && !strcmp(head->lastName, lName) && !strcmp(head->country->name, country) && (head->age == age)) {
                 // Check if one of the record's viruses is the same
-                for (int i=0; i<head->virusCount; i++){    
+                for (int i=0; i<head->virusCount; i++){
                     // If virus is the same, no need to add it to record's viruses
                     if (!strcmp(head->virus[i], virus)) {
                         return 0;
@@ -260,13 +252,13 @@ int insertCitizenCheck (Record* head, char* citizenID, char* fName, char* lName,
                 return 2;
             }
             else {
-                printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, country, age, virus);            
-                return 1;                
+                printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, country, age, virus);
+                return 1;
             }
         }
         head = head->next;
     }
-    return 0;    
+    return 0;
 }
 
 // Compare dates - Returns : "1", a older than b [a < b] | "0", a newer than b [a > b] | "-1": [a = b]
@@ -300,11 +292,9 @@ Date getTime () {
     time(&t);
     struct tm *timeInfo = localtime(&t);
     char*buffer = malloc(strlen(ctime(&t) + 1));
-    strftime(buffer, strlen(ctime(&t) + 1), "%e-%m-%Y", timeInfo); // %m: month  %Y: year %e: day of month without leading zeros
+    strftime(buffer, strlen(ctime(&t) + 1), "%e-%m-%Y", timeInfo); // %m: month %Y: year %e: day of month without leading zeros
     sscanf(buffer, "%d-%d-%d", &currentDate.day, &currentDate.month, &currentDate.year);
     
-    // printf("Current date is %d-%d-%d\n", currentDate.day, currentDate.month, currentDate.year);
     free(buffer);
-
     return currentDate;
 }

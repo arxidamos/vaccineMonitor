@@ -10,7 +10,6 @@ typedef struct Date {
     int day;    //dd
     int month;  //mm
     int year;   //yyyy
-    int empty;
 } Date;
 
 typedef struct State {
@@ -48,7 +47,6 @@ typedef struct SkipNode {
 
 typedef struct SkipList {
     SkipNode* head;
-    // SkipNode* last;
     int maxLevel;
     char* virus;
     struct SkipList* next;

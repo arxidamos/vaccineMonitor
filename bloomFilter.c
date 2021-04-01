@@ -46,7 +46,6 @@ BloomFilter* createBloom (BloomFilter* bloomsHead, char* virus, int size, int k)
     else {
         newBloom->next = NULL;
     }
-
     return newBloom;
 }
 
@@ -55,7 +54,7 @@ void insertInBloom (BloomFilter* bloomsHead, char* citizenID, char* virus) {
     BloomFilter* current = bloomsHead;
     unsigned char* id = (unsigned char*)citizenID;
     unsigned long hash;
-    unsigned int set = 1; // All 0s and leftmost bit=1
+    unsigned int set = 1; // All 0s but rightmost bit=1
     int x;
     // Search for this virus' BF
     while (current) {
@@ -66,16 +65,13 @@ void insertInBloom (BloomFilter* bloomsHead, char* citizenID, char* virus) {
                 hash = hash_i(id, i);
                 // Get the equivalent bit position that needs to be set to 1
                 x = hash%(current->size*8);
-                // An int is 32 bits
-                // So x/32 is the index in the bitArray
-                // And x%32 is the bit's position inside that index
+                // An int is 32 bits, x/32 is the index in the bitArray, x%32 is the bit's position inside that index
                 
                 // Shift left the *set* bit
                 set = set << (x%32);
                 current->bitArray[x/32] = current->bitArray[x/32] | set;
                 set = 1;
             } 
-            // printf("X= %d\n", x);
             return;
         }
         current = current->next;
@@ -84,7 +80,6 @@ void insertInBloom (BloomFilter* bloomsHead, char* citizenID, char* virus) {
 
 // Check if Bloom Filter for this virus exists
 int virusBloomExists (BloomFilter* bloomsHead, char* virus) {
-    
     // No Blooms Filter yet
     if (!bloomsHead) {
         return 0;
@@ -102,9 +97,9 @@ int virusBloomExists (BloomFilter* bloomsHead, char* virus) {
 
 // Print list of Bloom Filters
 void printBloomsList (BloomFilter* head) {
-    BloomFilter* current = head;    
+    BloomFilter* current = head;
     while (current) {
-        printf("BF : %s\n", current->virus);    
+        printf("BF : %s\n", current->virus);
         current = current->next;
     }
 }
