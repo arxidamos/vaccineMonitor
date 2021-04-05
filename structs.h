@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-#define max 32
+#define MAX 32
 
 typedef struct Date {
     int day;    //dd
@@ -42,7 +41,7 @@ typedef struct SkipNode {
     Date vaccDate; // dd-mm-yyyy
     Record* record;
     int levels;
-    struct SkipNode* next[max]; // Array of nexts, one for each level
+    struct SkipNode* next[MAX]; // Array of nexts, one for each level
 } SkipNode;
 
 typedef struct SkipList {

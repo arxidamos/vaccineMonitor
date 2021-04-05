@@ -52,7 +52,7 @@ random_id() {
     # If duplicates are allowed, up to 2% of IDs will be duplicates
     if [ $1 -eq 1 ]
     then
-        local p=`bc <<< "$numLines*0.03/1"`   # floor to nearest integer
+        local p=`bc <<< "$numLines*0.03/1"` # Floor to nearest integer
         while [ $p -gt 0 ]
         do
             # get random indices in num_array
@@ -82,18 +82,18 @@ while [ $i -lt $numLines ]
 do
     # Create random citizenID
     citizenID=${num_array[$i]}
-    echo $citizenID  | tr '\n' ' ' >> "citizenRecordsFile.txt"
+    echo $citizenID | tr '\n' ' ' >> "citizenRecordsFile.txt"
 
     # Create random name
     name_length=$(( $RANDOM%13+3 ))
     # tr -dc: remove all chars from incoming command BUT the ones in the set
     # head -c : keep first <name_length> bytes (chars) from /urandom
-    tr -dc 'a-zA-Z' </dev/urandom | head -z -c $name_length  >> "citizenRecordsFile.txt"
+    tr -dc 'a-zA-Z' </dev/urandom | head -z -c $name_length >> "citizenRecordsFile.txt"
     echo -n ' ' >> "citizenRecordsFile.txt"
 
     # Create random surname
     name_length=$(( $RANDOM%13+3 ))
-    tr -dc 'a-zA-Z' </dev/urandom | head -z -c $name_length  >> "citizenRecordsFile.txt"
+    tr -dc 'a-zA-Z' </dev/urandom | head -z -c $name_length >> "citizenRecordsFile.txt"
     echo -n ' ' >> "citizenRecordsFile.txt"
 
     # Select random country

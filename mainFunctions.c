@@ -80,8 +80,7 @@ void vaccineStatusAll (SkipList* head, char* citizenID) {
 }
 
 // Display country's vaccined total and percentage of citizens for virus
-void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2) {
-    
+void populationStatus (SkipList* skipVaccHead, SkipList* skipNonVaccHead, char* country, State* stateHead, Date date1, Date date2) { 
     int vaccined = 0;
     int vaccTotal = 0;
     int nonVaccTotal = 0;
@@ -251,6 +250,7 @@ int insertCitizenCheck (Record* head, char* citizenID, char* fName, char* lName,
                 // If new virus, add it to record's virus list
                 return 2;
             }
+            // CitizenID same, rest is different
             else {
                 printf("ERROR IN RECORD %s %s %s %s %d %s \n", citizenID, fName, lName, country, age, virus);
                 return 1;

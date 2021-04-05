@@ -35,9 +35,6 @@ int main(int argc, char **argv) {
     size_t textSize;
     char* text = NULL;
     char* token = NULL;
-    
-    srand(time(NULL));
-
     char* citizenID;
     char* fName;
     char* lName;
@@ -54,6 +51,8 @@ int main(int argc, char **argv) {
     int recordAccepted = 1;
     SkipList* skipVaccHead = NULL;
     SkipList* skipNonVaccHead = NULL;
+    // Seed the time generator
+    srand(time(NULL));
 
     // Read from inputFile and create structs
     while (getline(&text, &textSize, inputFile) != -1) {
@@ -112,7 +111,6 @@ int main(int argc, char **argv) {
 
         // Insert records into structures
         if (recordAccepted) {
-
             // Add country in State linked list
             // Add each country once only
             if (!stateExists(stateHead, country)) {
@@ -142,7 +140,6 @@ int main(int argc, char **argv) {
         }
 
         if (recordAccepted) {
-
             // Add vaccinated record in Bloom Filter
             if (vaccDate.year != 0) {
                 // Check if we have Bloom Filter for this virus
@@ -185,11 +182,6 @@ int main(int argc, char **argv) {
         free(country);
         free(virus);
     }
-    // Bloom filter test cases
-    // vaccineStatusBloom(bloomsHead, "2135", "Nipah"); // Maybe
-    // vaccineStatusBloom(bloomsHead, "2135", "Rabies"); // Not
-    // vaccineStatusBloom(bloomsHead, "647", "Bunyavirus"); // Maybe
-    // vaccineStatusBloom(bloomsHead, "9872", "YellowFever"); // Maybe
 
     // printStateList(stateHead);
     // printRecordsList(recordsHead);
@@ -202,11 +194,9 @@ int main(int argc, char **argv) {
     size_t inputSize;
     char* input = NULL;
     char* command = NULL;
-
     printf("Structs have been constructed. Type a command:\n");
 
     while (1) {
-
         getline(&input, &inputSize, stdin);
         input[strlen(input)-1] = '\0'; // Cut terminating '\n' from string
         
@@ -215,7 +205,6 @@ int main(int argc, char **argv) {
 
         // /vaccineStatusBloom citizenID virusName 
         if (!strcmp(command, "/vaccineStatusBloom")) {
-
             // Get citizenID
             command = strtok(NULL, " ");
             if (command) {
@@ -240,8 +229,7 @@ int main(int argc, char **argv) {
             }
         }
         // /vaccineStatus citizenID [virusName]
-        else if (!strcmp(command, "/vaccineStatus")) {
-            
+        else if (!strcmp(command, "/vaccineStatus")) { 
             // Get cizitenID
             command = strtok(NULL, " ");
             if (command) {
@@ -250,7 +238,6 @@ int main(int argc, char **argv) {
 
                 // Check that citizenID is valid
                 if (checkExistence(recordsHead, citizenID)) {
-                    
                     // Get virusName
                     command = strtok(NULL, " ");
                     // Call vaccineStatus function
@@ -289,7 +276,7 @@ int main(int argc, char **argv) {
                     command = strtok(NULL, " ");
                     if (command) {
                         // 2nd argument: existing virusName
-                        if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {                        
+                        if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {
                             virus = malloc(strlen(command)+1);
                             strcpy(virus, command);
                     
@@ -345,7 +332,7 @@ int main(int argc, char **argv) {
                     free(country);
                 }
                 // 1st argument: existing virusName
-                else if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {                    
+                else if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {
                     // No optional country argument passed
                     virus = malloc(strlen(command)+1);
                     strcpy(virus, command);
@@ -418,7 +405,7 @@ int main(int argc, char **argv) {
                     command = strtok(NULL, " ");
                     if (command) {
                         // 2nd argument: existing virusName
-                        if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {                        
+                        if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {
                             virus = malloc(strlen(command)+1);
                             strcpy(virus, command);
                     
@@ -474,7 +461,7 @@ int main(int argc, char **argv) {
                     free(country);
                 }
                 // 1st argument: existing virusName
-                else if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {                    
+                else if (virusSkipExists(skipVaccHead, command) || virusSkipExists(skipNonVaccHead, command)) {
                     // No optional country argument passed
                     virus = malloc(strlen(command)+1);
                     strcpy(virus, command);
@@ -611,7 +598,7 @@ int main(int argc, char **argv) {
                                                                         // Add record in Bloom Filter
                                                                         insertInBloom(bloomsHead, citizenID, virus);
                                                                         // Add record in Skip List
-                                                                        insertInSkip(skipVaccHead, record, virus, vaccDate);                                                                        
+                                                                        insertInSkip(skipVaccHead, record, virus, vaccDate);
                                                                     }
                                                                 }
                                                                 // Vaccinated Skip List for this virus doesn't exist
@@ -635,7 +622,7 @@ int main(int argc, char **argv) {
                                                                         // Remove node from non vaccinated Skip List
                                                                         removeFromSkip (nonVList, node);
                                                                     }
-                                                                }                                           
+                                                                }
                                                             }
                                                         }
                                                         else {
@@ -651,7 +638,7 @@ int main(int argc, char **argv) {
                                                     // Check if new record is inconsistent
                                                     if (check == 1) {
                                                         printf("CitizenID %s already in use for another record. Please enter a different one.\n", citizenID);
-                                                    }        
+                                                    }
                                                     // New record is consistent
                                                     else {
                                                         // if skipListVirus tote if (ID) tote ERROR
@@ -695,8 +682,8 @@ int main(int argc, char **argv) {
                                                                         // Add record in non vaccinated Skip List
                                                                         vaccDate.day=0;
                                                                         vaccDate.month=0;
-                                                                        vaccDate.year=0;                                                                        
-                                                                        insertInSkip(skipNonVaccHead, record, virus, vaccDate);                                                                        
+                                                                        vaccDate.year=0;
+                                                                        insertInSkip(skipNonVaccHead, record, virus, vaccDate);
                                                                     }
                                                                 }
                                                             }
@@ -818,7 +805,7 @@ int main(int argc, char **argv) {
                                                         // Add record in Bloom Filter
                                                         insertInBloom(bloomsHead, citizenID, virus);
                                                         // Add record in Skip List
-                                                        insertInSkip(skipVaccHead, record, virus, vaccDate);                                                                        
+                                                        insertInSkip(skipVaccHead, record, virus, vaccDate);
                                                     }
                                                 }
                                                 // Vaccinated Skip List for this virus doesn't exist
@@ -877,10 +864,9 @@ int main(int argc, char **argv) {
                 else {
                     printf("Please enter the following parameters: citizenID, firstName, lastName, country, age, virusName\n");
                 }
-        }        
+        }
         // /list-nonVaccinated-Persons virusName
         else if (!strcmp(command, "/list-nonVaccinated-Persons")) {
-            
             // Get virusName
             command = strtok(NULL, " ");
             if (command) {
@@ -897,7 +883,6 @@ int main(int argc, char **argv) {
                 else {
                     printf("Please enter an existing virus name\n");
                 }
-
             }
             else {
                 printf("Please enter a virus name\n");
@@ -905,23 +890,20 @@ int main(int argc, char **argv) {
         }
         // /exit app
         else if (!strcmp(command, "/exit")) {
-
             // Deallocate memory
             free(text);
             free(input);
-            
             freeStateList(stateHead);
             freeRecordList(recordsHead);
             freeBlooms(bloomsHead);
             freeSkipLists(skipVaccHead);
             freeSkipLists(skipNonVaccHead);
-
             fclose(inputFile);
             printf("exiting\n");
 
             return 1;
         }
-        // /printRecord auxiliary function to print individual records 
+        // /printRecord (print individual records)
         else if (!strcmp(command, "/printRecord")) {
             // Get citizenID
             command = strtok(NULL, " ");
@@ -931,7 +913,7 @@ int main(int argc, char **argv) {
                 printSingleRecord(recordsHead, citizenID);
                 free(citizenID);
             }
-        }        
+        }
         else {
             printf("Command '%s' is unknown\n", command);
             printf("Please type a known command:\n");

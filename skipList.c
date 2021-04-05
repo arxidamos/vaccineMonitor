@@ -11,7 +11,7 @@ SkipList* createList (SkipList* skipListHead, char* virus) {
     newList = malloc(sizeof(SkipList));
     newList->head = malloc(sizeof(SkipNode));
 
-    newList->head->levels = max;
+    newList->head->levels = MAX;
 
     newList->head->citizenID = malloc(strlen("@")+1);
     strcpy(newList->head->citizenID, "@");
@@ -20,7 +20,7 @@ SkipList* createList (SkipList* skipListHead, char* virus) {
         newList->head->next[i] = NULL;
     }
 
-    newList->maxLevel = max; // ~log2(world population)
+    newList->maxLevel = MAX; // ~log2(world population)
 
     newList->virus = malloc(strlen(virus)+1);
     strcpy(newList->virus, virus);
@@ -46,7 +46,7 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vac
             int level = skipL->head->levels - 1;
             int compare;
             // Keep last visited for each level
-            SkipNode* lastVisited[max];
+            SkipNode* lastVisited[MAX];
             
             // Search Lists' nodes, starting from top level
             while ( (current) && (level>=0) ) {
@@ -79,7 +79,7 @@ void insertInSkip (SkipList* skipListHead, Record* record, char* virus, Date vac
             strcpy(newNode->citizenID, record->citizenID);
             newNode->vaccDate = vaccDate;
             newNode->record = record;
-            newNode->levels = getHeight(max);
+            newNode->levels = getHeight(MAX);
             for (int i=0; i<newNode->levels; i++) {
                 newNode->next[i] = lastVisited[i]->next[i];
                 lastVisited[i]->next[i] = newNode;
@@ -200,7 +200,7 @@ void removeFromSkip (SkipList* skipListHead, SkipNode* node) {
     int level = current->levels - 1;
     int compare;
     // Keep last visited for each level
-    SkipNode* lastVisited[max];
+    SkipNode* lastVisited[MAX];
     
     // Search Lists' nodes, starting from top level
     while ( (current) && (level>=0) ) {
