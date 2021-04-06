@@ -32,6 +32,7 @@ State* insertState (State** head, char* country) {
     return newNode;
 }
 
+// Check if country exists in States linked list
 State* stateExists (State* head, char* country) {
     State* current = head;
     
