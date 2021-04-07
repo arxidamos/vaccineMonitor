@@ -214,10 +214,16 @@ int main(int argc, char **argv) {
                 // Get virusName
                 command = strtok(NULL, " ");
                 if(command) {
-                    virus = malloc(strlen(command)+1);
-                    strcpy(virus, command);
-                    vaccineStatusBloom(bloomsHead, citizenID, virus);
-                    free(virus);
+                    // Check that virus exists in our data
+                    if (virusSkipExists(skipVaccHead, command)) {
+                        virus = malloc(strlen(command)+1);
+                        strcpy(virus, command);
+                        vaccineStatusBloom(bloomsHead, citizenID, virus);
+                        free(virus);
+                    }
+                    else {
+                        printf("Please enter an existing virus name\n");
+                    }
                 }
                 else {
                     printf("Please enter a virus name\n");
@@ -241,11 +247,16 @@ int main(int argc, char **argv) {
                     // Get virusName
                     command = strtok(NULL, " ");
                     // Call vaccineStatus function
-                    if(command) {
-                        virus = malloc(strlen(command)+1);
-                        strcpy(virus, command);
-                        vaccineStatus(skipVaccHead, citizenID, virus);
-                        free(virus);
+                    if (command) {
+                        if (virusSkipExists(skipVaccHead, command)) {
+                            virus = malloc(strlen(command)+1);
+                            strcpy(virus, command);
+                            vaccineStatus(skipVaccHead, citizenID, virus);
+                            free(virus);
+                        }
+                        else {
+                            printf("Please enter an existing virus name\n");
+                        }
                     }
                     // Call vaccineStatusAll function
                     else {
